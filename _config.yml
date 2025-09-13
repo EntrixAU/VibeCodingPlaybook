@@ -1,0 +1,73 @@
+# Site settings
+title: "Vibe Coding Playbook"
+description: "Let's Do It Right - A comprehensive guide to AI-assisted development"
+author: "Sam Fernando"
+email: "sam@opexconsulting.com.au"
+organization: "Opex Consulting"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# GitHub Pages settings
+url: "https://username.github.io"  # Replace with your GitHub username
+baseurl: "/VibeCodingPlaybook"     # Replace with your repository name
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Navigation
+header_pages:
+  - index.md
+  - methodology.md
+  - evolution.md
+  - perils.md
+  - best-practices.md
+  - governance.md
+  - tools.md
+  - adoption.md
+  - cheat-sheet.md
+
+# Collections
+collections:
+  sections:
+    output: true
+    permalink: /:collection/:name/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - presentation.md
+
+# SEO and social
+twitter:
+  username: # Add your Twitter handle if you have one
+  card: summary
+
+# Google Analytics (optional)
+# google_analytics: # Add your GA tracking ID
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Sam Fernando"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      author: "Sam Fernando"
