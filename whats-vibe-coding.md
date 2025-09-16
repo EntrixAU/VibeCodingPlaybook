@@ -29,18 +29,6 @@ Think about your own teams — how many hours have been saved by AI tools this y
 
 ### The Four Pillars of Enterprise Readiness
 
-```mermaid
-graph LR
-    A[Team Readiness] --> B[Security]
-    B --> C[Compliance] 
-    C --> D[Quality]
-    D --> A
-    
-    style A fill:#2563eb,stroke:#1e40af,color:#fff
-    style B fill:#dc2626,stroke:#b91c1c,color:#fff
-    style C fill:#059669,stroke:#047857,color:#fff
-    style D fill:#7c3aed,stroke:#6d28d9,color:#fff
-```
 
 ## 🚀 The Promise
 
@@ -52,7 +40,7 @@ So why are teams adopting vibe coding at this pace? It's because of the promise 
 |---------|--------|
 | **Faster delivery & prototyping (POCs)** | AI can generate scaffolding, boilerplate, and even functional code in seconds. What once took days now takes hours, which compresses delivery cycles dramatically |
 | **Reduce repetitive coding** | Eliminates grunt work, allowing developers to focus on higher-value activities |
-| **Reduce barriers to entry into the industry** | A junior dev, a BA, or even a product owner with limited coding experience can now draft working prototypes. This democratization of development can be powerful if managed well |
+| **Reduce barriers to entry into the industry** | A junior dev, a BA, or even a product owner with limited coding experience can now draft working prototypes. This democratisation of development can be powerful if managed well |
 | **Frees experts to focus on architecture, security etc** | Instead of writing yet another CRUD endpoint, experienced engineers can focus on architecture, scaling, and design decisions |
 | **Accelerate innovation & experimentation** | Teams can test ideas faster, pivot faster, and bring new features to market more quickly. That's why companies like Microsoft and Coinbase are embracing it so aggressively |
 
@@ -117,4 +105,4 @@ Ready to dive deeper? Continue to [Common Habits](common-habits.html) to underst
 
 ---
 
-[← Back to Home](index.html) | [Next: Common Habits →](common-habits.html)
+**Navigation**: [← Home](index.html) | [Common Habits →](common-habits.html)

@@ -351,7 +351,7 @@ class SecureOAuthService:
     
     def generate_auth_url(self, state: Optional[str] = None) -> Dict[str, str]:
         """
-        CURSOR-SECURITY: Generate secure OAuth authorization URL
+        CURSOR-SECURITY: Generate secure OAuth authorisation URL
         - CSRF protection via state parameter
         - Secure random state generation
         - URL parameter validation
@@ -364,7 +364,7 @@ class SecureOAuthService:
         # Store state for validation
         self._store_oauth_state(state, expires_in=600)  # 10 minutes
         
-        # Construct authorization URL with security parameters
+        # Construct authorisation URL with security parameters
         auth_url = (
             f"https://oauth-provider.com/oauth/authorize?"
             f"client_id={self.client_id}&"
@@ -600,7 +600,7 @@ Provide specific recommendations for each issue found.
 """
 
 def login_endpoint():
-    # Copilot will analyze and suggest improvements
+    # Copilot will analyse and suggest improvements
     pass
 ```
 
@@ -1258,4 +1258,4 @@ class EnterpriseComplianceAuditor:
 
 ---
 
-[← Previous: Best Practices](best-practices.html) | [Next: Enterprise Alignment →](enterprise-alignment.html)
+**Navigation**: [← Prompting Best Practices](prompting-best-practices.html) | [Enterprise Alignment →](enterprise-alignment.html)

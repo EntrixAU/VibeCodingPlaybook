@@ -282,7 +282,7 @@ IMPLEMENTATION REQUIREMENTS:
 - Document any assumptions or clarifications needed"
 ```
 
-### Rule #8: Modularize the Code
+### Rule #8: Modularise the Code
 
 **Prompting Pattern: Component-Focused Prompting**
 ```markdown
@@ -353,7 +353,7 @@ PHASE 2 - IMPLEMENTATION:
 ```markdown
 "Let's solve this step by step:
 
-1. First, analyze the current authentication flow
+1. First, analyse the current authentication flow
 2. Then, identify security gaps and requirements  
 3. Next, design the improved architecture
 4. Finally, implement the solution with tests
@@ -415,7 +415,7 @@ Create [functionality] that treats all data as potentially dangerous, implements
 
 ### The Performance-Obsessed Engineer
 ```markdown
-"As a performance engineer optimizing for milliseconds:
+"As a performance engineer optimising for milliseconds:
 
 Implement [functionality] with focus on minimal latency, efficient memory usage, optimal algorithms, and comprehensive performance monitoring."
 ```
@@ -461,10 +461,21 @@ Before sending any prompt, verify:
 
 ## 🚀 Prompting Anti-Patterns to Avoid
 
+### Quick Reference: Good vs Bad Prompting
+
+| ✅ **GOOD PROMPTING** | ❌ **BAD PROMPTING** |
+|----------------------|---------------------|
+| Be specific and detailed | "Make this code better" |
+| Provide context and constraints | No context or requirements |
+| Use structured formats | Unclear, rambling requests |
+| Include examples and patterns | Vague, open-ended questions |
+| Specify security requirements | Ignore security considerations |
+| Test and iterate prompts | Use one-size-fits-all prompts |
+
 ### ❌ The Vague Request
 ```markdown
 BAD: "Make this code better"
-GOOD: "Refactor this function to improve readability, add error handling for edge cases, and optimize the algorithm for better performance"
+GOOD: "Refactor this function to improve readability, add error handling for edge cases, and optimise the algorithm for better performance"
 ```
 
 ### ❌ The Context-Free Prompt
@@ -507,4 +518,4 @@ GOOD: "Create the user authentication component following our established patter
 
 ---
 
-[← Previous: Best Practices](best-practices.html) | [Next: Tools & Examples →](tools-and-examples.html)
+**Navigation**: [← Best Practices](best-practices.html) | [Tools & Examples →](tools-and-examples.html)

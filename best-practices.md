@@ -10,20 +10,20 @@ Transform AI-assisted development from a risk into a competitive advantage with 
 
 ## 🎯 The Golden Rules
 
+### Quick Reference: Do's and Don'ts
+
+| ✅ **DO** | ❌ **DON'T** |
+|-----------|-------------|
+| Always review AI-generated code | Auto-merge AI commits |
+| Version control your prompts | Put secrets in prompts |
+| Run security scans on AI code | Trust AI output blindly |
+| Use instruction files for context | Let AI access entire codebase |
+| Test AI-generated code thoroughly | Skip human review steps |
+| Log all AI interactions | Deploy without validation |
+
 ### Rule #1: AI Generates → Human Reviews → CI/CD Validates
 **Never skip the human in the loop**
 
-```mermaid
-graph LR
-    A[AI Suggestion] --> B[Human Review] 
-    B --> C[Code Modification]
-    C --> D[Automated Testing]
-    D --> E[Security Scan]
-    E --> F[Deployment]
-    
-    B --> G[Reject & Iterate]
-    G --> A
-```
 
 ### Rule #2: Trust but Verify
 **Every AI suggestion needs validation**
@@ -285,7 +285,7 @@ This PR implements user authentication using AI-generated code.
 
 ## Review Focus Areas
 1. **Security Review Required**: Password hashing implementation
-2. **Performance Impact**: Database query optimization needed
+2. **Performance Impact**: Database query optimisation needed
 3. **Compliance Check**: GDPR compliance for user data handling
 
 ## Automated Checks Status
@@ -348,7 +348,7 @@ Generate database operations for [ENTITY] with:
 - Connection pooling
 - Input sanitization
 - Error handling with audit logging
-- Performance optimization
+- Performance optimisation
 - Include migration scripts if needed
 
 Data sensitivity: [PUBLIC/INTERNAL/CONFIDENTIAL]
@@ -361,7 +361,7 @@ Compliance requirements: [GDPR/SOX/HIPAA/etc]
 Create REST API endpoint for [RESOURCE] with:
 - OpenAPI/Swagger documentation
 - Input validation middleware
-- Authentication/authorization checks
+- Authentication/authorisation checks
 - Rate limiting
 - Comprehensive error responses
 - Audit logging for sensitive operations
@@ -471,7 +471,7 @@ ai_generated_code_review: mandatory
 - [ ] No hardcoded secrets or credentials
 - [ ] Input validation on all user inputs
 - [ ] Proper error handling (no info leakage)
-- [ ] Authentication/authorization checks
+- [ ] Authentication/authorisation checks
 - [ ] SQL injection prevention
 - [ ] XSS prevention measures
 - [ ] CSRF protection where applicable
@@ -629,4 +629,4 @@ security_pipeline:
 
 ---
 
-[← Previous: Common Habits](common-habits.html) | [Next: Enterprise Alignment →](enterprise-alignment.html)
+**Navigation**: [← Common Habits](common-habits.html) | [Prompting Best Practices →](prompting-best-practices.html)

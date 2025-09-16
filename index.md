@@ -13,7 +13,7 @@ CTO, Opex Consulting
 
 ## What's in it for you
 
-This playbook provides a comprehensive framework for implementing AI-assisted development in your organization:
+This playbook provides a comprehensive framework for implementing AI-assisted development in your organisation:
 
 ### **(01) What's Vibe Coding**
 [Understanding the methodology](whats-vibe-coding.html) - Learn what vibe coding is, its benefits, and how it transforms development workflows.
@@ -34,7 +34,37 @@ This playbook provides a comprehensive framework for implementing AI-assisted de
 [Governance and compliance](enterprise-alignment.html) - Frameworks for integrating AI-assisted development into enterprise environments while maintaining compliance.
 
 ### **(07) Adoption Framework**
-[Step-by-step implementation](adoption-framework.html) - A structured approach to rolling out AI-assisted development across your organization.
+[Step-by-step implementation](adoption-framework.html) - A structured approach to rolling out AI-assisted development across your organisation.
+
+## 🎯 Who This Guide Is For
+
+### Primary Audiences
+
+**👨‍💻 Development Teams**
+- Developers using AI coding assistants (GitHub Copilot, Cursor, Claude)
+- Tech leads implementing AI-assisted development practices
+- Engineering managers overseeing AI tool adoption
+
+**🏢 Enterprise Leaders**
+- CTOs and engineering directors planning AI strategy
+- Security teams ensuring safe AI implementation
+- Compliance officers managing regulatory requirements
+
+**📚 Learning & Development**
+- Training teams creating AI development curricula
+- Consultants helping organisations adopt AI practices
+- Academic institutions teaching modern development practices
+
+### How to Use This Guide
+
+**🚀 For Immediate Implementation**
+Start with [Best Practices](best-practices.html) → [Tools & Examples](tools-and-examples.html) → [Enterprise Alignment](enterprise-alignment.html)
+
+**📖 For Comprehensive Understanding**
+Begin with [What's Vibe Coding?](whats-vibe-coding.html) → [Common Habits](common-habits.html) → [Best Practices](best-practices.html)
+
+**🏗️ For Organisational Rollout**
+Follow [Adoption Framework](adoption-framework.html) → [Enterprise Alignment](enterprise-alignment.html) → [Best Practices](best-practices.html)
 
 ## Quick Start
 

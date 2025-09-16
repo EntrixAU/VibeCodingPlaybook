@@ -51,6 +51,17 @@ Understanding the patterns that emerge when teams adopt AI-assisted development 
 
 ## ⚠️ Dangerous Habits to Avoid
 
+### Quick Reference: Good vs Dangerous Habits
+
+| ✅ **GOOD HABITS** | ❌ **DANGEROUS HABITS** |
+|-------------------|------------------------|
+| Review AI suggestions critically | Blindly accept AI output |
+| Use AI for specific tasks | Let AI make architectural decisions |
+| Maintain coding skills | Become dependent on AI |
+| Follow security best practices | Ignore security implications |
+| Version control prompts | Use ad-hoc prompting |
+| Test AI-generated code | Deploy without testing |
+
 Every new paradigm comes with enthusiasm — but also with mistakes. With vibe coding, I see the same patterns repeating across teams:
 
 ### 🤖 Over-reliance on AI, No Reviews, Testing
@@ -371,4 +382,4 @@ Ready to learn how to do it right? Continue to [Best Practices](best-practices.h
 
 ---
 
-[← Previous: What's Vibe Coding](whats-vibe-coding.html) | [Next: Best Practices →](best-practices.html)
+**Navigation**: [← What's Vibe Coding](whats-vibe-coding.html) | [Best Practices →](best-practices.html)

@@ -8,21 +8,6 @@ permalink: /adoption-framework/
 
 A comprehensive 6-step roadmap for successfully implementing AI-assisted development across enterprise organizations. This framework ensures systematic, secure, and scalable adoption of vibe coding practices.
 
-```mermaid
-graph LR
-    A[Step 01<br/>Strategy &<br/>Alignment] --> B[Step 02<br/>Risk Management &<br/>Governance]
-    B --> C[Step 03<br/>Security &<br/>Compliance]
-    C --> D[Step 04<br/>Pilot & Training]
-    D --> E[Step 05<br/>Integration &<br/>Scaling]
-    E --> F[Step 06<br/>Continuous<br/>Improvement]
-    
-    style A fill:#2563eb,stroke:#1e40af,color:#fff
-    style B fill:#dc2626,stroke:#b91c1c,color:#fff
-    style C fill:#059669,stroke:#047857,color:#fff
-    style D fill:#7c3aed,stroke:#6d28d9,color:#fff
-    style E fill:#ea580c,stroke:#c2410c,color:#fff
-    style F fill:#0891b2,stroke:#0e7490,color:#fff
-```
 
 ---
 
@@ -37,7 +22,7 @@ graph LR
 - **Secure leadership buy-in**: Present business case and ROI projections
 - **Define success metrics**: Establish measurable outcomes and KPIs
 - **Allocate resources**: Secure budget for tools, training, and personnel
-- **Communicate vision**: Share AI development strategy across organization
+- **Communicate vision**: Share AI development strategy across organisation
 
 #### Strategic Planning
 ```yaml
@@ -590,4 +575,4 @@ Ready for quick reference? Check out the [Cheat Sheet](cheat-sheet.html) for dai
 
 ---
 
-[← Previous: Tools](tools.html) | [Next: Cheat Sheet →](cheat-sheet.html)
+**Navigation**: [← Enterprise Alignment](enterprise-alignment.html) | [Home →](index.html)

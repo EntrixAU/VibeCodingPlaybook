@@ -94,32 +94,6 @@ ai_rbac_matrix:
 ### 2. Architectural Integration
 
 #### Enterprise AI Platform Architecture
-```mermaid
-graph TB
-    subgraph "Developer Environment"
-        A[IDE with AI] --> B[Local Security Scan]
-        B --> C[Commit with AI Tags]
-    end
-    
-    subgraph "CI/CD Pipeline"
-        C --> D[AI Detection]
-        D --> E[Enhanced Security Scan]
-        E --> F[Policy Validation]
-        F --> G[Mandatory Review Gate]
-    end
-    
-    subgraph "Governance Layer"
-        G --> H[Audit Logger]
-        H --> I[Compliance Dashboard]
-        I --> J[Risk Assessment]
-    end
-    
-    subgraph "Enterprise Systems"
-        J --> K[SIEM Integration]
-        K --> L[GRC Platform]
-        L --> M[Executive Reporting]
-    end
-```
 
 #### Integration Points
 
@@ -132,7 +106,7 @@ class EnterpriseAIAccessManager:
         self.audit_logger = AuditLogger()
     
     def authorize_ai_access(self, user_id, ai_tool, operation):
-        """Authorize AI tool access based on enterprise policies"""
+        """Authorise AI tool access based on enterprise policies"""
         
         # Get user context from enterprise directory
         user = self.ldap.get_user(user_id)
@@ -151,7 +125,7 @@ class EnterpriseAIAccessManager:
                 self.audit_logger.log_access_denied(user_id, ai_tool, "operation_requires_approval")
                 raise AccessDenied(f"Operation {operation} requires additional approval")
         
-        # Log successful authorization
+        # Log successful authorisation
         self.audit_logger.log_access_granted(user_id, ai_tool, operation)
         
         return AIAccessToken(
@@ -686,16 +660,16 @@ feedback_systems:
     - bi_annual_strategy_update
 ```
 
-### 🏆 Establish a CoE (Center of Excellence)
-**Build organizational AI expertise**
+### 🏆 Establish a CoE (Centre of Excellence)
+**Build organisational AI expertise**
 
 - **Appoint champions**: Identify and empower AI advocates across teams
-- **Build a centre of excellence**: Centralized expertise and best practices
+- **Build a centre of excellence**: Centralised expertise and best practices
 - **Advocate best practices**: Promote proven patterns and prevent anti-patterns
 
 **CoE Structure**:
 ```yaml
-ai_center_of_excellence:
+ai_centre_of_excellence:
   leadership:
     - ai_program_director
     - technical_architect
@@ -839,22 +813,6 @@ policy_management:
 
 ### Change Adoption Strategy
 
-```mermaid
-graph TD
-    A[Awareness Building] --> B[Skill Development]
-    B --> C[Tool Implementation]
-    C --> D[Process Integration]
-    D --> E[Culture Transformation]
-    E --> F[Continuous Improvement]
-    F --> B
-    
-    style A fill:#ff6b6b,color:#fff
-    style B fill:#4ecdc4,color:#fff
-    style C fill:#45b7d1,color:#fff
-    style D fill:#96ceb4,color:#fff
-    style E fill:#feca57,color:#fff
-    style F fill:#ff9ff3,color:#fff
-```
 
 ### Success Metrics
 
@@ -1105,17 +1063,6 @@ ai_agent_policy:
 - **Compliance Officer** - Ensures regulatory adherence
 
 #### Review Process
-```mermaid
-graph TD
-    A[AI Generates Code] --> B[Developer Review]
-    B --> C[Automated Checks]
-    C --> D{Critical System?}
-    D -->|Yes| E[Review Board]
-    D -->|No| F[Peer Review]
-    E --> G[Board Approval]
-    F --> G
-    G --> H[Deployment]
-```
 
 #### Review Criteria Matrix
 
@@ -1181,4 +1128,4 @@ Ready to implement this systematically? Continue to [Adoption Framework](adoptio
 
 ---
 
-[← Previous: Best Practices](best-practices.html) | [Next: Adoption Framework →](adoption-framework.html)
+**Navigation**: [← Tools & Examples](tools-and-examples.html) | [Adoption Framework →](adoption-framework.html)
