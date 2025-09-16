@@ -3,8 +3,6 @@ title: "(02) Common Habits"
 permalink: /common-habits/
 ---
 
-# Common Habits in AI-Assisted Development
-
 Understanding the patterns that emerge when teams adopt AI-assisted development helps identify both productive practices and dangerous pitfalls.
 
 ## 😊 Good Habits That Emerge

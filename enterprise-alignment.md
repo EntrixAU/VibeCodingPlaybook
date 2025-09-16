@@ -3,8 +3,6 @@ title: "(04) Enterprise Alignment"
 permalink: /enterprise-alignment/
 ---
 
-# Enterprise Alignment - Governance & Compliance
-
 Integrating AI-assisted development into enterprise environments while maintaining compliance, security, and operational excellence.
 
 ## 🏢 Enterprise Challenges

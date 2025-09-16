@@ -2,8 +2,6 @@
 title: "Vibe Coding Playbook"
 ---
 
-# Vibe Coding – Let's Do It Right
-
 Welcome to the **Vibe Coding Playbook**, a comprehensive guide to AI-assisted development that helps you harness the power of AI while maintaining security, governance, and best practices.
 
 **This presentation exists because the developer community needs practical, actionable guidance RIGHT NOW.** Not theoretical frameworks or academic discussions, but real-world strategies that can be implemented immediately.
