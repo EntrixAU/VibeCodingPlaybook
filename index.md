@@ -7,38 +7,18 @@ title: "Vibe Coding Playbook"
 
 Welcome to the **Vibe Coding Playbook**, a comprehensive guide to AI-assisted development that helps you harness the power of AI while maintaining security, governance, and best practices.
 
-**Presented by Sam Fernando**  
-CTO, Opex Consulting  
-*Originally presented at ACS Forum*
+**This presentation exists because the developer community needs practical, actionable guidance RIGHT NOW.** Not theoretical frameworks or academic discussions, but real-world strategies that can be implemented immediately.
 
-## What's in it for you
+## About This Guide
 
-This playbook provides a comprehensive framework for implementing AI-assisted development in your organisation:
+This documentation is based on real-world experience implementing AI-assisted development across enterprise environments. It provides practical, actionable guidance that you can implement immediately in your development workflow.
 
-### **(01) What's Vibe Coding**
-[Understanding the methodology](whats-vibe-coding.html) - Learn what vibe coding is, its benefits, and how it transforms development workflows.
+The goal isn't to slow down development or add bureaucracy - it's to help you harness AI's power while avoiding the pitfalls that are already causing problems in organizations worldwide.
 
-### **(02) Common Habits**
-[Identifying patterns and pitfalls](common-habits.html) - Recognize common practices, both good and bad, that emerge when teams adopt AI-assisted development.
-
-### **(03) Best Practices & Guardrails**
-[Do it Right!](best-practices.html) - Comprehensive guide with proven strategies, security measures, and governance frameworks for safe AI coding.
-
-### **(04) Prompting Best Practices**
-[The Art of AI Prompting](prompting-best-practices.html) - Master structured prompting techniques to unlock AI's full potential while maintaining quality and security.
-
-### **(05) Tools & Practical Examples**
-[Implementation Guide](tools-and-examples.html) - Hands-on examples showing how to implement best practices using GitHub Copilot, Cursor, and Claude.
-
-### **(06) Enterprise Alignment**
-[Governance and compliance](enterprise-alignment.html) - Frameworks for integrating AI-assisted development into enterprise environments while maintaining compliance.
-
-### **(07) Adoption Framework**
-[Step-by-step implementation](adoption-framework.html) - A structured approach to rolling out AI-assisted development across your organisation.
+**Disclaimer:**  
+This playbook reflects my personal opinions, based on my experience and research. Please use it as a guide, but always do your own research and adapt recommendations to your specific context and requirements.
 
 ## 🎯 Who This Guide Is For
-
-### Primary Audiences
 
 **👨‍💻 Development Teams**
 - Developers using AI coding assistants (GitHub Copilot, Cursor, Claude)
@@ -55,20 +35,22 @@ This playbook provides a comprehensive framework for implementing AI-assisted de
 - Consultants helping organisations adopt AI practices
 - Academic institutions teaching modern development practices
 
-### How to Use This Guide
+## What's in it for you
 
-**🚀 For Immediate Implementation**
-Start with [Best Practices](best-practices.html) → [Tools & Examples](tools-and-examples.html) → [Enterprise Alignment](enterprise-alignment.html)
+### **(01) What's Vibe Coding**
+[Understanding the methodology](whats-vibe-coding.html) - Learn what vibe coding is, its benefits, and how it transforms development workflows.
 
-**📖 For Comprehensive Understanding**
-Begin with [What's Vibe Coding?](whats-vibe-coding.html) → [Common Habits](common-habits.html) → [Best Practices](best-practices.html)
+### **(02) Common Habits**
+[Identifying patterns and pitfalls](common-habits.html) - Recognise common practices, both good and bad, that emerge when teams adopt AI-assisted development.
 
-**🏗️ For Organisational Rollout**
-Follow [Adoption Framework](adoption-framework.html) → [Enterprise Alignment](enterprise-alignment.html) → [Best Practices](best-practices.html)
+### **(03) Best Practices & Guardrails**
+[Do it Right!](best-practices.html) - Comprehensive guide with proven strategies, security measures, and governance frameworks for safe AI coding.
 
-## Quick Start
+### **(04) Enterprise Alignment**
+[Governance and compliance](enterprise-alignment.html) - Frameworks for integrating AI-assisted development into enterprise environments while maintaining compliance.
 
-Ready to get started? Begin with [What's Vibe Coding?](whats-vibe-coding.html) for a comprehensive introduction, or jump to [Best Practices](best-practices.html) for immediate actionable guidance.
+### **(05) Adoption Framework**
+[Step-by-step implementation](adoption-framework.html) - A structured approach to rolling out AI-assisted development across your organisation.
 
 ## Why This Presentation Exists
 
@@ -110,15 +92,3 @@ Every day that passes without proper AI development education means:
 - Greater technical debt accumulation
 - Increased security exposure
 - Wider skills gaps
-
-**This presentation exists because the developer community needs practical, actionable guidance RIGHT NOW.** Not theoretical frameworks or academic discussions, but real-world strategies that can be implemented immediately.
-
-## About This Guide
-
-This documentation is based on real-world experience implementing AI-assisted development across enterprise environments. It provides practical, actionable guidance that you can implement immediately in your development workflow.
-
-The goal isn't to slow down development or add bureaucracy - it's to help you harness AI's power while avoiding the pitfalls that are already causing problems in organizations worldwide.
-
----
-
-*Have questions or feedback? Contact [sam@opexconsulting.com.au](mailto:sam@opexconsulting.com.au)*

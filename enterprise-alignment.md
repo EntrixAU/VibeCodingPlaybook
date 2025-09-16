@@ -35,404 +35,183 @@ This fundamental question drives enterprise AI governance strategy.
 ### 1. Policy Foundation
 
 #### AI Development Charter
-```yaml
-enterprise_ai_policy:
-  version: "2.1"
-  effective_date: "2025-01-15"
-  
-  principles:
-    - human_accountability: "Humans remain accountable for all AI-generated code"
-    - transparency: "All AI interactions must be logged and auditable"
-    - security_first: "Security controls apply equally to AI and human code"
-    - compliance_by_design: "AI workflows must support regulatory requirements"
-    - continuous_monitoring: "AI code performance and security continuously monitored"
-  
-  prohibited_activities:
-    - auto_deployment: "AI cannot deploy code without human approval"
-    - sensitive_data_exposure: "No PII, credentials, or sensitive data in AI prompts"
-    - compliance_bypass: "AI cannot be used to circumvent existing controls"
-    - untracked_usage: "All AI interactions must be logged"
-  
-  mandatory_controls:
-    - dual_approval: "AI code requires human review and approval"
-    - security_scanning: "All AI code must pass security scans"
-    - audit_logging: "Complete audit trail for all AI interactions"
-    - regular_assessment: "Quarterly review of AI practices and outcomes"
-```
+
+**Enterprise AI Policy (v2.1, effective 2025-01-15):**
+
+- **Principles:**
+  - *Human accountability*: Humans remain accountable for all AI-generated code.
+  - *Transparency*: All AI interactions must be logged and auditable.
+  - *Security first*: Security controls apply equally to AI and human code.
+  - *Compliance by design*: AI workflows must support regulatory requirements.
+  - *Continuous monitoring*: AI code performance and security are continuously monitored.
+
+- **Prohibited Activities:**
+  - *Auto deployment*: AI cannot deploy code without human approval.
+  - *Sensitive data exposure*: No PII, credentials, or sensitive data in AI prompts.
+  - *Compliance bypass*: AI cannot be used to circumvent existing controls.
+  - *Untracked usage*: All AI interactions must be logged.
+
+- **Mandatory Controls:**
+  - *Dual approval*: AI code requires human review and approval.
+  - *Security scanning*: All AI code must pass security scans.
+  - *Audit logging*: Complete audit trail for all AI interactions.
+  - *Regular assessment*: Quarterly review of AI practices and outcomes.
 
 #### Role-Based Access Control (RBAC)
-```yaml
-ai_rbac_matrix:
-  junior_developer:
-    ai_tools: ["copilot_individual", "cursor_basic"]
-    restrictions:
-      - no_production_deployment
-      - mandatory_senior_review
-      - limited_context_access
-    
-  senior_developer:
-    ai_tools: ["copilot_business", "cursor_pro", "claude_api"]
-    restrictions:
-      - security_review_required
-      - audit_trail_mandatory
-    
-  tech_lead:
-    ai_tools: ["all_approved_tools"]
-    permissions:
-      - approve_ai_architecture_decisions
-      - configure_team_ai_policies
-      - access_ai_audit_logs
-    
-  security_team:
-    permissions:
-      - review_all_ai_security_findings
-      - approve_ai_security_exceptions
-      - access_complete_ai_audit_trail
-      - modify_ai_security_policies
-```
+
+**AI RBAC Matrix:**
+
+- **Junior Developer**
+  - *AI tools*: Approved assistant (team tier), IDE integrations
+  - *Restrictions*:
+    - No production deployment
+    - Mandatory senior review
+    - Limited context access
+
+- **Senior Developer**
+  - *AI tools*: Approved enterprise assistants, vetted APIs
+  - *Restrictions*:
+    - Security review required
+    - Audit trail mandatory
+
+- **Tech Lead**
+  - *AI tools*: All approved tools
+  - *Permissions*:
+    - Approve AI architecture decisions
+    - Configure team AI policies
+    - Access AI audit logs
+
+- **Security Team**
+  - *Permissions*:
+    - Review all AI security findings
+    - Approve AI security exceptions
+    - Access complete AI audit trail
+    - Modify AI security policies
 
 ### 2. Architectural Integration
 
 #### Enterprise AI Platform Architecture
+An enterprise platform should provide governed capabilities for AI-assisted delivery:
+- **Context management**: Standard patterns to provide relevant, least-privilege context to AI tools (e.g., repo subsets, sanitized datasets).
+- **Guardrails as code**: Policies baked into pipelines, IDEs, and agents to enforce approvals, scans, and logging.
+- **Observability**: Unified telemetry across prompts, outputs, model usage, and CI events.
+- **Connectivity**: Secure connectors to VCS, CI/CD, artifact stores, and ticketing with least-privilege scopes.
 
 #### Integration Points
-
-##### Identity and Access Management (IAM)
-```python
-class EnterpriseAIAccessManager:
-    def __init__(self, ldap_client, rbac_engine):
-        self.ldap = ldap_client
-        self.rbac = rbac_engine
-        self.audit_logger = AuditLogger()
-    
-    def authorize_ai_access(self, user_id, ai_tool, operation):
-        """Authorise AI tool access based on enterprise policies"""
-        
-        # Get user context from enterprise directory
-        user = self.ldap.get_user(user_id)
-        
-        # Check role-based permissions
-        permissions = self.rbac.get_permissions(user.role, user.department)
-        
-        # Validate AI tool access
-        if ai_tool not in permissions.allowed_ai_tools:
-            self.audit_logger.log_access_denied(user_id, ai_tool, "tool_not_authorized")
-            raise AccessDenied(f"User {user_id} not authorized for {ai_tool}")
-        
-        # Check operation-specific permissions
-        if operation in permissions.restricted_operations:
-            if not self.check_additional_approval(user_id, operation):
-                self.audit_logger.log_access_denied(user_id, ai_tool, "operation_requires_approval")
-                raise AccessDenied(f"Operation {operation} requires additional approval")
-        
-        # Log successful authorisation
-        self.audit_logger.log_access_granted(user_id, ai_tool, operation)
-        
-        return AIAccessToken(
-            user_id=user_id,
-            ai_tool=ai_tool,
-            permissions=permissions,
-            expires_at=datetime.utcnow() + timedelta(hours=8)
-        )
-```
-
-##### Security Information and Event Management (SIEM)
-```python
-class AISIEMIntegration:
-    def __init__(self, siem_client):
-        self.siem = siem_client
-    
-    def send_ai_security_event(self, event_data):
-        """Send AI-related security events to enterprise SIEM"""
-        
-        siem_event = {
-            "timestamp": datetime.utcnow().isoformat(),
-            "event_type": "ai_security_event",
-            "severity": self.calculate_severity(event_data),
-            "source": "ai_development_platform",
-            "user": {
-                "id": event_data["user_id"],
-                "department": event_data["department"],
-                "role": event_data["role"]
-            },
-            "ai_context": {
-                "tool": event_data["ai_tool"],
-                "operation": event_data["operation"],
-                "risk_score": event_data["risk_score"]
-            },
-            "security_findings": event_data["security_findings"],
-            "compliance_impact": event_data["compliance_impact"],
-            "remediation_required": event_data["remediation_required"]
-        }
-        
-        self.siem.send_event(siem_event)
-        
-        # Trigger automated response for high-severity events
-        if siem_event["severity"] >= 7:
-            self.trigger_incident_response(siem_event)
-```
-
+- **Identity and Access Management (IAM)**: SSO, SCIM provisioning, role mapping for AI tools, short‑lived tokens.
+- **Security Information and Event Management (SIEM)**: Stream AI interaction logs, scan results, and policy events for detection and response.
+- **VCS/CI**: Branch protections, required reviews, signing, SBOM; gates for SAST/DAST/SCA and license checks.
+- **Secrets Management**: Brokered access; never expose raw secrets to prompts.
+- **Data Platforms**: Sanitized data products for non-production AI workflows with clear classification and retention.
 ### 3. Compliance Automation
 
 #### Automated Compliance Checking
-```python
-class ComplianceValidator:
-    def __init__(self):
-        self.frameworks = {
-            'SOC2': SOC2Validator(),
-            'ISO27001': ISO27001Validator(), 
-            'GDPR': GDPRValidator(),
-            'HIPAA': HIPAAValidator(),
-            'PCI_DSS': PCIDSSValidator()
-        }
-    
-    def validate_ai_code_compliance(self, code_metadata):
-        """Validate AI-generated code against compliance frameworks"""
-        
-        results = {}
-        
-        for framework_name, validator in self.frameworks.items():
-            if framework_name in code_metadata['applicable_frameworks']:
-                validation_result = validator.validate(
-                    code=code_metadata['code'],
-                    context=code_metadata['context'],
-                    ai_generated=True
-                )
-                
-                results[framework_name] = {
-                    'status': validation_result.status,
-                    'findings': validation_result.findings,
-                    'recommendations': validation_result.recommendations,
-                    'risk_level': validation_result.risk_level
-                }
-        
-        return ComplianceReport(
-            code_id=code_metadata['code_id'],
-            validation_results=results,
-            overall_compliance=self.calculate_overall_compliance(results),
-            remediation_required=any(r['status'] == 'FAIL' for r in results.values())
-        )
-
-class SOC2Validator:
-    def validate(self, code, context, ai_generated=False):
-        """Validate code against SOC 2 requirements"""
-        
-        findings = []
-        
-        # CC6.1 - Logical and physical access controls
-        if 'authentication' in context['functionality']:
-            if not self.check_access_controls(code):
-                findings.append({
-                    'control': 'CC6.1',
-                    'issue': 'Insufficient access controls in authentication code',
-                    'severity': 'HIGH',
-                    'ai_generated': ai_generated
-                })
-        
-        # CC7.1 - System monitoring
-        if not self.check_logging_implementation(code):
-            findings.append({
-                'control': 'CC7.1', 
-                'issue': 'Insufficient audit logging',
-                'severity': 'MEDIUM',
-                'ai_generated': ai_generated
-            })
-        
-        return ValidationResult(
-            status='PASS' if len(findings) == 0 else 'FAIL',
-            findings=findings
-        )
-```
+- Map enterprise policies to machine-checkable rules (policy-as-code) for security, quality, and compliance.
+- Enforce in CI/CD: SAST/DAST/SCA, license allowlists, secret scanning, infrastructure and policy tests.
+- Require evidence artifacts (scan reports, approvals, test results) to be attached to PRs/releases.
 
 #### Continuous Compliance Monitoring
-```yaml
-# compliance-monitoring.yml
-monitoring_schedule:
-  daily:
-    - ai_code_security_scans
-    - access_control_validation
-    - audit_log_integrity_check
-  
-  weekly:
-    - compliance_framework_validation
-    - ai_usage_pattern_analysis
-    - security_incident_review
-  
-  monthly:
-    - comprehensive_compliance_assessment
-    - ai_governance_effectiveness_review
-    - stakeholder_reporting
-  
-  quarterly:
-    - external_compliance_audit_preparation
-    - ai_policy_review_and_update
-    - risk_assessment_update
+- Continuously ingest audit logs and control signals into SIEM/GRC tools.
+- Detect drift (e.g., missing approvals, disabled gates) and alert/rescind privileges.
+- Periodically validate controls against frameworks (e.g., ISO 27001, SOC 2).
+### Compliance Monitoring Schedule
 
-alert_thresholds:
-  critical:
-    - compliance_violation_detected
-    - unauthorized_ai_tool_usage
-    - security_incident_involving_ai_code
-  
-  warning:
-    - compliance_drift_detected
-    - ai_usage_pattern_anomaly
-    - performance_degradation_in_ai_code
-```
+A robust compliance monitoring program should include regular, automated checks and alerting to ensure ongoing alignment with enterprise policies and regulatory requirements. Below is a sample schedule and alerting structure:
+
+#### Monitoring Schedule
+
+- **Daily**
+  - AI code security scans
+  - Access control validation
+  - Audit log integrity checks
+
+- **Weekly**
+  - Compliance framework validation
+  - AI usage pattern analysis
+  - Security incident review
+
+- **Monthly**
+  - Comprehensive compliance assessment
+  - AI governance effectiveness review
+  - Stakeholder reporting
+
+- **Quarterly**
+  - Preparation for external compliance audits
+  - Review and update of AI policies
+  - Risk assessment updates
+
+#### Alert Thresholds
+
+- **Critical Alerts**
+  - Compliance violation detected
+  - Unauthorized AI tool usage
+  - Security incident involving AI-generated code
+
+- **Warning Alerts**
+  - Compliance drift detected
+  - Anomalies in AI usage patterns
+  - Performance degradation in AI code
+
+This schedule and alerting framework helps ensure that compliance and security risks related to AI development are identified and addressed proactively.
 
 ---
 
 ## 📊 Enterprise Metrics and KPIs
 
 ### Governance Effectiveness Metrics
+Define KPI categories and example signals to track policy effectiveness and outcomes:
+- **Adoption**: Active AI users, assistant usage per dev, approved tool coverage
+- **Quality**: Defect density of AI-assisted changes vs baseline, rollback rate
+- **Security**: Rate of AI-related findings, time-to-remediate, secret/leak incidents
+- **Delivery**: Lead time for changes, PR cycle time, change failure rate
+- **Compliance**: Evidence completeness %, control drift incidents, audit pass rate
 
 #### AI Development Quality
-```python
-class AIGovernanceMetrics:
-    def calculate_governance_effectiveness(self, time_period):
-        """Calculate key governance metrics for executive reporting"""
-        
-        return {
-            "compliance_metrics": {
-                "ai_code_compliance_rate": self.get_compliance_rate(time_period),
-                "audit_findings_resolved": self.get_audit_resolution_rate(time_period),
-                "policy_violations": self.get_policy_violations(time_period),
-                "framework_adherence": self.get_framework_adherence(time_period)
-            },
-            
-            "security_metrics": {
-                "ai_security_incidents": self.get_security_incidents(time_period),
-                "vulnerabilities_in_ai_code": self.get_vulnerability_count(time_period),
-                "security_scan_coverage": self.get_scan_coverage(time_period),
-                "incident_response_time": self.get_incident_response_time(time_period)
-            },
-            
-            "operational_metrics": {
-                "ai_code_review_sla": self.get_review_sla_performance(time_period),
-                "deployment_success_rate": self.get_deployment_success_rate(time_period),
-                "developer_productivity": self.get_productivity_metrics(time_period),
-                "tool_adoption_rate": self.get_tool_adoption_rate(time_period)
-            },
-            
-            "risk_metrics": {
-                "overall_risk_score": self.calculate_overall_risk_score(time_period),
-                "regulatory_risk": self.assess_regulatory_risk(time_period),
-                "operational_risk": self.assess_operational_risk(time_period),
-                "reputational_risk": self.assess_reputational_risk(time_period)
-            }
-        }
-```
+Monitor test coverage, code complexity, and maintainability for AI-assisted changes. Compare against human-only baselines to detect regressions.
 
 #### Executive Dashboard
-```yaml
-executive_dashboard:
-  title: "AI Development Governance Dashboard"
-  
-  key_metrics:
-    - name: "AI Code Compliance Rate"
-      current_value: "94.2%"
-      target: "95%"
-      trend: "improving"
-      
-    - name: "Security Incidents (AI-related)"
-      current_value: "2"
-      target: "0"
-      trend: "stable"
-      
-    - name: "Developer Productivity Gain"
-      current_value: "32%"
-      target: "25%"
-      trend: "exceeding"
-      
-    - name: "Audit Readiness Score"
-      current_value: "8.7/10"
-      target: "9.0/10"
-      trend: "improving"
-  
-  risk_indicators:
-    - regulatory_compliance: "GREEN"
-    - security_posture: "YELLOW" 
-    - operational_stability: "GREEN"
-    - financial_impact: "GREEN"
-```
-
----
+Provide a quarterly dashboard with trendlines across adoption, delivery, quality, security, and compliance to inform governance decisions and investments.
 
 ## 🔍 Audit and Assurance
 
 ### Audit Preparation Framework
+Create an audit runbook that enumerates controls, evidence locations, owners, and sampling procedures. Rehearse quarterly using dry‑runs to ensure evidence is complete and retrievable.
 
 #### Evidence Collection
-```python
-class AIAuditEvidence:
-    def __init__(self):
-        self.evidence_store = EnterpriseEvidenceStore()
-    
-    def prepare_audit_package(self, audit_scope, time_period):
-        """Prepare comprehensive audit evidence package"""
-        
-        evidence_package = {
-            "governance_evidence": {
-                "policies": self.get_ai_policies(time_period),
-                "procedures": self.get_ai_procedures(time_period),
-                "training_records": self.get_training_evidence(time_period),
-                "policy_exceptions": self.get_approved_exceptions(time_period)
-            },
-            
-            "operational_evidence": {
-                "ai_usage_logs": self.get_ai_usage_logs(time_period),
-                "code_review_records": self.get_review_records(time_period),
-                "security_scan_results": self.get_security_scan_evidence(time_period),
-                "incident_reports": self.get_incident_reports(time_period)
-            },
-            
-            "compliance_evidence": {
-                "framework_assessments": self.get_compliance_assessments(time_period),
-                "control_testing_results": self.get_control_test_results(time_period),
-                "remediation_tracking": self.get_remediation_evidence(time_period),
-                "management_attestations": self.get_management_attestations(time_period)
-            },
-            
-            "technical_evidence": {
-                "architecture_documentation": self.get_architecture_docs(),
-                "security_configurations": self.get_security_configs(),
-                "monitoring_configurations": self.get_monitoring_configs(),
-                "access_control_matrices": self.get_access_matrices()
-            }
-        }
-        
-        return AuditPackage(
-            scope=audit_scope,
-            period=time_period,
-            evidence=evidence_package,
-            preparation_date=datetime.utcnow(),
-            prepared_by=self.get_current_user()
-        )
-```
+- PR metadata: reviewers, approvals, sign-off timestamps
+- Security scans: SAST/DAST/SCA results, exceptions with expiry and compensating controls
+- Test evidence: unit/integration coverage and results
+- Deployment evidence: SBOMs, provenance attestations, signed artifacts
+- AI interaction logs: prompt/output hashes, model/tool versions, operator identity
 
 #### Audit Trail Requirements
-```yaml
-audit_trail_requirements:
-  retention_period: "7_years"  # Standard enterprise requirement
-  
-  required_fields:
-    - timestamp: "ISO 8601 format with timezone"
-    - user_identification: "Enterprise user ID and role"
-    - ai_tool_used: "Specific tool and version"
-    - operation_performed: "Detailed operation description"
-    - input_data_hash: "Hash of input provided to AI"
-    - output_data_hash: "Hash of AI-generated output"
-    - human_review_status: "Review status and reviewer ID"
-    - security_scan_results: "Security scan outcomes"
-    - compliance_validation: "Compliance check results"
-    - business_justification: "Business reason for AI usage"
-  
-  immutability_requirements:
-    - cryptographic_signing: "Digital signatures for audit records"
-    - tamper_evidence: "Blockchain or similar tamper-evident storage"
-    - access_logging: "Log all access to audit records"
-    - backup_verification: "Regular backup integrity checks"
-```
+
+To meet enterprise compliance and audit standards, your AI development process should maintain a robust audit trail with the following characteristics:
+
+- **Retention Period:**  
+  Retain audit records according to your regulatory context (commonly 1–7 years). Align with data minimisation policies for prompts/outputs that may contain sensitive data.
+
+- **Required Fields:**  
+  Each audit entry should include:
+  - **Timestamp:** Recorded in ISO 8601 format with timezone.
+  - **User Identification:** Enterprise user ID and role.
+  - **AI Tool Used:** Specific tool and version.
+  - **Operation Performed:** Detailed description of the action taken.
+  - **Input Data Hash:** Hash of the input provided to the AI.
+  - **Output Data Hash:** Hash of the AI-generated output.
+  - **Human Review Status:** Status of human review and reviewer ID.
+  - **Security Scan Results:** Outcomes of any security scans performed.
+  - **Compliance Validation:** Results of compliance checks.
+  - **Business Justification:** Documented business reason for using AI in this instance.
+
+- **Immutability and Integrity:**  
+  To ensure audit records are trustworthy and tamper-evident:
+  - **Cryptographic Signing:** Apply digital signatures to all audit records.
+  - **Tamper Evidence:** Use write-once or append-only storage (e.g., WORM, immutability policies) with cryptographic hash chains where feasible.
+  - **Access Logging:** Log all access to audit records for traceability.
+  - **Backup Verification:** Perform regular integrity checks on backups of audit data.
+
+These requirements help ensure that all AI-related activities are fully traceable, verifiable, and compliant with enterprise and regulatory standards.
 
 ---
 
@@ -441,161 +220,112 @@ audit_trail_requirements:
 ### AI-Specific Risk Framework
 
 #### Risk Categories and Controls
-```yaml
-ai_risk_framework:
-  operational_risks:
-    - risk: "AI code quality degradation"
-      controls:
-        - mandatory_code_review
-        - enhanced_testing_requirements
-        - performance_monitoring
-      
-    - risk: "Developer skill atrophy"
-      controls:
-        - regular_manual_coding_assessments
-        - ai_free_development_periods
-        - continuous_learning_programs
-  
-  security_risks:
-    - risk: "AI-generated vulnerabilities"
-      controls:
-        - comprehensive_security_scanning
-        - ai_specific_security_rules
-        - security_team_review_mandatory
-      
-    - risk: "Prompt injection attacks"
-      controls:
-        - input_sanitization_requirements
-        - ai_interaction_monitoring
-        - security_awareness_training
-  
-  compliance_risks:
-    - risk: "Regulatory non-compliance"
-      controls:
-        - automated_compliance_checking
-        - regular_compliance_assessments
-        - legal_team_consultation
-      
-    - risk: "Audit trail insufficiency"
-      controls:
-        - comprehensive_logging_requirements
-        - audit_trail_validation
-        - regular_audit_preparation_exercises
-```
+### AI Risk Framework
+
+The following framework outlines key risk categories associated with AI-assisted development in the enterprise, along with recommended controls for each risk.
+
+#### Operational Risks
+
+- **AI code quality degradation**
+  - *Controls:*
+    - Mandatory code review for all AI-generated code
+    - Enhanced testing requirements (unit, integration, and regression tests)
+    - Ongoing performance monitoring of deployed AI code
+
+- **Developer skill atrophy**
+  - *Controls:*
+    - Regular manual coding assessments for developers
+    - Scheduled periods where development is performed without AI assistance
+    - Continuous learning and upskilling programs
+
+#### Security Risks
+
+- **AI-generated vulnerabilities**
+  - *Controls:*
+    - Comprehensive security scanning of all AI-generated code
+    - Implementation of AI-specific security rules and policies
+    - Mandatory review by the security team for high-risk changes
+
+- **Prompt injection attacks**
+  - *Controls:*
+    - Strict input sanitization requirements for all prompts and user inputs
+    - Monitoring and logging of all AI interactions
+    - Security awareness training for developers and users of AI tools
+
+#### Compliance Risks
+
+- **Regulatory non-compliance**
+  - *Controls:*
+    - Automated compliance checking integrated into the development pipeline
+    - Regular compliance assessments and audits
+    - Consultation with the legal team for high-impact changes
+
+- **Audit trail insufficiency**
+  - *Controls:*
+    - Comprehensive logging requirements for all AI-related activities
+    - Regular validation of audit trails to ensure completeness and integrity
+    - Periodic audit preparation exercises to test readiness
+
+This framework helps organizations proactively identify, manage, and mitigate the unique risks introduced by AI in software development.
 
 #### Risk Assessment Matrix
-```python
-class AIRiskAssessment:
-    def __init__(self):
-        self.risk_factors = {
-            'data_sensitivity': {'low': 1, 'medium': 2, 'high': 3, 'critical': 4},
-            'system_criticality': {'low': 1, 'medium': 2, 'high': 3, 'critical': 4},
-            'regulatory_impact': {'none': 0, 'low': 1, 'medium': 2, 'high': 3},
-            'ai_complexity': {'simple': 1, 'moderate': 2, 'complex': 3, 'advanced': 4}
-        }
-    
-    def assess_ai_code_risk(self, code_metadata):
-        """Assess risk level of AI-generated code"""
-        
-        risk_score = 0
-        
-        # Calculate base risk score
-        for factor, value in code_metadata['risk_factors'].items():
-            if factor in self.risk_factors:
-                risk_score += self.risk_factors[factor].get(value, 0)
-        
-        # Apply AI-specific multipliers
-        if code_metadata['ai_generated']:
-            risk_score *= 1.2  # 20% increase for AI-generated code
-        
-        if code_metadata['human_reviewed'] == False:
-            risk_score *= 1.5  # 50% increase for unreviewed code
-        
-        # Determine risk level
-        if risk_score <= 4:
-            risk_level = 'LOW'
-        elif risk_score <= 8:
-            risk_level = 'MEDIUM'
-        elif risk_score <= 12:
-            risk_level = 'HIGH'
-        else:
-            risk_level = 'CRITICAL'
-        
-        return RiskAssessment(
-            score=risk_score,
-            level=risk_level,
-            factors=code_metadata['risk_factors'],
-            recommendations=self.get_risk_recommendations(risk_level),
-            required_controls=self.get_required_controls(risk_level)
-        )
-```
+**AI Risk Assessment Matrix (Example Approach)**
+
+A structured risk assessment matrix can help organizations evaluate the risk level of AI-generated code by considering multiple factors. Below is an example of how such a matrix might be constructed and used:
+
+**Key Risk Factors:**
+- **Data Sensitivity:** How sensitive is the data handled by the code? (low, medium, high, critical)
+- **System Criticality:** How critical is the system to business operations? (low, medium, high, critical)
+- **Regulatory Impact:** What is the potential regulatory exposure? (none, low, medium, high)
+- **AI Complexity:** How complex is the AI-generated logic? (simple, moderate, complex, advanced)
+- **AI-Generated:** Was the code generated by AI? (yes/no)
+- **Human Reviewed:** Has the code been reviewed by a human? (yes/no)
+
+**Example Scoring Table:**
+
+| Factor               | Value      | Score |
+|----------------------|------------|-------|
+| Data Sensitivity     | low        | 1     |
+|                      | medium     | 2     |
+|                      | high       | 3     |
+|                      | critical   | 4     |
+| System Criticality   | low        | 1     |
+|                      | medium     | 2     |
+|                      | high       | 3     |
+|                      | critical   | 4     |
+| Regulatory Impact    | none       | 0     |
+|                      | low        | 1     |
+|                      | medium     | 2     |
+|                      | high       | 3     |
+| AI Complexity        | simple     | 1     |
+|                      | moderate   | 2     |
+|                      | complex    | 3     |
+|                      | advanced   | 4     |
+
+**Risk Calculation Example:**
+
+1. **Assign a score** for each risk factor based on the table above.
+2. **Sum the scores** for all factors.
+3. **Apply multipliers**:
+   - If the code is AI-generated, increase the score by 20%.
+   - If the code has *not* been human reviewed, increase the score by 50%.
+4. **Determine risk level**:
+   - 0–4: **LOW**
+   - 5–8: **MEDIUM**
+   - 9–12: **HIGH**
+   - 13+: **CRITICAL**
+
+**Sample Assessment Workflow:**
+
+- Gather metadata for the code (risk factors, AI-generated status, human review status).
+- Calculate the total risk score using the matrix and multipliers.
+- Assign a risk level (LOW, MEDIUM, HIGH, CRITICAL).
+- Based on the risk level, apply appropriate controls and recommendations (e.g., mandatory security review, enhanced testing, audit logging).
+
+This approach enables consistent, transparent, and auditable risk assessments for AI-generated code in enterprise environments.
 
 ---
 
-## 📈 Implementation Strategy
-
-### Phase 1: Foundation (Months 1-3)
-```yaml
-foundation_phase:
-  objectives:
-    - establish_governance_framework
-    - implement_basic_controls
-    - create_audit_capabilities
-  
-  deliverables:
-    - ai_governance_policy_v1
-    - basic_audit_logging_system
-    - security_scanning_integration
-    - initial_compliance_assessment
-  
-  success_criteria:
-    - 100_percent_ai_interactions_logged
-    - security_scans_integrated_in_cicd
-    - compliance_baseline_established
-    - team_training_completed
-```
-
-### Phase 2: Integration (Months 4-6)
-```yaml
-integration_phase:
-  objectives:
-    - integrate_with_enterprise_systems
-    - automate_compliance_checking
-    - enhance_monitoring_capabilities
-  
-  deliverables:
-    - siem_integration_complete
-    - automated_compliance_validation
-    - executive_dashboard_deployed
-    - risk_assessment_automation
-  
-  success_criteria:
-    - enterprise_systems_integrated
-    - compliance_automation_95_percent
-    - executive_visibility_established
-    - risk_management_operational
-```
-
-### Phase 3: Optimization (Months 7-12)
-```yaml
-optimization_phase:
-  objectives:
-    - optimize_governance_processes
-    - enhance_ai_capabilities_safely
-    - prepare_for_external_audit
-  
-  deliverables:
-    - advanced_ai_agent_integration
-    - comprehensive_audit_package
-    - optimized_governance_processes
-    - continuous_improvement_framework
-  
-  success_criteria:
-    - external_audit_passed
-    - governance_efficiency_improved
-    - ai_capabilities_expanded_safely
-    - continuous_improvement_operational
-```
 
 ---
 
@@ -611,24 +341,24 @@ Successful AI implementation requires both robust processes and engaged people. 
 - **Ensure devs stick to governed set of tools**: Maintain approved tool registry and prevent shadow AI usage
 
 **Implementation Framework**:
-```yaml
-mcp_tool_governance:
-  approval_process:
-    - security_assessment: mandatory
-    - compliance_review: required
-    - legal_approval: for_external_tools
-    - performance_evaluation: required
-  
-  approved_tools_registry:
-    - cursor_ide: "v1.2.3"
-    - github_copilot: "enterprise"
-    - claude_api: "approved_endpoints_only"
-  
-  monitoring:
-    - usage_tracking: enabled
-    - security_scanning: continuous
-    - compliance_auditing: quarterly
-```
+**MCP Tool Governance Framework**
+
+- **Approval Process:**
+  - All Model Context Protocol (MCP) tools must undergo a mandatory security assessment.
+  - Compliance review is required to ensure alignment with regulatory standards.
+  - Legal approval is necessary for any external tools.
+  - Performance evaluation must be completed before tool adoption.
+
+- **Approved Tools Registry:**
+  - Only tools listed in the approved registry may be used for AI-assisted development.
+    - *Cursor IDE* (version 1.2.3)
+    - *GitHub Copilot* (Enterprise edition)
+    - *Claude API* (approved endpoints only)
+
+- **Monitoring:**
+  - Usage tracking is enabled for all MCP tools to ensure proper oversight.
+  - Continuous security scanning is performed to detect vulnerabilities.
+  - Compliance auditing occurs quarterly to verify ongoing adherence to policies.
 
 ### 🔄 Continuous Feedback/Improve
 **Maintain development excellence through feedback**
@@ -638,27 +368,26 @@ mcp_tool_governance:
 - **Progress over perfection**: Iterative improvement rather than waiting for perfect solutions
 
 **Feedback Mechanisms**:
-```yaml
-feedback_systems:
-  developer_feedback:
-    frequency: weekly
-    methods:
-      - retrospectives
-      - one_on_ones
-      - anonymous_surveys
-      - code_review_feedback
-  
-  ai_effectiveness_metrics:
-    - productivity_gains
-    - code_quality_scores
-    - security_incident_rates
-    - developer_satisfaction
-  
-  improvement_cycles:
-    - monthly_process_review
-    - quarterly_tool_evaluation
-    - bi_annual_strategy_update
-```
+**Feedback Systems**
+
+- **Developer Feedback**
+  - Frequency: Weekly
+  - Methods:
+    - Retrospectives
+    - One-on-ones
+    - Anonymous surveys
+    - Code review feedback
+
+- **AI Effectiveness Metrics**
+  - Productivity gains
+  - Code quality scores
+  - Security incident rates
+  - Developer satisfaction
+
+- **Improvement Cycles**
+  - Monthly process review
+  - Quarterly tool evaluation
+  - Bi-annual strategy update
 
 ### 🏆 Establish a CoE (Centre of Excellence)
 **Build organisational AI expertise**
@@ -668,27 +397,26 @@ feedback_systems:
 - **Advocate best practices**: Promote proven patterns and prevent anti-patterns
 
 **CoE Structure**:
-```yaml
-ai_centre_of_excellence:
-  leadership:
-    - ai_program_director
-    - technical_architect
-    - security_lead
-    - compliance_officer
-  
-  champions_network:
-    - department_representatives
-    - technical_leads
-    - security_ambassadors
-    - training_coordinators
-  
-  responsibilities:
-    - best_practice_development
-    - tool_evaluation_and_approval
-    - training_program_delivery
-    - policy_development
-    - incident_response_coordination
-```
+The Centre of Excellence (CoE) should be structured to provide leadership, foster a network of champions, and drive key responsibilities across the organization:
+
+**CoE Leadership:**
+- AI Program Director
+- Technical Architect
+- Security Lead
+- Compliance Officer
+
+**Champions Network:**
+- Department representatives
+- Technical leads
+- Security ambassadors
+- Training coordinators
+
+**Key Responsibilities:**
+- Develop and maintain best practices for AI adoption
+- Evaluate and approve new AI tools
+- Deliver training programs to upskill teams
+- Develop and update AI-related policies
+- Coordinate incident response for AI-related issues
 
 ### 🔴 Red-team Reviews
 **Enhanced scrutiny for AI-generated code**
@@ -698,33 +426,30 @@ ai_centre_of_excellence:
 - **Quality assurance**: Enhanced testing and validation procedures
 
 **Red-team Review Process**:
-```yaml
-red_team_reviews:
-  triggers:
-    - ai_generated_code: true
-    - security_critical_changes: true
-    - production_deployments: true
-    - compliance_sensitive_areas: true
-  
-  review_team:
-    - security_specialist
-    - senior_developer
-    - domain_expert
-    - compliance_reviewer
-  
-  review_criteria:
-    - security_vulnerability_assessment
-    - code_quality_evaluation
-    - business_logic_validation
-    - compliance_adherence_check
-    - performance_impact_analysis
-  
-  approval_requirements:
-    - unanimous_security_approval
-    - senior_developer_signoff
-    - compliance_verification
-    - automated_test_passage
-```
+**Red-team reviews should be triggered in the following scenarios:**
+- When code is generated by AI
+- For security-critical changes
+- For production deployments
+- In compliance-sensitive areas
+
+**The red-team review team should include:**
+- A security specialist
+- A senior developer
+- A domain expert
+- A compliance reviewer
+
+**Key review criteria:**
+- Assess for security vulnerabilities
+- Evaluate code quality
+- Validate business logic
+- Check for compliance adherence
+- Analyze performance impact
+
+**Approval requirements:**
+- Security team must unanimously approve
+- Senior developer sign-off is required
+- Compliance must be verified
+- All automated tests must pass
 
 ### 📚 Training
 **Comprehensive education program**
@@ -735,37 +460,18 @@ red_team_reviews:
 - **Compliance requirements**: Regulatory and policy training
 
 **Training Program Structure**:
-```yaml
-training_program:
-  foundational_training:
-    duration: "2 days"
-    topics:
-      - ai_assisted_development_basics
-      - security_considerations
-      - prompt_engineering_fundamentals
-      - code_review_for_ai_generated_code
-  
-  role_specific_training:
-    developers:
-      - secure_prompting_techniques
-      - ai_code_debugging
-      - testing_ai_generated_code
-    
-    security_team:
-      - ai_security_vulnerabilities
-      - ai_code_review_techniques
-      - incident_response_for_ai_issues
-    
-    managers:
-      - ai_governance_frameworks
-      - productivity_measurement
-      - risk_management
-  
-  continuous_education:
-    - monthly_lunch_and_learns
-    - quarterly_security_updates
-    - annual_ai_conference_attendance
-```
+The training program consists of several key components:
+
+**Foundational Training (2 days):**
+- Covers the basics of AI-assisted development, security considerations, prompt engineering fundamentals, and code review for AI-generated code.
+
+**Role-Specific Training:**
+- *Developers*: Focus on secure prompting techniques, debugging AI-generated code, and testing practices for AI outputs.
+- *Security Team*: Training on identifying AI-specific security vulnerabilities, reviewing AI-generated code, and responding to AI-related incidents.
+- *Managers*: Education on AI governance frameworks, measuring productivity, and managing risks associated with AI adoption.
+
+**Continuous Education:**
+- Ongoing learning opportunities such as monthly lunch-and-learn sessions, quarterly security updates, and annual attendance at AI conferences to keep teams up to date with the latest developments and best practices.
 
 ### 📋 Review & Update Policies
 **Maintain current and effective governance**
@@ -775,37 +481,34 @@ training_program:
 - **Compliance monitoring**: Ensure ongoing regulatory adherence
 
 **Policy Management Framework**:
-```yaml
-policy_management:
-  review_schedule:
-    monthly:
-      - tool_usage_metrics
-      - security_incident_analysis
-      - developer_feedback_review
-    
-    quarterly:
-      - policy_effectiveness_assessment
-      - compliance_audit_preparation
-      - tool_security_evaluation
-    
-    annually:
-      - comprehensive_policy_review
-      - regulatory_requirement_updates
-      - strategic_alignment_assessment
-  
-  update_process:
-    - stakeholder_consultation
-    - impact_assessment
-    - pilot_testing
-    - phased_rollout
-    - effectiveness_monitoring
-  
-  compliance_monitoring:
-    - automated_policy_checking
-    - regular_audit_preparation
-    - external_assessment_coordination
-    - remediation_tracking
-```
+**Policy Management Framework**
+
+- **Review Schedule**
+  - *Monthly*:
+    - Review tool usage metrics
+    - Analyze security incidents
+    - Gather and assess developer feedback
+  - *Quarterly*:
+    - Assess policy effectiveness
+    - Prepare for compliance audits
+    - Evaluate tool security
+  - *Annually*:
+    - Conduct a comprehensive policy review
+    - Update regulatory requirements
+    - Assess strategic alignment
+
+- **Update Process**
+  1. Consult with stakeholders
+  2. Assess the impact of proposed changes
+  3. Pilot test updates
+  4. Roll out changes in phases
+  5. Monitor effectiveness of updates
+
+- **Compliance Monitoring**
+  - Use automated policy checking
+  - Prepare regularly for audits
+  - Coordinate with external assessors
+  - Track and remediate issues
 
 ---
 
@@ -876,58 +579,10 @@ Use bcrypt for password hashing (cost factor 12).
 #### Jira Integration
 Link specifications to Jira stories for complete traceability:
 
-```yaml
-# Jira Story Template
-Story: "Implement JWT Authentication"
-Spec Link: "specs/auth-module.md"
-AI Generated: "Yes"
-Review Status: "Pending Security Review"
-Reviewer: "security-team@company.com"
-```
 
 ### 🏛️ Advanced Policy as Code
 
 #### Open Policy Agent (OPA) Integration
-
-```rego
-package ai_code_review
-
-# Deny AI-generated code without human review
-deny[msg] {
-    input.ai_generated == true
-    input.human_reviewed == false
-    msg := "AI-generated code requires human review"
-}
-
-# Require security scan for sensitive files
-deny[msg] {
-    input.file_path contains "auth"
-    input.security_scanned == false
-    msg := "Authentication code requires security scan"
-}
-
-# Enforce test coverage for AI code
-deny[msg] {
-    input.ai_generated == true
-    input.test_coverage < 80
-    msg := "AI-generated code requires 80% test coverage"
-}
-```
-
-#### Conftest Integration
-```yaml
-# .github/workflows/policy-check.yml
-name: Policy Check
-on: [pull_request]
-jobs:
-  policy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run Conftest
-        run: |
-          conftest verify --policy policy/ src/
-```
 
 #### Policy Categories
 
@@ -949,47 +604,8 @@ jobs:
 ### 📝 Enterprise Audit-Ready Logs
 
 #### Comprehensive Logging Strategy
+Define a schema for AI event logging across tools. Normalise key fields (identity, model, input/output hashes, decision records) and centralise in your SIEM/GRC for correlation with code, CI, and deployment events.
 
-```json
-{
-  "event_type": "ai_code_generation",
-  "timestamp": "2025-01-15T10:30:00Z",
-  "session_id": "sess_abc123",
-  "developer": {
-    "id": "john.doe@company.com",
-    "role": "senior_developer",
-    "team": "backend"
-  },
-  "ai_context": {
-    "model": "claude-3.5-sonnet",
-    "prompt_hash": "sha256:abc123...",
-    "context_files": ["auth.py", "models.py"],
-    "tokens_used": 1500
-  },
-  "output": {
-    "code_hash": "sha256:def456...",
-    "files_modified": ["auth/jwt.py"],
-    "lines_added": 45,
-    "lines_modified": 12
-  },
-  "review": {
-    "status": "approved_with_modifications",
-    "reviewer": "jane.smith@company.com",
-    "modifications": [
-      "Added input validation",
-      "Updated error handling",
-      "Improved logging"
-    ],
-    "security_scan": "passed",
-    "test_coverage": 85
-  },
-  "deployment": {
-    "status": "deployed_to_staging",
-    "pipeline_id": "pipe_789xyz",
-    "deployment_time": "2025-01-15T14:20:00Z"
-  }
-}
-```
 
 #### Retention and Access Requirements
 - **Retention Period**: 7 years for compliance
@@ -1000,57 +616,8 @@ jobs:
 ### 🔌 Secure Connector Patterns
 
 #### OAuth2 Pattern for AI Agents
-```python
-class SecureAIConnector:
-    def __init__(self, client_id, client_secret):
-        self.oauth_client = OAuth2Client(client_id, client_secret)
-        self.rate_limiter = RateLimiter(requests_per_minute=60)
-    
-    def call_external_api(self, endpoint, data):
-        # Rate limiting
-        self.rate_limiter.wait_if_needed()
-        
-        # Get fresh token
-        token = self.oauth_client.get_access_token()
-        
-        # Sanitize data before sending
-        sanitized_data = self.sanitize_sensitive_data(data)
-        
-        # Make request with proper headers
-        response = requests.post(
-            endpoint,
-            json=sanitized_data,
-            headers={
-                'Authorization': f'Bearer {token}',
-                'User-Agent': 'AI-Agent/1.0',
-                'X-Request-ID': str(uuid.uuid4())
-            },
-            timeout=30
-        )
-        
-        # Log the interaction
-        self.log_api_call(endpoint, response.status_code)
-        
-        return response
-```
 
 #### API Gateway Integration
-```yaml
-# API Gateway configuration for AI agents
-ai_agent_policy:
-  rate_limiting:
-    requests_per_minute: 100
-    burst_limit: 10
-  authentication:
-    method: "oauth2"
-    scopes: ["ai:read", "ai:write"]
-  monitoring:
-    log_requests: true
-    alert_on_errors: true
-  security:
-    input_validation: strict
-    output_sanitization: enabled
-```
 
 ### 👥 Enterprise Review Boards
 
@@ -1074,23 +641,6 @@ ai_agent_policy:
 | Data Processing | ✅ Required | ✅ Required | ✅ Required | ✅ Required |
 
 #### Decision Tracking
-```yaml
-# review-decision.yml
-review_id: "rev_2025_001"
-code_hash: "sha256:abc123..."
-board_members:
-  - security: "alice@company.com"
-  - architecture: "bob@company.com"
-  - domain: "carol@company.com"
-  - compliance: "dave@company.com"
-decision: "approved_with_conditions"
-conditions:
-  - "Add rate limiting to API endpoints"
-  - "Implement audit logging for data access"
-  - "Update security documentation"
-approval_date: "2025-01-15"
-valid_until: "2025-04-15"
-```
 
 ### 🔄 Continuous Governance
 
@@ -1103,17 +653,6 @@ valid_until: "2025-04-15"
 - **Developer Satisfaction** - Survey scores on AI assistance quality
 
 #### Automated Reporting
-```python
-class GovernanceMetrics:
-    def generate_monthly_report(self):
-        return {
-            "ai_code_percentage": self.calculate_ai_code_ratio(),
-            "security_issues_found": self.count_security_issues(),
-            "review_board_decisions": self.summarize_board_decisions(),
-            "compliance_status": self.check_compliance_status(),
-            "recommendations": self.generate_recommendations()
-        }
-```
 
 #### Continuous Improvement Process
 
@@ -1121,11 +660,3 @@ class GovernanceMetrics:
 2. **Quarterly Security Assessment** - Deep dive on security posture
 3. **Annual Compliance Audit** - External validation of processes
 4. **Ongoing Policy Updates** - Adapt to new threats and technologies
-
----
-
-Ready to implement this systematically? Continue to [Adoption Framework](adoption-framework.html).
-
----
-
-**Navigation**: [← Tools & Examples](tools-and-examples.html) | [Adoption Framework →](adoption-framework.html)

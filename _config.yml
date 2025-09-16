@@ -2,16 +2,14 @@
 title: "Vibe Coding Playbook"
 description: "Let's Do It Right - A comprehensive guide to AI-assisted development"
 author: "Sam Fernando"
-email: "sam@opexconsulting.com.au"
-organization: "Opex Consulting"
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
+theme: jekyll-theme-cayman
 
 # GitHub Pages settings
-url: "https://username.github.io"  # Replace with your GitHub username
+url: "https://samfernandoau.github.io"  # Replace with your GitHub username
 baseurl: "/VibeCodingPlaybook"     # Replace with your repository name
 
 # Plugins
@@ -26,8 +24,6 @@ header_pages:
   - whats-vibe-coding.md
   - common-habits.md
   - best-practices.md
-  - prompting-best-practices.md
-  - tools-and-examples.md
   - enterprise-alignment.md
   - adoption-framework.md
 

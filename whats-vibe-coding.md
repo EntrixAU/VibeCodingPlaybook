@@ -4,15 +4,13 @@ title: "(01) What's Vibe Coding"
 permalink: /whats-vibe-coding/
 ---
 
-# What is Vibe Coding?
-
 Vibe Coding represents a **methodology** that blends AI-driven suggestions with **human creativity** and expertise. It goes far beyond simple autocomplete functionality, establishing a structured collaboration between developers and AI systems.
 
 ## 🤔 Why This Matters?
 
-In the past 18 months, we've seen an explosion in AI-assisted development — tools like Copilot, Cursor, and Claude Desktop have fundamentally changed how we write code.
+Over roughly the past 18–24 months, many teams have seen rapid adoption of AI-assisted development — tools like Copilot, Cursor, and Claude Desktop are beginning to change how code gets written.
 
-This isn't just autocomplete; we're seeing **agentic workflows**, where AI doesn't just suggest code, but orchestrates tasks, connects to repos, and drafts features end-to-end. This is a big shift in software delivery.
+This isn't just autocomplete; we're seeing **agentic workflows**—AI systems that plan multi-step work, call tools (for example, repos and CLIs), and iterate under human oversight. Capabilities vary by tool, and maturity differs across organisations. This is a big shift in software delivery.
 
 While this creates incredible opportunities, it also raises questions that can't be ignored:
 
@@ -29,7 +27,6 @@ Think about your own teams — how many hours have been saved by AI tools this y
 
 ### The Four Pillars of Enterprise Readiness
 
-
 ## 🚀 The Promise
 
 So why are teams adopting vibe coding at this pace? It's because of the promise it offers:
@@ -38,20 +35,22 @@ So why are teams adopting vibe coding at this pace? It's because of the promise 
 
 | Benefit | Impact |
 |---------|--------|
-| **Faster delivery & prototyping (POCs)** | AI can generate scaffolding, boilerplate, and even functional code in seconds. What once took days now takes hours, which compresses delivery cycles dramatically |
+| **Faster delivery & prototyping (POCs)** | AI can generate scaffolding, boilerplate, and even functional code in seconds. On suitable tasks, work that once took days can take hours, compressing delivery cycles (results vary by task and team maturity) |
 | **Reduce repetitive coding** | Eliminates grunt work, allowing developers to focus on higher-value activities |
 | **Reduce barriers to entry into the industry** | A junior dev, a BA, or even a product owner with limited coding experience can now draft working prototypes. This democratisation of development can be powerful if managed well |
 | **Frees experts to focus on architecture, security etc** | Instead of writing yet another CRUD endpoint, experienced engineers can focus on architecture, scaling, and design decisions |
-| **Accelerate innovation & experimentation** | Teams can test ideas faster, pivot faster, and bring new features to market more quickly. That's why companies like Microsoft and Coinbase are embracing it so aggressively |
+| **Accelerate innovation & experimentation** | Teams can test ideas faster, pivot faster, and bring new features to market more quickly |
 
 ### Real-World Impact
 
-- **Faster Prototyping**: What once took days now takes hours
-- **Lower Entry Barriers**: Junior developers and even non-technical stakeholders can create working prototypes
-- **Expert Focus**: Senior engineers freed from repetitive tasks to focus on architecture and complex problem-solving
-- **Rapid Experimentation**: Teams can test ideas faster, pivot faster, and bring features to market more quickly
+- **Faster Prototyping**: Can reduce days of work to hours on suitable tasks
+- **Lower Entry Barriers**: May enable junior developers and some non-technical stakeholders to create working prototypes with guidance
+- **Expert Focus**: Can free senior engineers from repetitive tasks to focus on architecture and complex problem-solving
+- **Rapid Experimentation**: Often enables faster experimentation, quicker pivots, and shorter time-to-market
 
-> Companies like **Microsoft** and **Coinbase** are embracing AI-assisted development aggressively because of these productivity gains.
+> Many organisations are piloting and scaling AI-assisted development because of perceived productivity gains.
+
+> Note: Actual impact varies. Establish a baseline and measure locally (for example, lead time for changes, PR cycle time, change failure rate, and defect rates) to validate outcomes.
 
 ## ⚠️ But... The Reality Check
 
@@ -98,11 +97,3 @@ Vibe Coding isn't just about using AI tools—it's about creating a **structured
 2. **Implements Guardrails** - Clear rules and boundaries for AI assistance
 3. **Ensures Quality** - Rigorous review and testing processes
 4. **Preserves Accountability** - Clear ownership and decision trails
-
-## Next Steps
-
-Ready to dive deeper? Continue to [Common Habits](common-habits.html) to understand patterns and pitfalls, or jump straight to [Best Practices](best-practices.html) to start implementing vibe coding safely.
-
----
-
-**Navigation**: [← Home](index.html) | [Common Habits →](common-habits.html)

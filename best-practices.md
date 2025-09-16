@@ -21,22 +21,6 @@ Transform AI-assisted development from a risk into a competitive advantage with 
 | Test AI-generated code thoroughly | Skip human review steps |
 | Log all AI interactions | Deploy without validation |
 
-### Rule #1: AI Generates → Human Reviews → CI/CD Validates
-**Never skip the human in the loop**
-
-
-### Rule #2: Trust but Verify
-**Every AI suggestion needs validation**
-
-### The Golden Rules Quick Reference
-```markdown
-1. AI generates → Human reviews → CI/CD validates
-2. Never auto-merge AI commits
-3. Always version control prompts
-4. Mask secrets before AI interaction
-5. Log everything for audit trails
-```
-
 ---
 
 ## 🏆 Essential Best Practices
@@ -88,6 +72,109 @@ Transform AI-assisted development from a risk into a competitive advantage with 
 - **Use in prompts**: Reference specs directly in AI instructions
 - **Iterative refinement**: Improve specs based on AI output quality
 
+## 🧾 Instruction Examples
+
+Design a lightweight instruction file that sets boundaries, embeds context, and defines how the AI should behave. Keep it short, version it with your code, and link to it from prompts.
+
+### What to include
+- **Project/file/folder structure**: Where things live, naming conventions, and what goes where.
+- **Architecture principles**: Non-negotiable patterns, layering rules, and non‑functional priorities.
+- **Logging changes**: What the AI must report after making edits or proposing diffs.
+- **Permission controls**: What the AI can and cannot do; environments it must not touch.
+- **Clarify-if-uncertain policy**: Ask questions instead of assuming when requirements are unclear.
+- **Role-driven workflow**: Humans guide and approve; AI proposes and executes within guardrails.
+
+### Example: Repository instruction file (YAML)
+```yaml
+# .ai/instructions.yml
+context:
+  language: typescript
+  framework: nextjs
+  testing: vitest
+  formatting: prettier+eslint
+  repo_structure:
+    - src/: application code (domain → app → ui)
+    - tests/: unit and integration tests
+    - docs/: architecture and ADRs
+
+architecture:
+  principles:
+    - dependency_inversion: ui → app → domain (no upward imports)
+    - pure_functions_preferred: side effects isolated at boundaries
+    - error_handling: never swallow errors; propagate with context
+  non_functionals:
+    - performance_first_render: avoid blocking data calls in critical paths
+    - security_inputs: validate and sanitize all external inputs
+
+permissions:
+  allowed:
+    - propose diffs via PR only
+    - create tests and docs alongside code changes
+  prohibited:
+    - push to main
+    - modify production infra or secrets
+    - run destructive commands
+
+workstyle:
+  clarify_if_uncertain: true
+  ask_before_installing_dependencies: true
+  review_gates:
+    human_review_required: true
+
+logging:
+  require:
+    - list of files created/modified/deleted
+    - rationale and risks for changes
+    - follow-up actions and test coverage
+```
+
+### Example snippets to paste into prompts
+
+#### Project/file/folder structure
+```markdown
+Use this structure:
+- src/domain/: business logic (no framework imports)
+- src/app/: orchestration, services, adapters
+- src/ui/: components and pages
+Place new code accordingly and keep imports directional (ui→app→domain only).
+```
+
+#### Architecture principles
+```markdown
+Apply these rules:
+- Prefer dependency inversion; depend on interfaces in domain
+- Isolate side effects; pure functions by default
+- Validate inputs at boundaries; never trust request data
+Explain any trade-offs if you must break a rule.
+```
+
+#### Logging changes
+```markdown
+After changes, output:
+1) Files changed (added/modified/deleted)
+2) Summary of changes and rationale
+3) Tests added/updated and results
+4) Risks/assumptions and follow-ups
+```
+
+#### Permission controls
+```markdown
+Do not write to protected branches or production configs. Propose a PR only.
+Never run destructive commands or modify secrets. Ask before installing deps.
+```
+
+#### Ask for clarity if in doubt
+```markdown
+If requirements are ambiguous, ask targeted questions (max 5) before coding.
+Show your plan briefly and wait for confirmation.
+```
+
+#### Role-driven workflow
+```markdown
+You propose; humans decide. Provide diffs, tests, and a rollback plan.
+Wait for approval gates before executing follow-up steps.
+```
+
 ### 🤖 AI for Non-Coding Tasks
 **Leverage AI beyond just code generation**
 
@@ -107,13 +194,15 @@ Transform AI-assisted development from a risk into a competitive advantage with 
 ### 🧠 Pick the Model That Works for the Task
 **Choose the right AI tool for each specific need**
 
-| Task Type | Recommended Model | Why |
-|-----------|------------------|-----|
-| **Code Generation** | GPT-4, Claude-3.5-Sonnet | Strong reasoning and code quality |
-| **Code Explanation** | GPT-4, Claude-3 | Excellent at breaking down complex logic |
-| **Refactoring** | Claude-3.5-Sonnet | Good at maintaining code structure |
-| **Documentation** | GPT-4, Claude-3 | Natural language excellence |
-| **Security Review** | Specialized tools + GPT-4 | Domain-specific knowledge needed |
+| Task Type           | Recommended Model(s)                | Why                                      |
+|---------------------|-------------------------------------|------------------------------------------|
+| **Code Generation** | Use the latest, high-quality code generation models | Strong reasoning and code quality        |
+| **Code Explanation**| Use models optimized for code understanding and explanation | Excellent at breaking down complex logic |
+| **Refactoring**     | Use advanced models capable of code transformation | Good at maintaining and improving code structure |
+| **Documentation**   | Use models with strong natural language capabilities | Natural language excellence              |
+| **Security Review** | Use specialized security tools and advanced AI models | Domain-specific knowledge needed         |
+
+Note: Use only organisation-approved models. Consider data residency, privacy and IP licensing constraints, and cost/latency trade-offs when selecting models for workflows.
 
 ### 📋 Plan Before Making Changes
 **Use structured approaches for AI-assisted development**
@@ -147,16 +236,6 @@ A good agent is like a junior dev — needs clear rules. These house rules ensur
 | **Ask "Why" Not "What"** | Challenge AI reasoning | "Why this approach?" |
 | **Least Privilege** | Minimal AI permissions | Read-only access by default |
 | **Human in Loop** | Mandatory approval gates | No autonomous deployments |
-
-### Quick Security Checks
-```bash
-# Before using AI assistance
-✅ Are secrets masked?
-✅ Is context appropriate?
-✅ Will output be reviewed?
-✅ Are logs being captured?
-✅ Is this a sensitive system?
-```
 
 ### 🔒 Isolate Tasks
 **Limit context window for focused execution**
@@ -200,48 +279,8 @@ Implementing comprehensive DevSecOps strategies ensures AI-assisted development 
 **Comprehensive security validation at every stage**
 
 #### SAST (Static Application Security Testing)
-```yaml
-# Example SAST configuration for AI code
-sast_config:
-  tools:
-    - semgrep:
-        rules: ["security", "ai-specific-rules"]
-        fail_on: ["ERROR", "WARNING"]
-    - sonarqube:
-        quality_gate: "ai-code-standards"
-        coverage_threshold: 80
-    - codeql:
-        languages: ["javascript", "python", "java"]
-        queries: ["security-and-quality"]
-```
-
 #### Security Scanning Commands
-```bash
-# Vulnerability scanning
-trivy fs --severity HIGH,CRITICAL .
-grype .
-snyk test
-
-# Secret detection
-truffleHog git file://. --only-verified
-git-secrets --scan
-
-# SAST scanning
-semgrep --config=auto .
-codeql database analyze
-```
-
 #### Policy Validation
-```bash
-# Check OPA policies
-conftest verify --policy .policies/ .
-
-# Validate configuration
-conftest test --policy security.rego deployment.yaml
-
-# Check compliance
-opa eval -d policies/ "data.security.allow" -i input.json
-```
 
 ### 📋 Requirements as Code
 **Codify and automate compliance requirements**
@@ -298,79 +337,6 @@ This PR implements user authentication using AI-generated code.
 ### 🚫 Policy as Code
 **Automated policy enforcement**
 
-```python
-# Example policy as code for AI compliance
-class AICompliancePolicy:
-    def validate_ai_code(self, code_metadata):
-        violations = []
-        
-        # Check for mandatory security review
-        if code_metadata.get('security_critical') and not code_metadata.get('security_reviewed'):
-            violations.append("Security-critical AI code requires security team review")
-        
-        # Validate test coverage
-        if code_metadata.get('test_coverage', 0) < 80:
-            violations.append("AI-generated code requires minimum 80% test coverage")
-        
-        # Check for human review
-        if code_metadata.get('ai_generated') and not code_metadata.get('human_reviewed'):
-            violations.append("AI-generated code requires human review")
-        
-        return violations
-```
-
----
-
-## 📝 Prompt Templates & Examples
-
-### Secure Code Generation Template
-```markdown
-## Template: Authentication Code
-Create [FUNCTIONALITY] with these security requirements:
-- Input validation for all parameters
-- Parameterized queries (no string concatenation)
-- Proper error handling with logging
-- Rate limiting: [X] requests per [TIME]
-- Use environment variables for secrets
-- Include comprehensive unit tests
-
-Security considerations:
-- [SPECIFIC SECURITY REQUIREMENTS]
-- [COMPLIANCE REQUIREMENTS]
-```
-
-### Database Operations Template
-```markdown
-## Template: Database Code
-Generate database operations for [ENTITY] with:
-- Parameterized queries only
-- Transaction management
-- Connection pooling
-- Input sanitization
-- Error handling with audit logging
-- Performance optimisation
-- Include migration scripts if needed
-
-Data sensitivity: [PUBLIC/INTERNAL/CONFIDENTIAL]
-Compliance requirements: [GDPR/SOX/HIPAA/etc]
-```
-
-### API Development Template
-```markdown
-## Template: API Endpoint
-Create REST API endpoint for [RESOURCE] with:
-- OpenAPI/Swagger documentation
-- Input validation middleware
-- Authentication/authorisation checks
-- Rate limiting
-- Comprehensive error responses
-- Audit logging for sensitive operations
-- Unit and integration tests
-
-Security level: [LOW/MEDIUM/HIGH]
-Data classification: [PUBLIC/INTERNAL/RESTRICTED]
-```
-
 ---
 
 ## 🧹 Prompt Engineering Hygiene
@@ -378,26 +344,9 @@ Data classification: [PUBLIC/INTERNAL/RESTRICTED]
 ### Security Rules
 
 #### Never Include Secrets in Prompts
-```bash
-# ❌ BAD
-"Create a database connection using password 'prod_secret_123'"
-
-# ✅ GOOD  
-"Create a database connection using environment variable for password"
-```
 
 #### Mask Sensitive Data
-```python
-# Before sending to AI
-user_data = {
-    "email": "user@example.com",
-    "ssn": "***-**-1234",  # Masked
-    "account": "****5678"   # Masked
-}
-```
-
 #### Use Synthetic Data
-Generate realistic but fake data for AI training and testing scenarios.
 
 ---
 
@@ -411,18 +360,6 @@ Generate realistic but fake data for AI training and testing scenarios.
 - **Deployment status** - What made it to production
 
 ### Example Log Entry
-```json
-{
-  "timestamp": "2025-01-15T10:30:00Z",
-  "developer": "john.doe@company.com",
-  "ai_model": "claude-3.5-sonnet",
-  "prompt_hash": "sha256:abc123...",
-  "output_hash": "sha256:def456...",
-  "review_status": "approved_with_modifications",
-  "modifications": ["added input validation", "updated error handling"],
-  "deployment": "pending_qa"
-}
-```
 
 ---
 
@@ -436,14 +373,6 @@ Generate realistic but fake data for AI training and testing scenarios.
 - **Enable diff previews** before accepting suggestions
 
 #### Safety Features
-```bash
-# .cursorignore example
-.env
-secrets/
-credentials/
-*.key
-*.pem
-```
 
 ### Using GitHub Copilot
 
@@ -453,13 +382,6 @@ credentials/
 - **Enforce PR review policies** for all AI-assisted commits
 
 #### Repository Policies
-```yaml
-# .github/branch_protection.yml
-required_reviews: 2
-dismiss_stale_reviews: true
-require_code_owner_reviews: true
-ai_generated_code_review: mandatory
-```
 
 ---
 
@@ -493,62 +415,6 @@ ai_generated_code_review: mandatory
 
 ---
 
-## 🚨 Incident Response
-
-### AI Code Security Incident
-```markdown
-## Immediate Actions (0-1 hour)
-1. Identify affected systems and code
-2. Assess potential data exposure
-3. Implement temporary mitigations
-4. Notify security team and stakeholders
-
-## Investigation (1-24 hours)
-1. Analyze AI interaction logs
-2. Review prompt and output history
-3. Identify root cause
-4. Assess blast radius
-
-## Resolution (24-72 hours)
-1. Implement permanent fixes
-2. Update AI policies if needed
-3. Conduct lessons learned session
-4. Update training materials
-```
-
-### Emergency Contacts
-```yaml
-Security Team: security@company.com
-AI Governance: ai-governance@company.com
-Compliance: compliance@company.com
-Legal: legal@company.com
-```
-
----
-
-## 🚫 Universal Rules (Tool-Agnostic)
-
-### Never Auto-Merge AI Commits
-Every AI-generated change must pass human review, regardless of how trivial it appears.
-
-### Comprehensive Scanning Pipeline
-```yaml
-security_pipeline:
-  - sast_scan: "sonarqube, semgrep"
-  - dast_scan: "owasp-zap, burp"
-  - dependency_scan: "grype, trivy, snyk"
-  - license_check: "fossa, licensefinder"
-  - sbom_generation: "syft, cyclonedx"
-```
-
-### Mandatory Security Gates
-- All AI code must pass security scans
-- Performance benchmarks must be maintained
-- Test coverage cannot decrease
-- Documentation must be updated
-
----
-
 ## 📊 Daily Workflow Checklist
 
 ### Before Using AI
@@ -574,19 +440,19 @@ security_pipeline:
 
 ## 🎯 Implementation Roadmap
 
-### Phase 1: Foundation (Weeks 1-4)
+### Phase 1: Foundation
 - [ ] Implement basic SAST/SCA scanning
 - [ ] Set up secret scanning and linting
 - [ ] Create initial AI code review checklists
 - [ ] Establish branch protection rules
 
-### Phase 2: Enhancement (Weeks 5-8)
+### Phase 2: Enhancement
 - [ ] Deploy DAST and infrastructure scanning
 - [ ] Implement policy as code framework
 - [ ] Create automated compliance checking
 - [ ] Set up continuous monitoring
 
-### Phase 3: Advanced Integration (Weeks 9-12)
+### Phase 3: Advanced Integration
 - [ ] Deploy AI-augmented review processes
 - [ ] Implement comprehensive SBOM generation
 - [ ] Set up MCP addons for structured access
@@ -622,11 +488,3 @@ security_pipeline:
 - **Team training**: Ensure everyone understands AI security risks
 - **Incident preparation**: Have response plans ready
 - **Continuous monitoring**: Watch for new AI-related threats
-
----
-
-*This comprehensive guide combines best practices, security measures, and practical guidance for successful AI-assisted development. Bookmark this page for daily reference and continuous improvement of your AI development practices.*
-
----
-
-**Navigation**: [← Common Habits](common-habits.html) | [Prompting Best Practices →](prompting-best-practices.html)
