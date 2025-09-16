@@ -23,14 +23,13 @@ plugins:
 # Navigation
 header_pages:
   - index.md
-  - methodology.md
-  - evolution.md
-  - perils.md
+  - whats-vibe-coding.md
+  - common-habits.md
   - best-practices.md
-  - governance.md
-  - tools.md
-  - adoption.md
-  - cheat-sheet.md
+  - prompting-best-practices.md
+  - tools-and-examples.md
+  - enterprise-alignment.md
+  - adoption-framework.md
 
 # Collections
 collections:
