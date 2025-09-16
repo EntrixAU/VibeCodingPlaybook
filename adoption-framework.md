@@ -3,7 +3,7 @@ title: "(05) Adoption Framework"
 permalink: /adoption-framework/
 ---
 
-# Comprehensive AI Adoption and Governance Framework for Software Teams (2025)
+_A practical six-step roadmap to adopt AI-assisted development securely and at scale._
 
 ## 1. Strategy & Alignment
 

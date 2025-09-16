@@ -3,6 +3,8 @@ title: "(03) Best Practices & Guardrails"
 permalink: /best-practices/
 ---
 
+_Practical rules and guardrails to make AI assistance safe, effective, and auditable._
+
 Transform AI-assisted development from a risk into a competitive advantage with proven strategies, security measures, and governance frameworks. Your comprehensive guide to safe, effective AI-assisted development.
 
 ## 🎯 The Golden Rules

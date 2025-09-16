@@ -3,6 +3,8 @@ title: "(02) Common Habits"
 permalink: /common-habits/
 ---
 
+_Patterns you’ll see when teams adopt AI—what to amplify and what to avoid._
+
 Understanding the patterns that emerge when teams adopt AI-assisted development helps identify both productive practices and dangerous pitfalls.
 
 ## 😊 Good Habits That Emerge

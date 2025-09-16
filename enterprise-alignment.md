@@ -3,6 +3,8 @@ title: "(04) Enterprise Alignment"
 permalink: /enterprise-alignment/
 ---
 
+_Governance, compliance, and platform patterns for AI-assisted delivery at scale._
+
 Integrating AI-assisted development into enterprise environments while maintaining compliance, security, and operational excellence.
 
 ## 🏢 Enterprise Challenges

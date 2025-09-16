@@ -3,6 +3,8 @@ title: "(01) What's Vibe Coding"
 permalink: /whats-vibe-coding/
 ---
 
+_A methodology that blends AI assistance with human judgment and governance._
+
 Vibe Coding represents a **methodology** that blends AI-driven suggestions with **human creativity** and expertise. It goes far beyond simple autocomplete functionality, establishing a structured collaboration between developers and AI systems.
 
 ## 🤔 Why This Matters?
