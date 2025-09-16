@@ -7,22 +7,7 @@ _Practical rules and guardrails to make AI assistance safe, effective, and audit
 
 Transform AI-assisted development from a risk into a competitive advantage with proven strategies, security measures, and governance frameworks. Your comprehensive guide to safe, effective AI-assisted development.
 
-## 🎯 The Golden Rules
-
-### Quick Reference: Do's and Don'ts
-
-| ✅ **DO** | ❌ **DON'T** |
-|-----------|-------------|
-| Always review AI-generated code | Auto-merge AI commits |
-| Version control your prompts | Put secrets in prompts |
-| Run security scans on AI code | Trust AI output blindly |
-| Use instruction files for context | Let AI access entire codebase |
-| Test AI-generated code thoroughly | Skip human review steps |
-| Log all AI interactions | Deploy without validation |
-
----
-
-## 🏆 Essential Best Practices
+## Essential Best Practices
 
 ### 🚫 Avoid Building Entire Features
 **Focus on components, not complete systems**
@@ -127,7 +112,7 @@ logging:
     - follow-up actions and test coverage
 ```
 
-### Example snippets to paste into prompts
+### Example Instructions to create and use (or paste into prompts)
 
 #### Project/file/folder structure
 ```markdown
@@ -150,10 +135,11 @@ Explain any trade-offs if you must break a rule.
 #### Logging changes
 ```markdown
 After changes, output:
-1) Files changed (added/modified/deleted)
-2) Summary of changes and rationale
-3) Tests added/updated and results
-4) Risks/assumptions and follow-ups
+1) Architectural decisions or changes done
+2) Files changed (added/modified/deleted)
+3) Summary of changes and rationale
+4) Tests added/updated and results
+5) Risks/assumptions and follow-ups
 ```
 
 #### Permission controls
@@ -222,9 +208,9 @@ Note: Use only organisation-approved models. Consider data residency, privacy an
 
 ---
 
-## 🏠 AI Agent House Rules
+## 🏠 AI Coding Agent House Rules
 
-A good agent is like a junior dev — needs clear rules. These house rules ensure AI agents operate safely and effectively within your organization.
+A good agent is like a developer in training mode, needs clear rules. These house rules ensure AI agents operate safely and effectively within your organization.
 
 ### Core Principles
 | Rule | Description | Example |
@@ -340,10 +326,8 @@ This PR implements user authentication using AI-generated code.
 
 ## 🧹 Prompt Engineering Hygiene
 
-### Security Rules
-
+#### Security Rules
 #### Never Include Secrets in Prompts
-
 #### Mask Sensitive Data
 #### Use Synthetic Data
 
@@ -357,34 +341,13 @@ This PR implements user authentication using AI-generated code.
 - **Human decisions** - What was approved/rejected
 - **Modifications** - How outputs were changed
 - **Deployment status** - What made it to production
-
-### Example Log Entry
-
----
-
-## 🛠️ Tool-Specific Best Practices
-
-### Using Cursor IDE
-
-#### Context Management
-- **Restrict context scope** - Don't expose entire repository
-- **Use `.cursorignore`** to exclude sensitive files
-- **Enable diff previews** before accepting suggestions
-
-#### Safety Features
-
-### Using GitHub Copilot
-
-#### Security Configuration
-- **Disable for sensitive files** (credentials, compliance logic)
-- **Use Copilot Chat** to understand reasoning, not just generate code
-- **Enforce PR review policies** for all AI-assisted commits
-
-#### Repository Policies
+- **Architectural Changes** - Critical changes made by the AI
 
 ---
 
-## 🔍 Code Review Checklist
+## 🔍 Review Checklist
+
+_If you don't have tools (highly recommended to have some), then you can use this simple checklist as a way of validation. Not a perfect list or a one size fits all but a good starting point._
 
 ### AI-Generated Code Review
 ```markdown
@@ -415,7 +378,7 @@ This PR implements user authentication using AI-generated code.
 ---
 
 ## 📊 Daily Workflow Checklist
-
+```markdown
 ### Before Using AI
 - [ ] Review AI suggestions before accepting
 - [ ] Run security scans on AI-generated code
@@ -434,11 +397,11 @@ This PR implements user authentication using AI-generated code.
 - [ ] Run comprehensive security scans
 - [ ] Validate against business requirements
 - [ ] Update documentation and tests
-
+```
 ---
 
 ## 🎯 Implementation Roadmap
-
+```markdown
 ### Phase 1: Foundation
 - [ ] Implement basic SAST/SCA scanning
 - [ ] Set up secret scanning and linting
@@ -462,7 +425,7 @@ This PR implements user authentication using AI-generated code.
 - [ ] Optimize performance of security scans
 - [ ] Enhance AI review assistance
 - [ ] Continuous improvement of processes
-
+```
 ---
 
 ## 💡 Pro Tips for Success

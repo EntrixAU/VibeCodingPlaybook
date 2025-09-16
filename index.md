@@ -6,14 +6,44 @@ Welcome to the **Vibe Coding Playbook**, a comprehensive guide to AI-assisted de
 
 **This presentation exists because the developer community needs practical, actionable guidance RIGHT NOW.** Not theoretical frameworks or academic discussions, but real-world strategies that can be implemented immediately.
 
+**Disclaimer:**  
+This playbook reflects my personal opinions, based on my experience and research. Please use it as a guide, but always do your own research and adapt recommendations to your specific context and requirements.
+
 ## About This Guide
 
 This documentation is based on real-world experience implementing AI-assisted development across enterprise environments. It provides practical, actionable guidance that you can implement immediately in your development workflow.
 
 The goal isn't to slow down development or add bureaucracy - it's to help you harness AI's power while avoiding the pitfalls that are already causing problems in organizations worldwide.
 
-**Disclaimer:**  
-This playbook reflects my personal opinions, based on my experience and research. Please use it as a guide, but always do your own research and adapt recommendations to your specific context and requirements.
+## The Reality of AI-Assisted Development Today
+
+We're living through a fundamental shift in how software is built. AI coding assistants have moved from experimental tools to essential development companions, with millions of developers now relying on GitHub Copilot, Cursor, Claude, and similar tools daily. But here's the challenge: **most developers are winging it**.
+
+## The Vibe Coding Phenomenon
+
+"Vibe coding" has emerged as the dominant approach to AI-assisted development - developers intuitively using AI tools without structured methodologies, security considerations, or governance frameworks. While this feels natural and productive, it's creating significant risks:
+
+- **Shadow AI adoption** in enterprise environments
+- **Security vulnerabilities** from unvetted AI-generated code
+- **Compliance gaps** that auditors are starting to notice
+- **Technical debt** from poorly architected AI-assisted solutions
+- **Skills erosion** as developers become over-reliant on AI
+
+## Why Developer Education is Critical Now
+
+The window for establishing good practices is closing fast. As AI tools become more powerful and pervasive, the habits developers form today will shape the next decade of software development. We need to act now to:
+
+**🛡️ Prevent Security Disasters**  
+AI-generated code can introduce vulnerabilities that traditional security training doesn't cover. Developers need to understand prompt injection, model limitations, and AI-specific attack vectors.
+
+**📋 Establish Governance Before It's Too Late**  
+Regulatory bodies are starting to pay attention to AI in software development. Organizations that establish proper governance now will avoid painful retrofitting later.
+
+**🎯 Maximize AI's Potential**  
+Developers using AI haphazardly are leaving massive productivity gains on the table. Structured approaches can 10x the value of AI assistance.
+
+**👥 Maintain Human Skills**  
+As AI handles more routine tasks, developers need to evolve their skills toward architecture, security, and critical thinking - but only if we guide this transition properly.
 
 ## 🎯 Who This Guide Is For
 
@@ -48,44 +78,3 @@ This playbook reflects my personal opinions, based on my experience and research
 
 ### **(05) Adoption Framework**
 [Step-by-step implementation](adoption-framework) - A structured approach to rolling out AI-assisted development across your organisation.
-
-## Why This Presentation Exists
-
-### The Reality of AI-Assisted Development Today
-
-We're living through a fundamental shift in how software is built. AI coding assistants have moved from experimental tools to essential development companions, with millions of developers now relying on GitHub Copilot, Cursor, Claude, and similar tools daily. But here's the challenge: **most developers are winging it**.
-
-### The Vibe Coding Phenomenon
-
-"Vibe coding" has emerged as the dominant approach to AI-assisted development - developers intuitively using AI tools without structured methodologies, security considerations, or governance frameworks. While this feels natural and productive, it's creating significant risks:
-
-- **Shadow AI adoption** in enterprise environments
-- **Security vulnerabilities** from unvetted AI-generated code
-- **Compliance gaps** that auditors are starting to notice
-- **Technical debt** from poorly architected AI-assisted solutions
-- **Skills erosion** as developers become over-reliant on AI
-
-### Why Developer Education is Critical Now
-
-The window for establishing good practices is closing fast. As AI tools become more powerful and pervasive, the habits developers form today will shape the next decade of software development. We need to act now to:
-
-**🛡️ Prevent Security Disasters**  
-AI-generated code can introduce vulnerabilities that traditional security training doesn't cover. Developers need to understand prompt injection, model limitations, and AI-specific attack vectors.
-
-**📋 Establish Governance Before It's Too Late**  
-Regulatory bodies are starting to pay attention to AI in software development. Organizations that establish proper governance now will avoid painful retrofitting later.
-
-**🎯 Maximize AI's Potential**  
-Developers using AI haphazardly are leaving massive productivity gains on the table. Structured approaches can 10x the value of AI assistance.
-
-**👥 Maintain Human Skills**  
-As AI handles more routine tasks, developers need to evolve their skills toward architecture, security, and critical thinking - but only if we guide this transition properly.
-
-### The Urgency is Real
-
-Every day that passes without proper AI development education means:
-- More legacy systems built with poor AI practices
-- Deeper entrenchment of risky habits
-- Greater technical debt accumulation
-- Increased security exposure
-- Wider skills gaps

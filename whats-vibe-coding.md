@@ -26,8 +26,6 @@ Think about your own teams — how many hours have been saved by AI tools this y
 
 > *"But while the AI can produce working code fast, accountability doesn't shift. The organisation and its developers are still responsible for security, compliance, and maintainability."*
 
-### The Four Pillars of Enterprise Readiness
-
 ## 🚀 The Promise
 
 So why are teams adopting vibe coding at this pace? It's because of the promise it offers:
@@ -56,10 +54,6 @@ So why are teams adopting vibe coding at this pace? It's because of the promise 
 ## ⚠️ But... The Reality Check
 
 **But** — and this is a big but — with all these promises come pitfalls. The common mistakes teams make when adopting vibe coding can be dangerous.
-
-## Core Concept
-
-Think of vibe coding like pair programming, but your partner is an AI that never sleeps and knows "something" about everything — but not always the right thing. This partnership requires careful orchestration to be effective.
 
 ## Key Benefits
 

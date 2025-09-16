@@ -7,7 +7,7 @@ _Patterns you’ll see when teams adopt AI—what to amplify and what to avoid._
 
 Understanding the patterns that emerge when teams adopt AI-assisted development helps identify both productive practices and dangerous pitfalls.
 
-## 😊 Good Habits That Emerge
+## Good Habits That Emerge
 
 ### 🚀 Accelerated Experimentation
 **Pattern**: Developers try more approaches faster
@@ -35,18 +35,7 @@ Understanding the patterns that emerge when teams adopt AI-assisted development 
 
 ---
 
-## ⚠️ Dangerous Habits to Avoid
-
-### Quick Reference: Good vs Dangerous Habits
-
-| ✅ **GOOD HABITS** | ❌ **DANGEROUS HABITS** |
-|-------------------|------------------------|
-| Review AI suggestions critically | Blindly accept AI output |
-| Use AI for specific tasks | Let AI make architectural decisions |
-| Maintain coding skills | Become dependent on AI |
-| Follow security best practices | Ignore security implications |
-| Version control prompts | Use ad-hoc prompting |
-| Test AI-generated code | Deploy without testing |
+## Dangerous Habits to Avoid
 
 Every new paradigm comes with enthusiasm — but also with mistakes. With vibe coding, I see the same patterns repeating across teams:
 
@@ -167,7 +156,7 @@ Finally, there's the human side. If juniors rely on AI for every solution, they 
 
 ---
 
-## 🚨 Real Risks When Habits Go Wrong
+## Real Risks When Habits Go Wrong
 
 When those mistakes become habits, they translate into real risks. These are the perils of vibe coding if done wrong:
 
@@ -198,53 +187,31 @@ When those mistakes become habits, they translate into real risks. These are the
 
 > *"When teams over-index on AI, they may not be ready to respond to outages, bugs, or breaches. It creates a dangerous illusion of speed — until production blows up."*
 
-## 🎯 Building Better Habits
+## How can we build better habits?
 
-### Daily Practices
-
-#### Morning Routine
-- [ ] Review AI interaction logs from previous day
-- [ ] Check for security alerts on AI-generated code
-- [ ] Update prompt templates based on learnings
-
-#### During Development
-- [ ] Always review AI suggestions before accepting
-- [ ] Test AI code with edge cases
-- [ ] Document reasoning for accepting/rejecting suggestions
-- [ ] Run security scans on AI-generated code
-
-#### End of Day
-- [ ] Commit prompt history with code changes
-- [ ] Update team knowledge base with AI learnings
-- [ ] Review and tag AI-generated commits
-
-### Team Practices
-
-#### Weekly Rituals
+### Weekly Rituals
 - **AI Code Review Sessions**: Dedicated time to review AI-generated code
 - **Prompt Sharing**: Share effective prompts and patterns
 - **Security Retrospectives**: Discuss AI-related security findings
 
-#### Monthly Assessments
+### Monthly Assessments
 - **Habit Audit**: Review team's AI usage patterns
 - **Security Review**: Deep dive on AI code security posture  
 - **Skills Assessment**: Identify areas where AI dependency might be problematic
 
-### Organizational Habits
-
-#### Governance Rhythms
+### Governance Rhythms
 - **Policy Updates**: Regular review of AI usage policies
 - **Training Cycles**: Ongoing education on AI best practices
 - **Metrics Review**: Analyze productivity and quality trends
 
-#### Cultural Reinforcement
+### Cultural Reinforcement
 - **Success Stories**: Share examples of good AI practices
 - **Failure Analysis**: Learn from AI-related incidents
 - **Recognition**: Reward teams that exemplify good AI habits
 
 ---
 
-## 🔍 Self-Assessment Questions
+## Ask yourselves these questions if uncertain
 
 ### Personal Reflection
 1. **Do I understand the AI code I accept?** Can I explain how it works?
@@ -266,7 +233,7 @@ When those mistakes become habits, they translate into real risks. These are the
 
 ---
 
-## 🚨 Red Flags to Watch For
+## Red Flags to Watch For
 
 ### Individual Warning Signs
 - Accepting AI suggestions without reading them
