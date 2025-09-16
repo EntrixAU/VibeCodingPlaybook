@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "(01) What's Vibe Coding"
 permalink: /whats-vibe-coding/
 ---

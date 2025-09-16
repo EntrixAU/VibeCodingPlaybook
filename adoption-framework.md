@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "(05) Adoption Framework"
 permalink: /adoption-framework/
 ---

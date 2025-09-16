@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "(03) Best Practices & Guardrails"
 permalink: /best-practices/
 ---

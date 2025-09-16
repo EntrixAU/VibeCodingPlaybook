@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "(02) Common Habits"
 permalink: /common-habits/
 ---

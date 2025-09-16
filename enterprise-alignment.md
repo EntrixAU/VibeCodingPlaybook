@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "(04) Enterprise Alignment"
 permalink: /enterprise-alignment/
 ---
