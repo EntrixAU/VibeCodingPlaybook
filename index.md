@@ -1,5 +1,4 @@
----
-layout: home
+layout: page
 title: "Vibe Coding Playbook"
 ---
 
