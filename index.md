@@ -37,19 +37,19 @@ This playbook reflects my personal opinions, based on my experience and research
 ## What's in it for you
 
 ### **(01) What's Vibe Coding**
-[Understanding the methodology](whats-vibe-coding.html) - Learn what vibe coding is, its benefits, and how it transforms development workflows.
+[Understanding the methodology](whats-vibe-coding) - Learn what vibe coding is, its benefits, and how it transforms development workflows.
 
 ### **(02) Common Habits**
-[Identifying patterns and pitfalls](common-habits.html) - Recognise common practices, both good and bad, that emerge when teams adopt AI-assisted development.
+[Identifying patterns and pitfalls](common-habits) - Recognise common practices, both good and bad, that emerge when teams adopt AI-assisted development.
 
 ### **(03) Best Practices & Guardrails**
-[Do it Right!](best-practices.html) - Comprehensive guide with proven strategies, security measures, and governance frameworks for safe AI coding.
+[Do it Right!](best-practices) - Comprehensive guide with proven strategies, security measures, and governance frameworks for safe AI coding.
 
 ### **(04) Enterprise Alignment**
-[Governance and compliance](enterprise-alignment.html) - Frameworks for integrating AI-assisted development into enterprise environments while maintaining compliance.
+[Governance and compliance](enterprise-alignment) - Frameworks for integrating AI-assisted development into enterprise environments while maintaining compliance.
 
 ### **(05) Adoption Framework**
-[Step-by-step implementation](adoption-framework.html) - A structured approach to rolling out AI-assisted development across your organisation.
+[Step-by-step implementation](adoption-framework) - A structured approach to rolling out AI-assisted development across your organisation.
 
 ## Why This Presentation Exists
 

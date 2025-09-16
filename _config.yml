@@ -6,7 +6,7 @@ author: "Sam Fernando"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: jekyll-theme-cayman
+theme: minima
 
 # GitHub Pages settings
 url: "https://samfernandoau.github.io"  # Replace with your GitHub username
