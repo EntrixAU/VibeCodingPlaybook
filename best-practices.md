@@ -7,6 +7,43 @@ _Practical rules and guardrails to make AI assistance safe, effective, and audit
 
 Transform AI-assisted development from a risk into a competitive advantage with proven strategies, security measures, and governance frameworks. Your comprehensive guide to safe, effective AI-assisted development.
 
+## Table of Contents
+
+### Essential Best Practices
+- [🚫 Avoid Building Entire Features](#-avoid-building-entire-features)
+- [👥 Keep the Humans in the Loop](#-keep-the-humans-in-the-loop)
+- [🔍 Use Scanning Features](#-use-scanning-features)
+- [🎯 Craft Instructions Unique to You](#-craft-instructions-unique-to-you)
+- [🔒 Secure Prompting Patterns](#-secure-prompting-patterns)
+- [📋 Spec-Driven Prompts](#-spec-driven-prompts)
+- [📝 AI-Generated Code Documentation](#-ai-generated-code-documentation)
+
+### Implementation Guidance
+- [🧾 Instruction Examples](#-instruction-examples)
+- [🤖 AI for Non-Coding Tasks](#-ai-for-non-coding-tasks)
+- [📦 Modularise the Code](#-modularise-the-code)
+- [🧠 Pick the Model That Works for the Task](#-pick-the-model-that-works-for-the-task)
+- [📋 Plan Before Making Changes](#-plan-before-making-changes)
+- [⚠️ Fail Safe Mechanisms](#️-fail-safe-mechanisms)
+
+### AI Coding Agent House Rules
+- [🏠 AI Coding Agent House Rules](#-ai-coding-agent-house-rules)
+- [🔒 Isolate Tasks](#-isolate-tasks)
+- [💬 AI Comments](#-ai-comments)
+- [🔐 AI Permission Control](#-ai-permission-control)
+- [🔄 AI Feedback Loop](#-ai-feedback-loop)
+
+### Security & Operations
+- [🔒 DevSecOps Strategies for Safe Use of AI](#-devsecops-strategies-for-safe-use-of-ai)
+- [🧹 Prompt Engineering Hygiene](#-prompt-engineering-hygiene)
+- [📊 Audit Trails & Logging](#-audit-trails--logging)
+- [🔍 Review Checklist](#-review-checklist)
+
+### Practical Resources
+- [💡 Pro Tips for Success](#-pro-tips-for-success)
+
+---
+
 ## Essential Best Practices
 
 ### 🚫 Avoid Building Entire Features
