@@ -244,15 +244,8 @@ commenting_rules:
 - **Better context**: Smaller modules provide clearer context for AI
 
 ### 🧠 Pick the Model That Works for the Task
-**Choose the right AI tool for each specific need**
 
-| Task Type           | Recommended Model(s)                | Why                                      |
-|---------------------|-------------------------------------|------------------------------------------|
-| **Code Generation** | Use the latest, high-quality code generation models | Strong reasoning and code quality        |
-| **Code Explanation**| Use models optimized for code understanding and explanation | Excellent at breaking down complex logic |
-| **Refactoring**     | Use advanced models capable of code transformation | Good at maintaining and improving code structure |
-| **Documentation**   | Use models with strong natural language capabilities | Natural language excellence              |
-| **Security Review** | Use specialized security tools and advanced AI models | Domain-specific knowledge needed         |
+Selecting the appropriate AI tool for each task is essential for effective results. For code generation, opt for the latest, high-quality models that excel in reasoning and code quality. When you need code explanation, choose models specifically optimized for understanding and breaking down complex logic. For refactoring, advanced models capable of code transformation are best, as they help maintain and improve code structure. Documentation tasks benefit from models with strong natural language capabilities, ensuring clarity and thoroughness. For security reviews, rely on specialized security tools and advanced AI models that possess domain-specific knowledge to identify and address potential vulnerabilities.
 
 Note: Use only organisation-approved models. Consider data residency, privacy and IP licensing constraints, and cost/latency trade-offs when selecting models for workflows.
 
@@ -280,14 +273,14 @@ Note: Use only organisation-approved models. Consider data residency, privacy an
 A good agent is like a developer in training mode, needs clear rules. These house rules ensure AI agents operate safely and effectively within your organization.
 
 ### Core Principles
-| Rule | Description | Example |
-|------|-------------|---------|
-| **Never Self-Deploy** | AI suggests, humans deploy | AI creates PR, human merges |
-| **No Secrets in Prompts** | Always mask sensitive data | Use `***` for passwords |
-| **Mandatory Logging** | Log all AI interactions | Every prompt/response recorded |
-| **Ask "Why" Not "What"** | Challenge AI reasoning | "Why this approach?" |
-| **Least Privilege** | Minimal AI permissions | Read-only access by default |
-| **Human in Loop** | Mandatory approval gates | No autonomous deployments |
+| Rule                     | Description                | Example                        |
+|--------------------------|----------------------------|--------------------------------|
+| **Never Self-Deploy**    | AI suggests, humans deploy | AI creates PR, human merges    |
+| **No Secrets in Prompts**| Always mask sensitive data | Use `***` for passwords        |
+| **Mandatory Logging**    | Log all AI interactions    | Every prompt/response recorded |
+| **Ask "Why" Not "What"** | Challenge AI reasoning     | "Why this approach?"           |
+| **Least Privilege**      | Minimal AI permissions     | Read-only access by default    |
+| **Human in Loop**        | Mandatory approval gates   | No autonomous deployments      |
 
 ### 🔒 Isolate Tasks
 **Limit context window for focused execution**
