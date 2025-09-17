@@ -9,7 +9,7 @@ Vibe Coding represents a **methodology** that blends AI-driven suggestions with 
 
 ## 🤔 Why This Matters?
 
-Over roughly the past 18–24 months, many teams have seen rapid adoption of AI-assisted development — tools like Copilot, Cursor, and Claude Desktop are beginning to change how code gets written.
+Over roughly the past 18–24 months, many teams have seen rapid adoption of AI-assisted development — AI coding assistants and development tools are beginning to change how code gets written.
 
 This isn't just autocomplete; we're seeing **agentic workflows**—AI systems that plan multi-step work, call tools (for example, repos and CLIs), and iterate under human oversight. Capabilities vary by tool, and maturity differs across organisations. This is a big shift in software delivery.
 

@@ -171,10 +171,10 @@ This schedule and alerting framework helps ensure that compliance and security r
 
 - **Approved Tools Registry:**
   - Only tools listed in the approved registry may be used for AI-assisted development.
-    - *Cursor IDE* (version 1.2.3)
-    - *GitHub Copilot* (Enterprise edition)
-    - *Claude API* (approved endpoints only)
-    - *Other tools*
+    - *AI Development Environment* (approved version)
+    - *Enterprise AI Assistant* (enterprise edition)
+    - *AI API Services* (approved endpoints only)
+    - *Other approved tools*
 
 - **Monitoring:**
   - Usage tracking is enabled for all MCP tools to ensure proper oversight.
