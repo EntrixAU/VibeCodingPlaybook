@@ -59,7 +59,7 @@ _A practical six-step roadmap to adopt AI-assisted development securely and at s
 - Implement input/output logging for AI interactions with privacy filtering and PII minimisation.
 - Apply permission boundaries: scoped tokens, branch protections, environment isolation.
 - Configure continuous monitoring and alerting for model performance, misuse, and policy violations.
-- Map controls to frameworks (e.g., ISO 27001, SOC 2, APRA CPS) and prepare audit evidence.
+- Map controls to applicable regulatory frameworks and prepare audit evidence.
 
 ## 4. Pilot & Training
 
@@ -111,3 +111,57 @@ _A practical six-step roadmap to adopt AI-assisted development securely and at s
 - Track outcomes with dashboards (delivery, quality, security, adoption); run post-incident reviews.
 - Define sunset and upgrade criteria for tools; manage deprecations.
 - Foster a culture of augmentation, not replacement; recognise contributors and champions.
+
+---
+
+## 🎯 Implementation Roadmap in reality
+```markdown
+### Phase 1: Foundation
+- [ ] Implement basic SAST/SCA scanning
+- [ ] Set up secret scanning and linting
+- [ ] Create initial AI code review checklists
+- [ ] Establish branch protection rules
+
+### Phase 2: Enhancement
+- [ ] Deploy DAST and infrastructure scanning
+- [ ] Implement policy as code framework
+- [ ] Create automated compliance checking
+- [ ] Set up continuous monitoring
+
+### Phase 3: Advanced Integration
+- [ ] Deploy AI-augmented review processes
+- [ ] Implement comprehensive SBOM generation
+- [ ] Set up MCP addons for structured access
+- [ ] Create advanced risk assessment algorithms
+
+### Phase 4: Optimization (Ongoing)
+- [ ] Refine policies based on learnings
+- [ ] Optimize performance of security scans
+- [ ] Enhance AI review assistance
+- [ ] Continuous improvement of processes
+```
+
+
+---
+
+## 📊 Daily Workflow Checklist
+```markdown
+### Before Using AI
+- [ ] Review AI suggestions before accepting
+- [ ] Run security scans on AI-generated code
+- [ ] Document prompt used for future reference
+- [ ] Ensure test coverage meets standards
+- [ ] Verify compliance with coding standards
+
+### During Development
+- [ ] Use appropriate AI model for the task
+- [ ] Apply secure prompting patterns
+- [ ] Maintain human oversight at critical points
+- [ ] Log all AI interactions for audit
+
+### After AI Generation
+- [ ] Conduct thorough code review
+- [ ] Run comprehensive security scans
+- [ ] Validate against business requirements
+- [ ] Update documentation and tests
+```

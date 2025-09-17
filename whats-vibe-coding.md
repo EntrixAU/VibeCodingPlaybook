@@ -19,7 +19,7 @@ While this creates incredible opportunities, it also raises questions that can't
 |----------------|---------------|
 | **Team Readiness** | Are our teams ready for this change? |
 | **Security** | How do we keep security intact? |
-| **Compliance** | How do we stay compliant with ISO or APRA regulations? |
+| **Compliance** | How do we stay compliant with regulatory requirements? |
 | **Quality** | What does this mean for code quality? |
 
 Think about your own teams — how many hours have been saved by AI tools this year? And how many new risks might have slipped in as a result?

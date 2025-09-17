@@ -310,7 +310,7 @@ This PR implements user authentication using AI-generated code.
 ## Review Focus Areas
 1. **Security Review Required**: Password hashing implementation
 2. **Performance Impact**: Database query optimisation needed
-3. **Compliance Check**: GDPR compliance for user data handling
+3. **Compliance Check**: Data protection compliance for user data handling
 
 ## Automated Checks Status
 - ✅ SAST scan passed
@@ -375,57 +375,6 @@ _If you don't have tools (highly recommended to have some), then you can use thi
 - [ ] Access controls properly implemented
 ```
 
----
-
-## 📊 Daily Workflow Checklist
-```markdown
-### Before Using AI
-- [ ] Review AI suggestions before accepting
-- [ ] Run security scans on AI-generated code
-- [ ] Document prompt used for future reference
-- [ ] Ensure test coverage meets standards
-- [ ] Verify compliance with coding standards
-
-### During Development
-- [ ] Use appropriate AI model for the task
-- [ ] Apply secure prompting patterns
-- [ ] Maintain human oversight at critical points
-- [ ] Log all AI interactions for audit
-
-### After AI Generation
-- [ ] Conduct thorough code review
-- [ ] Run comprehensive security scans
-- [ ] Validate against business requirements
-- [ ] Update documentation and tests
-```
----
-
-## 🎯 Implementation Roadmap
-```markdown
-### Phase 1: Foundation
-- [ ] Implement basic SAST/SCA scanning
-- [ ] Set up secret scanning and linting
-- [ ] Create initial AI code review checklists
-- [ ] Establish branch protection rules
-
-### Phase 2: Enhancement
-- [ ] Deploy DAST and infrastructure scanning
-- [ ] Implement policy as code framework
-- [ ] Create automated compliance checking
-- [ ] Set up continuous monitoring
-
-### Phase 3: Advanced Integration
-- [ ] Deploy AI-augmented review processes
-- [ ] Implement comprehensive SBOM generation
-- [ ] Set up MCP addons for structured access
-- [ ] Create advanced risk assessment algorithms
-
-### Phase 4: Optimization (Ongoing)
-- [ ] Refine policies based on learnings
-- [ ] Optimize performance of security scans
-- [ ] Enhance AI review assistance
-- [ ] Continuous improvement of processes
-```
 ---
 
 ## 💡 Pro Tips for Success

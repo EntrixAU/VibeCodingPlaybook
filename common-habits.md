@@ -84,7 +84,7 @@ AI is probabilistic. If your prompt is vague — 'make me a login form' — you 
 ### 🔒 Ignoring security/compliance standards
 **Anti-Pattern**: Forgetting that compliance requirements still apply
 
-Many teams forget that **APRA, ISO 27001, SOC2 still apply**. AI code must go through the same secure SDLC process as human code. No shortcuts.
+Many teams forget that **regulatory and compliance frameworks still apply**. AI code must go through the same secure SDLC process as human code. No shortcuts.
 
 **Common Scenarios**:
 - Skipping security scans for "simple" AI code
@@ -173,7 +173,7 @@ When those mistakes become habits, they translate into real risks. These are the
 
 ### Compliance Failures, Business Reputation Risk
 - In financial services, healthcare, or government, you can't plead ignorance
-- **ISO 27001, APRA, SOC2** — they all expect software to go through controlled, auditable processes
+- **Regulatory frameworks** — they all expect software to go through controlled, auditable processes
 - AI-generated shortcuts won't pass audits
 
 ### Accountability Gaps, Who Owns What?
@@ -230,25 +230,3 @@ When those mistakes become habits, they translate into real risks. These are the
 2. **Are we measuring the right things?** Productivity vs. quality vs. security?
 3. **Are we prepared for AI incidents?** Do we have response procedures?
 4. **Are we staying current?** Do we adapt to new AI capabilities and risks?
-
----
-
-## Red Flags to Watch For
-
-### Individual Warning Signs
-- Accepting AI suggestions without reading them
-- Unable to debug AI-generated code
-- Avoiding tasks that AI can't help with
-- Declining manual coding skills
-
-### Team Warning Signs
-- Inconsistent code quality between developers
-- Increasing security vulnerabilities
-- Longer debugging sessions for AI code
-- Resistance to AI code review processes
-
-### Organizational Warning Signs
-- Rising security incidents involving AI code
-- Compliance audit failures
-- Developer skill degradation
-- Over-dependence on specific AI tools
