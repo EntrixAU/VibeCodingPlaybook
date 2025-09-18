@@ -53,7 +53,7 @@ As AI handles more routine tasks, developers need to evolve their skills toward 
 - Engineering managers overseeing AI tool adoption
 
 **🏢 Enterprise Leaders**
-- CTOs and engineering directors planning AI strategy
+- CTOs and engineering leads planning AI strategy
 - Security teams ensuring safe AI implementation
 - Compliance officers managing regulatory requirements
 
