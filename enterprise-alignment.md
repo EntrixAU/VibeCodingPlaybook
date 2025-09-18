@@ -37,7 +37,7 @@ Integrating AI-assisted development into enterprise environments while maintaini
 
 ---
 
-## 🏢 Enterprise Challenges
+## Enterprise Challenges
 
 ### The Compliance Imperative
 
@@ -57,7 +57,7 @@ This fundamental question drives enterprise AI governance strategy.
 
 ---
 
-## 🎯 Enterprise AI Governance Framework
+## Enterprise AI Governance Framework
 
 ### 1. Policy Foundation
 
@@ -189,7 +189,7 @@ This schedule and alerting framework helps ensure that compliance and security r
 
 ---
 
-## 📊 Enterprise Metrics and KPIs
+## Enterprise Metrics and KPIs
 
 ### Governance Effectiveness Metrics
 Define KPI categories and example signals to track policy effectiveness and outcomes:
@@ -202,7 +202,7 @@ Define KPI categories and example signals to track policy effectiveness and outc
 #### AI Development Quality
 Monitor test coverage, code complexity, and maintainability for AI-assisted changes. Compare against human-only baselines to detect regressions.
 
-## 🔍 Audit and Assurance
+## Audit and Assurance
 
 ### Audit Preparation Framework
 Create an audit runbook that enumerates controls, evidence locations, owners, and sampling procedures. Rehearse quarterly using dry‑runs to ensure evidence is complete and retrievable.
@@ -245,7 +245,7 @@ These requirements help ensure that all AI-related activities are fully traceabl
 
 ---
 
-## 🚨 Risk Management
+## Risk Management
 
 ### AI-Specific Risk Framework
 
@@ -335,11 +335,11 @@ This approach enables consistent, transparent, and auditable risk assessments fo
 
 ---
 
-## 👥 Process & People Framework
+## Process & People Framework
 
 Successful AI implementation requires both robust processes and engaged people. Here's how to build the organisational foundation for sustainable AI-assisted development.
 
-### 🔄 Continuous Feedback/Improve
+### Continuous Feedback/Improve
 **Maintain development excellence through feedback**
 
 - **Developers still matter**: Human expertise remains crucial for quality and innovation
@@ -367,7 +367,7 @@ Successful AI implementation requires both robust processes and engaged people. 
   - Quarterly tool evaluation
   - Bi-annual strategy update
 
-### 🏆 Establish a CoE (Centre of Excellence)
+### Establish a CoE (Centre of Excellence)
 **Build organisational AI expertise**
 
 - **Appoint champions**: Identify and empower AI advocates across teams
@@ -396,7 +396,7 @@ The Centre of Excellence (CoE) should be structured to provide leadership, foste
 - Develop and update AI-related policies
 - Coordinate incident response for AI-related issues
 
-### 🔴 Red-team Reviews
+### Red-team Reviews
 **Enhanced scrutiny for AI-generated code**
 
 - **Validate AI-driven pull requests with more scrutiny**: Specialized review process for AI code
@@ -429,7 +429,7 @@ The Centre of Excellence (CoE) should be structured to provide leadership, foste
 - Compliance must be verified
 - All automated tests must pass
 
-### 📚 Training
+### Training
 **Comprehensive education program**
 
 The training program consists of several key components:
@@ -460,7 +460,7 @@ The training program consists of several key components:
 **Continuous Education:**
 - Ongoing learning opportunities such as monthly lunch-and-learn sessions, quarterly security updates, and annual attendance at AI conferences to keep teams up to date with the latest developments and best practices.
 
-### 📋 Review & Update Policies
+### Review & Update Policies
 
 The AI based development landscape changes quite significantly. Reviewing and adapting policies are a must for an enterprise to stay on top of this ever changing realm.
 
@@ -501,11 +501,11 @@ The AI based development landscape changes quite significantly. Reviewing and ad
 
 ---
 
-## 🏛️ Advanced Governance Patterns
+## Advanced Governance Patterns
 
 Effective governance transforms AI-assisted development from a risk into a competitive advantage. These patterns provide structure, accountability, and compliance while maintaining development velocity.
 
-### 📋 Spec-Driven Development
+### Spec-Driven Development
 
 #### GitHub Spec Flow Pattern
 
@@ -517,7 +517,7 @@ Link specifications to Jira stories for complete traceability.
 #### MCP Based Integration
 Use a MCP tool that can fetch requirements from requirements management tool which can inject context into the agent's chat. Rather than using requirements as code or copying and pasting requirements into the prompt, use MCP to achieve the same outcome.
 
-### 🏛️ Advanced Policy as Code
+### Advanced Policy as Code
 
 #### Policy Categories
 
@@ -536,7 +536,7 @@ Use a MCP tool that can fetch requirements from requirements management tool whi
 - Review approval workflows
 - Change management procedures
 
-### 📝 Enterprise Audit-Ready Logs
+### Enterprise Audit-Ready Logs
 
 #### Comprehensive Logging Strategy
 Define a schema for AI event logging across tools. Normalise key fields (identity, model, input/output hashes, decision records) and centralise in your SIEM/GRC for correlation with code, CI, and deployment events.
@@ -547,7 +547,7 @@ Define a schema for AI event logging across tools. Normalise key fields (identit
 - **Immutability**: Write-once, tamper-evident storage
 - **Search Capability**: Full-text search for investigations
 
-### 🔌 Secure MCP & AI Agent Patterns
+### Secure MCP & AI Agent Patterns
 
 **Managed Control Points (MCPs)** and AI agents must be designed with robust security patterns to ensure safe integration and operation within enterprise environments.
 

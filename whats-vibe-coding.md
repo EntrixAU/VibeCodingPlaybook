@@ -7,7 +7,7 @@ _A methodology that blends AI assistance with human judgment and governance._
 
 Vibe Coding represents a **methodology** that blends AI-driven suggestions with **human creativity** and expertise. It goes far beyond simple autocomplete functionality, establishing a structured collaboration between developers and AI systems.
 
-## 🤔 Why This Matters?
+## Why This Matters?
 
 Over roughly the past 18–24 months, many teams have seen rapid adoption of AI-assisted development — AI coding assistants and development tools are beginning to change how code gets written.
 
@@ -26,7 +26,7 @@ Think about your own teams — how many hours have been saved by AI tools this y
 
 > *"But while the AI can produce working code fast, accountability doesn't shift. The organisation and its developers are still responsible for security, compliance, and maintainability."*
 
-## 🚀 The Promise
+## The Promise
 
 So why are teams adopting vibe coding at this pace? It's because of the promise it offers:
 
@@ -51,35 +51,35 @@ So why are teams adopting vibe coding at this pace? It's because of the promise 
 
 > Note: Actual impact varies. Establish a baseline and measure locally (for example, lead time for changes, PR cycle time, change failure rate, and defect rates) to validate outcomes.
 
-## ⚠️ But... The Reality Check
+## But... The Reality Check
 
 **But** — and this is a big but — with all these promises come pitfalls. The common mistakes teams make when adopting vibe coding can be dangerous.
 
 ## Key Benefits
 
-### 🚀 Accelerated Productivity
+### Accelerated Productivity
 - Faster code generation and boilerplate creation
 - Reduced time spent on repetitive tasks
 - Quick exploration of alternative approaches
 
-### 💡 Unlocks New Ways of Thinking
+### Unlocks New Ways of Thinking
 - AI suggests patterns you might not have considered
 - Cross-language knowledge transfer
 - Fresh perspectives on problem-solving
 
-### 📋 Enforces Standards (When Governed Correctly)
+### Enforces Standards (When Governed Correctly)
 - Consistent coding patterns across teams
 - Automated adherence to style guides
 - Built-in best practice suggestions
 
 ## Challenges to Address
 
-### ⚠️ Risk of Blind Trust in AI
+### Risk of Blind Trust in AI
 - AI generates plausible, not always correct, solutions
 - Developers may accept suggestions without proper review
 - False sense of security in AI-generated code
 
-### 🏛️ Governance Overhead
+### Governance Overhead
 - Need for new review processes
 - Compliance and audit trail requirements
 - IP and licensing considerations

@@ -114,7 +114,7 @@ _A practical six-step roadmap to adopt AI-assisted development securely and at s
 
 ---
 
-## 🎯 Implementation Roadmap in reality
+## Implementation Roadmap in reality
 ```markdown
 ### Phase 1: Foundation
 - [ ] Implement basic SAST/SCA scanning
@@ -143,7 +143,7 @@ _A practical six-step roadmap to adopt AI-assisted development securely and at s
 
 ---
 
-## 📊 Daily Workflow Checklist
+## Daily Workflow Checklist
 ```markdown
 ### Before Using AI
 - [ ] Review AI suggestions before accepting

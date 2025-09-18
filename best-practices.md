@@ -102,7 +102,7 @@ Transform AI-assisted development from a risk into a competitive advantage with 
 - **Use in prompts**: Reference specs directly in AI instructions
 - **Iterative refinement**: Improve specs based on AI output quality
 
-## 🧾 Master the Instruction files
+## Master the Instruction files
 
 Design a lightweight instruction file that sets boundaries, embeds context, and defines how the AI should behave. Keep it short, version it with your code, and link to it from prompts.
 
@@ -311,7 +311,7 @@ Note: Use only organisation-approved models. Consider data residency, privacy an
   
 ---
 
-## 🏠 AI Coding Agent House Rules
+## AI Coding Agent House Rules
 
 **A good agent is like a developer in training mode, needs clear rules. These house rules ensure AI agents operate safely and effectively within your organisation.**
 
@@ -352,7 +352,7 @@ Note: Use only organisation-approved models. Consider data residency, privacy an
 
 ---
 
-## 🔒 DevSecOps Strategies for Safe Use of AI
+## DevSecOps Strategies for Safe Use of AI
 
 Implementing comprehensive DevSecOps strategies ensures AI-assisted development maintains security, compliance, and quality throughout the development lifecycle.
 
@@ -490,7 +490,7 @@ policies:
 
 ---
 
-## 🧹 Prompt Engineering Hygiene
+## Prompt Engineering Hygiene
 
 #### Prompt Engineering Hygiene Best Practices
 
@@ -541,7 +541,7 @@ policies:
 
 ---
 
-## 📊 Audit Trails & Logging
+## Audit Trails & Logging
 
 ### What to Log
 - **Prompt inputs** - What was requested
@@ -553,7 +553,7 @@ policies:
 
 ---
 
-## 🔍 Review Checklist
+## Review Checklist
 
 _If you don't have tools (highly recommended to have some), then you can use this simple checklist as a way of validation. Not a perfect list or a one size fits all but a good starting point._
 
@@ -585,7 +585,7 @@ _If you don't have tools (highly recommended to have some), then you can use thi
 
 ---
 
-## 💡 Pro Tips for Success
+## Pro Tips for Success
 
 ### Prompt Engineering
 - **Be specific**: Vague prompts = unpredictable results

@@ -9,25 +9,25 @@ Understanding the patterns that emerge when teams adopt AI-assisted development 
 
 ## Good Habits That Emerge
 
-### 🚀 Accelerated Experimentation
+### Accelerated Experimentation
 **Pattern**: Developers try more approaches faster
 - **Benefit**: Increased innovation and solution exploration
 - **Example**: Testing 3-4 different algorithms in the time it used to take for one
 - **Best Practice**: Document experiments and learnings
 
-### 💡 Enhanced Learning
+### Enhanced Learning
 **Pattern**: Learning new technologies through AI guidance
 - **Benefit**: Faster skill acquisition across languages and frameworks
 - **Example**: Python developer quickly picking up Rust with AI assistance
 - **Best Practice**: Validate AI explanations with official documentation
 
-### 🔍 Better Code Review Culture
+### Better Code Review Culture
 **Pattern**: More thorough reviews due to AI-generated code scrutiny
 - **Benefit**: Higher overall code quality
 - **Example**: Teams developing specific checklists for AI-generated code
 - **Best Practice**: Treat AI code with same rigor as external contractor code
 
-### 📚 Documentation-First Thinking
+### Documentation-First Thinking
 **Pattern**: Writing better prompts leads to better documentation
 - **Benefit**: Clearer requirements and specifications
 - **Example**: Teams creating prompt libraries that double as specs
@@ -49,7 +49,7 @@ Some teams treat AI-generated code as production-ready. No peer review, no tests
 - Performance issues
 - Maintenance nightmares
 
-### 🏃‍♂️ Shadow IT/dev, by passing governance
+### Shadow IT/dev, by passing governance
 **Anti-Pattern**: Using AI tools outside established governance frameworks
 
 Because AI makes coding easy, people outside engineering can spin up scripts or apps without governance. These tools often run outside DevSecOps pipelines, creating serious security and compliance blind spots.
@@ -101,7 +101,7 @@ Many teams forget that **regulatory and compliance frameworks still apply**. AI 
 - Never auto-merge AI commits
 - Regular security training for AI-assisted development
 
-### 📋 Copy-Paste Culture 2.0
+### Copy-Paste Culture 2.0
 **Anti-Pattern**: Treating AI like an advanced copy-paste tool
 
 **Problems**:
