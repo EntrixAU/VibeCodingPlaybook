@@ -7,6 +7,36 @@ _Governance, compliance, and platform patterns for AI-assisted delivery at scale
 
 Integrating AI-assisted development into enterprise environments while maintaining compliance, security, and operational excellence.
 
+## Table of Contents
+
+- [Enterprise Challenges](#enterprise-challenges)
+  - [The Compliance Imperative](#the-compliance-imperative)
+- [Enterprise AI Governance Framework](#enterprise-ai-governance-framework)
+  - [1. Policy Foundation](#1-policy-foundation)
+  - [2. Architectural Integration](#2-architectural-integration)
+  - [3. Compliance Automation](#3-compliance-automation)
+  - [Compliance Monitoring Schedule](#compliance-monitoring-schedule)
+- [Enterprise Metrics and KPIs](#enterprise-metrics-and-kpis)
+  - [Governance Effectiveness Metrics](#governance-effectiveness-metrics)
+- [Audit and Assurance](#audit-and-assurance)
+  - [Audit Preparation Framework](#audit-preparation-framework)
+- [Risk Management](#risk-management)
+  - [AI-Specific Risk Framework](#ai-specific-risk-framework)
+  - [AI Risk Framework](#ai-risk-framework)
+- [Process & People Framework](#process--people-framework)
+  - [Continuous Feedback/Improve](#continuous-feedbackimprove)
+  - [Establish a CoE (Centre of Excellence)](#establish-a-coe-centre-of-excellence)
+  - [Red-team Reviews](#red-team-reviews)
+  - [Training](#training)
+  - [Review & Update Policies](#review--update-policies)
+- [Advanced Governance Patterns](#advanced-governance-patterns)
+  - [Spec-Driven Development](#spec-driven-development)
+  - [Advanced Policy as Code](#advanced-policy-as-code)
+  - [Enterprise Audit-Ready Logs](#enterprise-audit-ready-logs)
+  - [Secure MCP & AI Agent Patterns](#secure-mcp--ai-agent-patterns)
+
+---
+
 ## 🏢 Enterprise Challenges
 
 ### The Compliance Imperative
