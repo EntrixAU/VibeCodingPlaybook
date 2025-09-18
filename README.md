@@ -23,7 +23,7 @@ How to use this repo
 - Treat examples as starting points; adapt to your stack, policies, and risk appetite
 - Measure locally: establish baselines (lead time, PR cycle time, change failure rate, defect density) and validate outcomes
 
-Contributing
+Contributing - [Read more here](CONTRIBUTING.md)
 ------------
 Contributions are very welcome—from fixes and examples to entirely new sections. Please:
 
@@ -50,20 +50,9 @@ If you’ve tried these practices, learned something new, or built internal tool
 - Prompting patterns and instruction files that improved quality or safety
 - Metrics you track and how you measure impact
 
-Local development
------------------
-This is a Jekyll site compatible with GitHub Pages. To run locally:
-
-```bash
-bundle install
-bundle exec jekyll serve
-```
-
-Then open http://localhost:4000/VibeCodingPlaybook/ (or your baseurl) in a browser.
-
-License
+Licence
 -------
-Copyright (c) 2025. Licensed under the MIT License. See LICENSE for details.
+Copyright (c) 2025. Licensed under the MIT Licence. See LICENSE for details.
 
 Acknowledgements
 ----------------

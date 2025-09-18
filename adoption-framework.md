@@ -46,7 +46,7 @@ _A practical six-step roadmap to adopt AI-assisted development securely and at s
 ## 3. Security & Compliance
 
 ### Why this step
-- AI-generated and assisted code can introduce vulnerabilities and license issues at scale.
+- AI-generated and assisted code can introduce vulnerabilities and licence issues at scale.
 - Data flowing through AI tools can create exposure without proper controls.
 
 ### Purpose
@@ -55,7 +55,7 @@ _A practical six-step roadmap to adopt AI-assisted development securely and at s
 
 ### Activities
 - Integrate SAST/DAST/SCA and dependency updates (Dependabot) into pipelines.
-- Enable secret scanning, commit signing, and SBOM generation; enforce license policies.
+- Enable secret scanning, commit signing, and SBOM generation; enforce licence policies.
 - Implement input/output logging for AI interactions with privacy filtering and PII minimisation.
 - Apply permission boundaries: scoped tokens, branch protections, environment isolation.
 - Configure continuous monitoring and alerting for model performance, misuse, and policy violations.
@@ -134,13 +134,12 @@ _A practical six-step roadmap to adopt AI-assisted development securely and at s
 - [ ] Set up MCP addons for structured access
 - [ ] Create advanced risk assessment algorithms
 
-### Phase 4: Optimization (Ongoing)
+### Phase 4: Optimisation (Ongoing)
 - [ ] Refine policies based on learnings
-- [ ] Optimize performance of security scans
+- [ ] Optimise performance of security scans
 - [ ] Enhance AI review assistance
 - [ ] Continuous improvement of processes
 ```
-
 
 ---
 

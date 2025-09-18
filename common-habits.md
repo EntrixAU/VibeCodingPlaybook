@@ -39,7 +39,7 @@ Understanding the patterns that emerge when teams adopt AI-assisted development 
 
 Every new paradigm comes with enthusiasm — but also with mistakes. With vibe coding, I see the same patterns repeating across teams:
 
-### 🤖 Over-reliance on AI, No Reviews, Testing
+### Over-reliance on AI, No Reviews, Testing
 **Anti-Pattern**: Treating AI-generated code as production-ready
 
 Some teams treat AI-generated code as production-ready. No peer review, no tests. This is dangerous. **AI can be right 90% of the time, but it's the 10% you miss that creates the biggest risks** — the bugs, the vulnerabilities, the outages.
@@ -60,7 +60,7 @@ Because AI makes coding easy, people outside engineering can spin up scripts or 
 - Compliance violations
 - Shadow applications without proper oversight
 
-### 🎯 Poor prompting, risky outputs, assuming AI "gets it"
+### Poor prompting, risky outputs, assuming AI "gets it"
 **Anti-Pattern**: Using vague prompts and accepting whatever AI produces
 
 AI is probabilistic. If your prompt is vague — 'make me a login form' — you might get insecure code. Without constraints or context, the AI fills gaps on its own, often in unsafe ways.
@@ -81,7 +81,7 @@ AI is probabilistic. If your prompt is vague — 'make me a login form' — you 
 - Comprehensive error handling without info leakage"
 ```
 
-### 🔒 Ignoring security/compliance standards
+### Ignoring security/compliance standards
 **Anti-Pattern**: Forgetting that compliance requirements still apply
 
 Many teams forget that **regulatory and compliance frameworks still apply**. AI code must go through the same secure SDLC process as human code. No shortcuts.
@@ -109,7 +109,7 @@ Many teams forget that **regulatory and compliance frameworks still apply**. AI 
 - Inconsistent patterns within teams
 - Technical debt accumulation
 
-### 🧠 Erosion of critical thinking and dev skills
+### Erosion of critical thinking and dev skills
 **Anti-Pattern**: Over-dependence leading to skill atrophy
 
 Finally, there's the human side. If juniors rely on AI for every solution, they skip the hard lessons of debugging and problem-solving. Over time, the team loses critical engineering muscle.
@@ -128,7 +128,7 @@ Finally, there's the human side. If juniors rely on AI for every solution, they 
 - Loss of institutional knowledge
 - Reduced innovation capacity
 
-### 🔐 Prompt Injection Vulnerability
+### Prompt Injection Vulnerability
 **Prompt injection** is a new class of vulnerability unique to AI-assisted development. It occurs when untrusted or user-controlled input is included directly in prompts sent to AI models, allowing attackers to manipulate the AI's output or behavior.
 
 **How it happens**:

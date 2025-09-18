@@ -13,7 +13,7 @@ This playbook reflects my personal opinions, based on my experience and research
 
 This documentation is based on real-world experience implementing AI-assisted development across enterprise environments. It provides practical, actionable guidance that you can implement immediately in your development workflow.
 
-The goal isn't to slow down development or add bureaucracy - it's to help you harness AI's power while avoiding the pitfalls that are already causing problems in organizations worldwide.
+The goal isn't to slow down development or add bureaucracy - it's to help you harness AI's power while avoiding the pitfalls that are already causing problems in organisations worldwide.
 
 ## The Reality of AI-Assisted Development Today
 
@@ -37,9 +37,9 @@ The window for establishing good practices is closing fast. As AI tools become m
 AI-generated code can introduce vulnerabilities that traditional security training doesn't cover. Developers need to understand prompt injection, model limitations, and AI-specific attack vectors.
 
 **📋 Establish Governance Before It's Too Late**  
-Regulatory bodies are starting to pay attention to AI in software development. Organizations that establish proper governance now will avoid painful retrofitting later.
+Regulatory bodies are starting to pay attention to AI in software development. Organisations that establish proper governance now will avoid painful retrofitting later.
 
-**🎯 Maximize AI's Potential**  
+**🎯 Maximise AI's Potential**  
 Developers using AI haphazardly are leaving massive productivity gains on the table. Structured approaches can 10x the value of AI assistance.
 
 **👥 Maintain Human Skills**  
@@ -78,3 +78,6 @@ As AI handles more routine tasks, developers need to evolve their skills toward 
 
 ### **(05) Adoption Framework**
 [Step-by-step implementation](adoption-framework) - A structured approach to rolling out AI-assisted development across your organisation.
+
+### **(06) References**
+[Useful links and standards](references) - Curated resources for AI-assisted development, security, governance, and architecture.

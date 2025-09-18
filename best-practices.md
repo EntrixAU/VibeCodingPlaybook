@@ -10,50 +10,59 @@ Transform AI-assisted development from a risk into a competitive advantage with 
 ## Table of Contents
 
 ### Essential Best Practices
-- [🚫 Avoid Building Entire Features](#-avoid-building-entire-features)
-- [👥 Keep the Humans in the Loop](#-keep-the-humans-in-the-loop)
-- [🔍 Use Scanning Features](#-use-scanning-features)
-- [🎯 Craft Instructions Unique to You](#-craft-instructions-unique-to-you)
-- [🔒 Secure Prompting Patterns](#-secure-prompting-patterns)
-- [📋 Spec-Driven Prompts](#-spec-driven-prompts)
-- [📝 AI-Generated Code Documentation](#-ai-generated-code-documentation)
+- [Avoid Building Entire Features or Modules](#avoid-building-entire-features-or-modules)
+- [Keep the Humans in the Loop](#keep-the-humans-in-the-loop)
+- [Use Scanning Features](#use-scanning-features)
+- [Craft Instructions Unique to You](#craft-instructions-unique-to-you)
+- [Secure Prompting Patterns](#secure-prompting-patterns)
+- [Spec-Driven Prompts](#spec-driven-prompts)
+- [AI-Generated Code Documentation](#ai-generated-code-documentation)
 
 ### Implementation Guidance
-- [🧾 Instruction Examples](#-instruction-examples)
-- [🤖 AI for Non-Coding Tasks](#-ai-for-non-coding-tasks)
-- [📦 Modularise the Code](#-modularise-the-code)
-- [🧠 Pick the Model That Works for the Task](#-pick-the-model-that-works-for-the-task)
-- [📋 Plan Before Making Changes](#-plan-before-making-changes)
-- [⚠️ Fail Safe Mechanisms](#️-fail-safe-mechanisms)
+- [Master the Instruction Files](#master-the-instruction-files)
+- [AI for Non-Coding Tasks](#ai-for-non-coding-tasks)
+- [Reuse prompts](#reuse-prompts)
+- [Modularise the Code](#modularise-the-code)
+- [Pick the Model That Works for the Task](#pick-the-model-that-works-for-the-task)
+- [Plan Before Making Changes](#plan-before-making-changes)
+- [Fail Safe Mechanisms](#fail-safe-mechanisms)
+- [Validate MCP Tools](#validate-mcp-tools)
 
 ### AI Coding Agent House Rules
-- [🏠 AI Coding Agent House Rules](#-ai-coding-agent-house-rules)
-- [🔒 Isolate Tasks](#-isolate-tasks)
-- [💬 AI Comments](#-ai-comments)
-- [🔐 AI Permission Control](#-ai-permission-control)
-- [🔄 AI Feedback Loop](#-ai-feedback-loop)
+- [AI Coding Agent House Rules](#ai-coding-agent-house-rules)
+- [Isolate Tasks](#isolate-tasks)
+- [AI Comments](#ai-comments)
+- [AI Permission Control](#ai-permission-control)
+- [AI Feedback Loop](#ai-feedback-loop)
 
 ### Security & Operations
-- [🔒 DevSecOps Strategies for Safe Use of AI](#-devsecops-strategies-for-safe-use-of-ai)
-- [🧹 Prompt Engineering Hygiene](#-prompt-engineering-hygiene)
-- [📊 Audit Trails & Logging](#-audit-trails--logging)
-- [🔍 Review Checklist](#-review-checklist)
+- [DevSecOps Strategies for Safe Use of AI](#devsecops-strategies-for-safe-use-of-ai)
+  - [Automated Security Scanning](#automated-security-scanning)
+  - [Requirements as Code](#requirements-as-code)
+  - [Augmented Reviews](#augmented-reviews)
+  - [Policy as Code](#policy-as-code)
+  - [Continuous Monitoring](#continuous-monitoring)
+- [Prompt Engineering Hygiene](#prompt-engineering-hygiene)
+- [Audit Trails & Logging](#audit-trails--logging)
+- [Review Checklist](#review-checklist)
 
 ### Practical Resources
-- [💡 Pro Tips for Success](#-pro-tips-for-success)
+- [Pro Tips for Success](#pro-tips-for-success)
+- Tool Examples (Coming soon)
+- Prompt Examples (Coming soon)
 
 ---
 
 ## Essential Best Practices
 
-### 🚫 Avoid Building Entire Features
+### Avoid Building Entire Features or Modules
 **Focus on components, not complete systems**
 
 - **Build repeated code**: utility functions, helper functions, reusable code, templates, CRUD functions
 - **Don't build**: complete applications or complex business logic end-to-end
 - **Why**: AI excels at patterns but struggles with complex system architecture and business rules
 
-### 👥 Keep the Humans in the Loop
+### Keep the Humans in the Loop
 **Maintain human oversight at critical points**
 
 - **Code reviews**: Every AI-generated piece needs human review
@@ -61,7 +70,7 @@ Transform AI-assisted development from a risk into a competitive advantage with 
 - **CI/CD pipeline changes**: Human approval for deployment configurations
 - **Command execution**: Human verification before running AI-suggested commands
 
-### 🔍 Use Scanning Features
+### Use Scanning Features
 **Leverage automated security and quality checks**
 
 - **Scan code for**: leaked secrets, vulnerabilities, dependency issues
@@ -69,7 +78,7 @@ Transform AI-assisted development from a risk into a competitive advantage with 
 - **Regular audits**: Schedule periodic comprehensive scans
 - **Alert on findings**: Immediate notification for critical issues
 
-### 🎯 Craft Instructions Unique to You
+### Craft Instructions Unique to You
 **Customize AI prompts for your specific context**
 
 - **Craft instruction files**: Create prompts tailored to your tech stack, app, and software standards
@@ -77,7 +86,7 @@ Transform AI-assisted development from a risk into a competitive advantage with 
 - **Version control prompts**: Treat prompts like code - version and review them
 - **Team consistency**: Share effective prompts across the team
 
-### 🔒 Secure Prompting Patterns
+### Secure Prompting Patterns
 **Train developers and AI to use secure practices**
 
 - **Train developers**: Education on secure prompting techniques
@@ -85,7 +94,7 @@ Transform AI-assisted development from a risk into a competitive advantage with 
 - **Consistent patterns**: Establish standard secure prompting templates
 - **Regular updates**: Keep security patterns current with evolving threats
 
-### 📋 Spec-Driven Prompts
+### Spec-Driven Prompts
 **Break requirements into smaller, manageable specifications**
 
 - **Break requirements**: Decompose large features into smaller, specific tasks
@@ -93,7 +102,7 @@ Transform AI-assisted development from a risk into a competitive advantage with 
 - **Use in prompts**: Reference specs directly in AI instructions
 - **Iterative refinement**: Improve specs based on AI output quality
 
-## 🧾 Instruction Examples
+## 🧾 Master the Instruction files
 
 Design a lightweight instruction file that sets boundaries, embeds context, and defines how the AI should behave. Keep it short, version it with your code, and link to it from prompts.
 
@@ -203,7 +212,6 @@ Wait for approval gates before executing follow-up steps.
 Ensure AI-generated code is clearly identified and well-documented
 ```
 
-
 - **Mark AI-generated code**: Clearly identify AI-generated sections with comments
 - **Comprehensive documentation**: AI should document all functions, classes, and complex logic
 - **Instruction file guidance**: Create specific instructions for AI commenting standards
@@ -227,7 +235,7 @@ commenting_rules:
     - reference_specs: true
 ```
 
-### 🤖 AI for Non-Coding Tasks
+### AI for Non-Coding Tasks
 **Leverage AI beyond just code generation**
 
 - **Code explaining**: Use AI to document and explain existing code
@@ -235,7 +243,12 @@ commenting_rules:
 - **Architecture review**: Get suggestions for system design improvements
 - **Documentation**: Generate and maintain technical documentation
 
-### 📦 Modularise the Code
+### Reuse prompts
+**Ensure prompt best practices are documented and shared amongst the team to maximise reuse and consistency**
+
+Create a reusable library where you store your documentation or create prompts as MD files stored in the docs folder of your repo. If stored outside, use MCP tools to grab them during prompting. Check your AI coding tool's ability to reuse prompts and be consistent to achieve the outcome you desire.
+
+### Modularise the Code
 **Structure code for AI effectiveness**
 
 - **Smaller segments**: Break codebase into manageable modules
@@ -243,22 +256,24 @@ commenting_rules:
 - **Why**: LLMs struggle with large codebases and high line counts (LoC)
 - **Better context**: Smaller modules provide clearer context for AI
 
-### 🧠 Pick the Model That Works for the Task
+### Pick the Model That Works for the Task
 
-Selecting the appropriate AI tool for each task is essential for effective results. For code generation, opt for the latest, high-quality models that excel in reasoning and code quality. When you need code explanation, choose models specifically optimized for understanding and breaking down complex logic. For refactoring, advanced models capable of code transformation are best, as they help maintain and improve code structure. Documentation tasks benefit from models with strong natural language capabilities, ensuring clarity and thoroughness. For security reviews, rely on specialized security tools and advanced AI models that possess domain-specific knowledge to identify and address potential vulnerabilities.
+**Selecting the appropriate AI tool for each task is essential for effective results.**
+
+For code generation, opt for the latest, high‑quality models that excel in reasoning and code quality. When you need code explanation, choose models specifically optimised for understanding and breaking down complex logic. For refactoring, advanced models capable of code transformation are best, as they help maintain and improve code structure. Documentation tasks benefit from models with strong natural language capabilities, ensuring clarity and thoroughness. For security reviews, rely on specialised security tools and advanced AI models that possess domain‑specific knowledge to identify and address potential vulnerabilities.
 
 Note: Use only organisation-approved models. Consider data residency, privacy and IP licensing constraints, and cost/latency trade-offs when selecting models for workflows.
 
-### 📋 Plan Before Making Changes
-**Use structured approaches for AI-assisted development**
+### Plan Before Making Changes
+**Use structured approaches for AI-assisted development, brainstorm before execution to ensure the model understands your intentions**
 
 - **Ask or chat mode first**: Clarify the plan of attack before implementation
 - **Understand the approach**: Ensure AI's strategy aligns with your goals
 - **Then use agent mode**: Execute the planned approach systematically
 - **Iterative refinement**: Adjust plan based on results
 
-### ⚠️ Fail Safe Mechanisms
-**Build in controls and rollback capabilities**
+### Fail Safe Mechanisms
+**Build in controls and rollback capabilities, understand your tool's capabilities to undo/restore code if it makes a mistake or accidentally executes a command you didn't wish for**
 
 - **Control mechanisms**: Ways to stop or pause AI agent workflows
 - **Shutdown procedures**: Clear process to halt AI operations if needed
@@ -266,23 +281,41 @@ Note: Use only organisation-approved models. Consider data residency, privacy an
 - **Rollback controls**: Ability to undo AI-generated changes quickly
 - **Circuit breakers**: Automatic stops for suspicious or dangerous operations
 
+### Validate MCP Tools
+**Ensure tool security and compliance**
+
+- **Validate MCP tools for vulnerabilities**: Regular security assessments of all Model Context Protocol tools
+- **Compliance verification**: Ensure tools meet applicable regulatory requirements
+- **Ensure devs stick to governed set of tools**: Maintain approved tool registry and prevent shadow AI usage
+
+**Implementation Framework**:
+**MCP Tool Governance Framework**
+
+- **Approval Process:**
+  - All Model Context Protocol (MCP) tools must undergo a mandatory security assessment.
+  - Compliance review is required to ensure alignment with regulatory standards.
+  - Legal approval is necessary for any external tools.
+  - Performance evaluation must be completed before tool adoption.
+
+- **Approved Tools Registry:**
+  - Only tools listed in the approved registry may be used for AI-assisted development.
+    - *AI Development Environment* (approved version)
+    - *Enterprise AI Assistant* (enterprise edition)
+    - *AI API Services* (approved endpoints only)
+    - *Other approved tools*
+
+- **Monitoring:**
+  - Usage tracking is enabled for all MCP tools to ensure proper oversight.
+  - Continuous security scanning is performed to detect vulnerabilities.
+  - Compliance auditing occurs quarterly to verify ongoing adherence to policies.
+  
 ---
 
 ## 🏠 AI Coding Agent House Rules
 
-A good agent is like a developer in training mode, needs clear rules. These house rules ensure AI agents operate safely and effectively within your organization.
+**A good agent is like a developer in training mode, needs clear rules. These house rules ensure AI agents operate safely and effectively within your organisation.**
 
-### Core Principles
-| Rule                     | Description                | Example                        |
-|--------------------------|----------------------------|--------------------------------|
-| **Never Self-Deploy**    | AI suggests, humans deploy | AI creates PR, human merges    |
-| **No Secrets in Prompts**| Always mask sensitive data | Use `***` for passwords        |
-| **Mandatory Logging**    | Log all AI interactions    | Every prompt/response recorded |
-| **Ask "Why" Not "What"** | Challenge AI reasoning     | "Why this approach?"           |
-| **Least Privilege**      | Minimal AI permissions     | Read-only access by default    |
-| **Human in Loop**        | Mandatory approval gates   | No autonomous deployments      |
-
-### 🔒 Isolate Tasks
+### Isolate Tasks
 **Limit context window for focused execution**
 
 - **Limit context window**: Longer chats become more confusing for AI
@@ -290,7 +323,7 @@ A good agent is like a developer in training mode, needs clear rules. These hous
 - **Task boundaries**: Define clear scope and limitations
 - **Context management**: Keep conversations focused and relevant
 
-### 💬 AI Comments
+### AI Comments
 **Ensure generated code is readable and reviewable**
 
 - **Comment everything**: AI should comment all the way through
@@ -301,7 +334,7 @@ A good agent is like a developer in training mode, needs clear rules. These hous
 - **Traceability**: Include model version, generation date, and reviewer information
 - **Context preservation**: Document the prompt intent and business requirements
 
-### 🔐 AI Permission Control
+### AI Permission Control
 **Strict access control for AI agents**
 
 - **Clear boundary to operate under**: Define exactly what AI can and cannot do
@@ -309,7 +342,7 @@ A good agent is like a developer in training mode, needs clear rules. These hous
 - **No access to production resources**: Strict separation of environments
 - **Control tasks AI can and can't do**: Granular permission management
 
-### 🔄 AI Feedback Loop
+### AI Feedback Loop
 **Continuous improvement through structured feedback**
 
 - **Prompt → Code → Critique → Repeat**: Iterative refinement process
@@ -323,17 +356,51 @@ A good agent is like a developer in training mode, needs clear rules. These hous
 
 Implementing comprehensive DevSecOps strategies ensures AI-assisted development maintains security, compliance, and quality throughout the development lifecycle.
 
-### 🔍 Automated Security Scanning
+### Automated Security Scanning
 **Comprehensive security validation at every stage**
 
-#### SAST (Static Application Security Testing)
-#### Security Scanning Commands
-#### Policy Validation
+- **SAST (Static Application Security Testing)**: Analyze source code for security vulnerabilities before deployment
+- **SCA (Software Composition Analysis)**: Scan dependencies and third-party libraries for known vulnerabilities
+- **DAST (Dynamic Application Security Testing)**: Test running applications for security flaws
+- **Infrastructure configs & CSPM**: Validate cloud security posture and infrastructure configurations
+- **Secret scanning**: Detect and prevent hardcoded secrets, API keys, and credentials
+- **Linting**: Enforce coding standards and catch potential issues early
+- **Image Scanning**: If using containers, ensure images are scanned for any OS level or supply chain vulnerabilities
 
-### 📋 Requirements as Code
+**Implementation**:
+- Integrate scanning tools into CI/CD pipelines
+- Set up automated alerts for critical findings
+- Establish security gates that block deployments with high-risk vulnerabilities
+- Regular vulnerability assessments and penetration testing
+
+### Requirements as Code
 **Codify and automate compliance requirements**
 
-#### ADRs (Architecture Decision Records)
+- **ADRs (Architecture Decision Records)**: Document architectural decisions and their rationale
+- **ASVS (Application Security Verification Standard)**: Implement security requirements systematically
+- **Checklists**: Create standardised review checklists for AI-generated code
+
+**Implementation**:
+```yaml
+# security-requirements.yml
+security_standards:
+  authentication:
+    - multi_factor_required: true
+    - session_timeout: 30_minutes
+    - password_complexity: high
+  
+  data_protection:
+    - encryption_at_rest: required
+    - encryption_in_transit: required
+    - pii_handling: strict_compliance
+  
+  ai_specific:
+    - prompt_injection_protection: required
+    - model_output_validation: mandatory
+    - ai_decision_logging: comprehensive
+```
+
+#### ADR Example
 ```markdown
 # ADR-001: AI Code Generation Standards
 
@@ -341,7 +408,7 @@ Implementing comprehensive DevSecOps strategies ensures AI-assisted development 
 Accepted
 
 ## Context
-We need standardized approaches for AI code generation to ensure consistency and security.
+We need standardised approaches for AI code generation to ensure consistency and security.
 
 ## Decision
 - Use approved AI models for complex business logic generation
@@ -354,10 +421,14 @@ We need standardized approaches for AI code generation to ensure consistency and
 - Better long-term maintainability
 ```
 
-### ➕ Augmented Reviews
+### Augmented Reviews
 **AI-enhanced code review processes**
 
-#### AI PR Summaries
+- **AI PR Summaries**: Automated analysis of pull requests with AI-generated insights
+- **Missing tests detection**: Identify code changes that lack adequate test coverage
+- **Flag risky diffs**: Highlight potentially dangerous changes in security-critical areas
+
+**Implementation**:
 ```markdown
 # AI-Generated PR Summary
 
@@ -375,24 +446,98 @@ This PR implements user authentication using AI-generated code.
 2. **Performance Impact**: Database query optimisation needed
 3. **Compliance Check**: Data protection compliance for user data handling
 
-## Automated Checks Status
-- ✅ SAST scan passed
-- ✅ Secret scanning passed
-- ✅ Dependency scan passed
-- ⚠️ Performance test requires attention
 ```
 
-### 🚫 Policy as Code
+### Policy as Code
 **Automated policy enforcement**
+
+- **Enforce compliance checks**: Automatically validate code against organisational policies
+- **Block risky deployments**: Prevent deployment of code that fails security or compliance checks
+- **SBOM (Software Bill of Materials)**: Generate and maintain comprehensive software inventories
+
+**Implementation**:
+```yaml
+# policy-config.yml
+policies:
+  security:
+    - no_hardcoded_secrets: enforce
+    - dependency_vulnerabilities: block_high_critical
+    - code_coverage_minimum: 80%
+  
+  compliance:
+    - data_classification: required
+    - audit_logging: comprehensive
+    - access_controls: least_privilege
+  
+  ai_specific:
+    - ai_code_attribution: mandatory
+    - human_review_required: true
+    - prompt_sanitization: enforced
+```
+
+### Continuous Monitoring
+**Ongoing surveillance and alerting**
+
+- **AI agent use tracking**: Monitor and log all AI tool usage across the organisation
+- **Repository logs analysis**: Analyze code repository activity for anomalies
+- **Branch protection enforcement**: Ensure proper review processes are followed
+
+**Key Metrics to Monitor**:
+- AI-generated code percentage and quality trends
+- Security incident rates for AI-assisted vs. human-only code
+- Compliance violation patterns
+- Developer productivity and satisfaction metrics
 
 ---
 
 ## 🧹 Prompt Engineering Hygiene
 
-#### Security Rules
-#### Never Include Secrets in Prompts
-#### Mask Sensitive Data
-#### Use Synthetic Data
+#### Prompt Engineering Hygiene Best Practices
+
+- **Never Include Secrets in Prompts**  
+  Never paste passwords, API keys, tokens, or confidential information into prompts. Treat prompts as potentially visible to others or logged by systems.
+
+- **Mask Sensitive Data**  
+  Replace real user data, credentials, or internal identifiers with placeholders (e.g., `***`, `user@example.com`, `API_KEY_HERE`) before sharing with AI.
+
+- **Use Synthetic or Anonymized Data**  
+  When examples are needed, use fake or anonymized data that cannot be traced back to real users or systems.
+
+- **Minimise Personally Identifiable Information (PII)**  
+  Avoid including names, emails, addresses, or any PII in prompts. If necessary, redact or generalize such information.
+
+- **Be Specific and Concise**  
+  Write clear, focused prompts. Remove unnecessary context, code, or comments that could introduce risk or confusion.
+
+- **Avoid Proprietary or Confidential Business Logic**  
+  Do not share sensitive algorithms, trade secrets, or internal processes unless absolutely necessary and approved.
+
+- **Review Prompts Before Submission**  
+  Double-check prompts for accidental leaks of sensitive data or internal information before sending to an AI system.
+
+- **Document Prompt Intent**  
+  Clearly state the purpose of the prompt, especially if it will be reused or shared, to avoid misuse or misinterpretation.
+
+- **Version and Track Prompts**  
+  Store important prompts in version control, especially those used in automation or CI/CD, to ensure traceability and auditability.
+
+- **Use Organisation‑Approved Templates**  
+  Where possible, use standardised prompt templates vetted for security and compliance.
+
+- **Limit Prompt Length and Scope**  
+  Avoid overly long or complex prompts that may inadvertently include sensitive context or increase the risk of data leakage.
+
+- **Sanitize Outputs**  
+  Review AI-generated outputs for accidental inclusion of sensitive data before sharing or deploying.
+
+- **Educate Team Members**  
+  Train all users of AI tools on prompt hygiene and the risks of improper prompt construction.
+
+- **Log Prompt Usage (Where Appropriate)**  
+  Maintain an audit trail of prompts and responses for critical workflows, ensuring sensitive data is not logged.
+
+- **Regularly Review and Update Prompting Practices**  
+  Periodically audit prompt hygiene practices and update guidelines as threats and tools evolve.
 
 ---
 
@@ -457,7 +602,7 @@ _If you don't have tools (highly recommended to have some), then you can use thi
 - **Test thoroughly**: AI code needs the same testing rigor
 
 ### Security
-- **Defense in depth**: Multiple security layers, not just AI checks
+- **Defence in depth**: Multiple security layers, not just AI checks
 - **Regular updates**: Keep security tools and policies current
 - **Team training**: Ensure everyone understands AI security risks
 - **Incident preparation**: Have response plans ready

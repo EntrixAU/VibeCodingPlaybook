@@ -13,7 +13,7 @@ Integrating AI-assisted development into enterprise environments while maintaini
 
 Modern enterprises operate under multiple regulatory frameworks that AI-assisted development must respect:
 
-Enterprises must ensure that AI-assisted development aligns with key regulatory frameworks such as access controls and change management, information security management, data protection and privacy by design, financial reporting controls, healthcare data protection, and payment card security. This means organizations need to address questions like: 
+Enterprises must ensure that AI-assisted development aligns with key regulatory frameworks such as access controls and change management, information security management, data protection and privacy by design, financial reporting controls, healthcare data protection, and payment card security. This means organisations need to address questions like: 
 
 Who approved and tested AI-generated code? 
 How is sensitive data secured? Is personally identifiable information (PII) handled correctly? 
@@ -34,6 +34,12 @@ This fundamental question drives enterprise AI governance strategy.
 #### AI Development Charter
 
 **Enterprise AI Policy**
+
+- **Tooling:**
+
+  - *Governance for tools*: Ensure the tools the team want to use is first assessed for any risks.
+  - *Consistency*: Ensure tools are consistently incorporated into the other enterprise tools.
+  - *Compliance*: Review how AI tools uphold compliance obligations.
 
 - **Principles:**
   - *Human accountability*: Humans remain accountable for all AI-generated code.
@@ -97,14 +103,14 @@ An enterprise platform should provide governed capabilities for AI-assisted deli
 #### Integration Points
 - **Identity and Access Management (IAM)**: SSO, SCIM provisioning, role mapping for AI tools, short‑lived tokens.
 - **Security Information and Event Management (SIEM)**: Stream AI interaction logs, scan results, and policy events for detection and response.
-- **VCS/CI**: Branch protections, required reviews, signing, SBOM; gates for SAST/DAST/SCA and license checks.
+- **VCS/CI**: Branch protections, required reviews, signing, SBOM; gates for SAST/DAST/SCA and licence checks.
 - **Secrets Management**: Brokered access; never expose raw secrets to prompts.
 - **Data Platforms**: Sanitized data products for non-production AI workflows with clear classification and retention.
 ### 3. Compliance Automation
 
 #### Automated Compliance Checking
 - Map enterprise policies to machine-checkable rules (policy-as-code) for security, quality, and compliance.
-- Enforce in CI/CD: SAST/DAST/SCA, license allowlists, secret scanning, infrastructure and policy tests.
+- Enforce in CI/CD: SAST/DAST/SCA, licence allowlists, secret scanning, infrastructure and policy tests.
 - Require evidence artifacts (scan reports, approvals, test results) to be attached to PRs/releases.
 
 #### Continuous Compliance Monitoring
@@ -153,36 +159,6 @@ This schedule and alerting framework helps ensure that compliance and security r
 
 ---
 
-### 🔍 Validate MCP Tools
-**Ensure tool security and compliance**
-
-- **Validate MCP tools for vulnerabilities**: Regular security assessments of all Model Context Protocol tools
-- **Compliance verification**: Ensure tools meet applicable regulatory requirements
-- **Ensure devs stick to governed set of tools**: Maintain approved tool registry and prevent shadow AI usage
-
-**Implementation Framework**:
-**MCP Tool Governance Framework**
-
-- **Approval Process:**
-  - All Model Context Protocol (MCP) tools must undergo a mandatory security assessment.
-  - Compliance review is required to ensure alignment with regulatory standards.
-  - Legal approval is necessary for any external tools.
-  - Performance evaluation must be completed before tool adoption.
-
-- **Approved Tools Registry:**
-  - Only tools listed in the approved registry may be used for AI-assisted development.
-    - *AI Development Environment* (approved version)
-    - *Enterprise AI Assistant* (enterprise edition)
-    - *AI API Services* (approved endpoints only)
-    - *Other approved tools*
-
-- **Monitoring:**
-  - Usage tracking is enabled for all MCP tools to ensure proper oversight.
-  - Continuous security scanning is performed to detect vulnerabilities.
-  - Compliance auditing occurs quarterly to verify ongoing adherence to policies.
-
----
-
 ## 📊 Enterprise Metrics and KPIs
 
 ### Governance Effectiveness Metrics
@@ -217,7 +193,7 @@ To meet enterprise compliance and audit standards, your AI development process s
 
 - **Required Fields:**  
   Each audit entry should include:
-  - **Timestamp:** Recorded in standardized format with timezone.
+  - **Timestamp:** Recorded in standardised format with timezone.
   - **User Identification:** Enterprise user ID and role.
   - **AI Tool Used:** Specific tool and version.
   - **Operation Performed:** Detailed description of the action taken.
@@ -290,12 +266,12 @@ The following framework outlines key risk categories associated with AI-assisted
     - Regular validation of audit trails to ensure completeness and integrity
     - Periodic audit preparation exercises to test readiness
 
-This framework helps organizations proactively identify, manage, and mitigate the unique risks introduced by AI in software development.
+This framework helps organisations proactively identify, manage, and mitigate the unique risks introduced by AI in software development.
 
 #### Risk Assessment Matrix
 **AI Risk Assessment Matrix (Example Approach)**
 
-A structured risk assessment matrix can help organizations evaluate the risk level of AI-generated code by considering multiple factors. Below is an example of how such a matrix might be constructed and used:
+A structured risk assessment matrix can help organisations evaluate the risk level of AI-generated code by considering multiple factors. Below is an example of how such a matrix might be constructed and used:
 
 **Key Risk Factors:**
 - **Data Sensitivity:** How sensitive is the data handled by the code? (low, medium, high, critical)
@@ -331,7 +307,7 @@ This approach enables consistent, transparent, and auditable risk assessments fo
 
 ## 👥 Process & People Framework
 
-Successful AI implementation requires both robust processes and engaged people. Here's how to build the organizational foundation for sustainable AI-assisted development.
+Successful AI implementation requires both robust processes and engaged people. Here's how to build the organisational foundation for sustainable AI-assisted development.
 
 ### 🔄 Continuous Feedback/Improve
 **Maintain development excellence through feedback**
@@ -369,7 +345,7 @@ Successful AI implementation requires both robust processes and engaged people. 
 - **Advocate best practices**: Promote proven patterns and prevent anti-patterns
 
 **CoE Structure**:
-The Centre of Excellence (CoE) should be structured to provide leadership, foster a network of champions, and drive key responsibilities across the organization:
+The Centre of Excellence (CoE) should be structured to provide leadership, foster a network of champions, and drive key responsibilities across the organisation:
 
 **CoE Leadership:**
 - AI Program Director
@@ -546,7 +522,7 @@ Define a schema for AI event logging across tools. Normalise key fields (identit
 **Managed Control Points (MCPs)** and AI agents must be designed with robust security patterns to ensure safe integration and operation within enterprise environments.
 
 **Key Patterns:**
-- **Zero Trust Architecture**: Enforce authentication and authorization for every agent interaction, regardless of network location.
+- **Zero Trust Architecture**: Enforce authentication and authorisation for every agent interaction, regardless of network location.
 - **Least Privilege Principle**: Grant agents only the permissions necessary for their tasks, using scoped API tokens and granular RBAC.
 - **Isolated Execution Environments**: Run agents in sandboxed or containerized environments to limit blast radius.
 - **Secure Communication**: Use mutual TLS and certificate pinning for all agent-to-agent and agent-to-service communications.
@@ -558,6 +534,6 @@ Define a schema for AI event logging across tools. Normalise key fields (identit
 **Example Use Cases:**
 - Securely brokering access between LLM-powered agents and sensitive internal APIs.
 - Enforcing compliance checks before agents can trigger deployments or data exports.
-- Monitoring and alerting on anomalous agent behaviors in real time.
+- Monitoring and alerting on anomalous agent behaviours in real time.
 
 By applying these patterns, enterprises can safely leverage AI agents and MCPs while maintaining strong security and compliance postures.
