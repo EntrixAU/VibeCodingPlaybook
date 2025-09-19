@@ -1,5 +1,5 @@
 ---
-title: "(01) What's Vibe Coding"
+title: "What's Vibe Coding"
 permalink: /whats-vibe-coding/
 ---
 

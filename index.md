@@ -1,5 +1,5 @@
 ---
-title: "Vibe Coding Playbook"
+title: "About this Guide"
 ---
 
 Welcome to the **Vibe Coding Playbook**, a comprehensive guide to AI-assisted development that helps you harness the power of AI while maintaining security, governance, and best practices.

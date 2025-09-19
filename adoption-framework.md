@@ -1,5 +1,5 @@
 ---
-title: "(05) Adoption Framework"
+title: "Adoption Framework"
 permalink: /adoption-framework/
 ---
 

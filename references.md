@@ -1,5 +1,5 @@
 ---
-title: "(06) References"
+title: "References"
 permalink: /references/
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "(04) Enterprise Alignment"
+title: "Enterprise Alignment"
 permalink: /enterprise-alignment/
 ---
 

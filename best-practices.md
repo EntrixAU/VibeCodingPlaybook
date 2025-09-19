@@ -1,5 +1,5 @@
 ---
-title: "(03) Best Practices & Guardrails"
+title: "Best Practices & Guardrails"
 permalink: /best-practices/
 ---
 
