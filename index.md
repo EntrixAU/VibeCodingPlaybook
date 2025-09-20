@@ -4,7 +4,7 @@ title: "About this Guide"
 
 Welcome to the **Vibe Coding Playbook**, a comprehensive guide to AI-assisted development that helps you harness the power of AI while maintaining security, governance, and best practices.
 
-**This presentation exists because the developer community needs practical, actionable guidance RIGHT NOW.** Not theoretical frameworks or academic discussions, but real-world strategies that can be implemented immediately.
+**This presentation exists because the engineering community needs practical, actionable guidance and understand the risks that come with these tools in an enterprise setting.** Not theoretical frameworks or academic discussions, but real-world strategies that can be implemented immediately.
 
 **Disclaimer:**  
 This playbook reflects my personal opinions, based on my experience and research. Please use it as a guide, but always do your own research and adapt recommendations to your specific context and requirements.
@@ -15,11 +15,11 @@ This documentation is based on real-world experience implementing AI-assisted de
 
 The goal isn't to slow down development or add bureaucracy - it's to help you harness AI's power while avoiding the pitfalls that are already causing problems in organisations worldwide.
 
-## The Reality of AI-Assisted Development Today
+### The Reality of AI-Assisted Development Today
 
 We're living through a fundamental shift in how software is built. AI coding assistants have moved from experimental tools to essential development companions, with millions of developers now relying on various AI-powered development tools daily. But here's the challenge: **most developers are winging it**.
 
-## The Vibe Coding Phenomenon
+### The Vibe Coding Phenomenon
 
 "Vibe coding" has emerged as the dominant approach to AI-assisted development - developers intuitively using AI tools without structured methodologies, security considerations, or governance frameworks. While this feels natural and productive, it's creating significant risks:
 
@@ -29,7 +29,7 @@ We're living through a fundamental shift in how software is built. AI coding ass
 - **Technical debt** from poorly architected AI-assisted solutions
 - **Skills erosion** as developers become over-reliant on AI
 
-## Why Developer Education is Critical Now
+### Why Developer Education is Critical Now
 
 The window for establishing good practices is closing fast. As AI tools become more powerful and pervasive, the habits developers form today will shape the next decade of software development. We need to act now to:
 
@@ -45,7 +45,7 @@ Developers using AI haphazardly are leaving massive productivity gains on the ta
 **👥 Maintain Human Skills**  
 As AI handles more routine tasks, developers need to evolve their skills toward architecture, security, and critical thinking - but only if we guide this transition properly.
 
-## 🎯 Who This Guide Is For
+### 🎯 Who This Guide Is For
 
 **👨‍💻 Development Teams**
 - Developers using AI coding assistants and development tools
@@ -62,22 +62,22 @@ As AI handles more routine tasks, developers need to evolve their skills toward 
 - Consultants helping organisations adopt AI practices
 - Academic institutions teaching modern development practices
 
-## What's in it for you
+### What's in it for you
 
-### **(01) What's Vibe Coding**
+#### **(01) What's Vibe Coding**
 [Understanding the methodology](whats-vibe-coding) - Learn what vibe coding is, its benefits, and how it transforms development workflows.
 
-### **(02) Common Habits**
+#### **(02) Common Habits**
 [Identifying patterns and pitfalls](common-habits) - Recognise common practices, both good and bad, that emerge when teams adopt AI-assisted development.
 
-### **(03) Best Practices & Guardrails**
+#### **(03) Best Practices & Guardrails**
 [Do it Right!](best-practices) - Comprehensive guide with proven strategies, security measures, and governance frameworks for safe AI coding.
 
-### **(04) Enterprise Alignment**
+#### **(04) Enterprise Alignment**
 [Governance and compliance](enterprise-alignment) - Frameworks for integrating AI-assisted development into enterprise environments while maintaining compliance.
 
-### **(05) Adoption Framework**
+#### **(05) Adoption Framework**
 [Step-by-step implementation](adoption-framework) - A structured approach to rolling out AI-assisted development across your organisation.
 
-### **(06) References**
+#### **(06) References**
 [Useful links and standards](references) - Curated resources for AI-assisted development, security, governance, and architecture.

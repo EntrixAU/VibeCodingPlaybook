@@ -250,7 +250,7 @@ Perform a security review of this authentication middleware
 
 ## Focus Areas
 - JWT token validation
-- Input sanitization
+- Input sanitisation
 - Error handling and information leakage
 - Rate limiting considerations
 - Session management
@@ -272,7 +272,7 @@ Perform a security review of this authentication middleware
 **Good Prompt:**
 ```markdown
 ## Task
-Analyze code quality and suggest improvements
+Analyse code quality and suggest improvements
 
 ## Context
 - Language: Java 11
@@ -294,7 +294,7 @@ Analyze code quality and suggest improvements
 - Specific improvement suggestions
 - Refactoring recommendations
 - Best practice violations
-- Performance optimization opportunities
+- Performance optimisation opportunities
 ```
 
 ---
@@ -453,7 +453,7 @@ Generate comprehensive docstrings for a data processing module
 **Good Prompt:**
 ```markdown
 ## Task
-Analyze and provide solutions for a production error
+Analyse and provide solutions for a production error
 
 ## Context
 - Application: Web API (Python/Flask)
@@ -461,8 +461,8 @@ Analyze and provide solutions for a production error
 - Error frequency: Intermittent
 - Impact: High - affecting user transactions
 
-## Error Information
-- Error message: [Insert sanitized error message]
+- Error Information
+- Error message: [Insert sanitised error message]
 - Stack trace: [Insert relevant stack trace]
 - Logs: [Insert relevant log entries]
 - Reproduction steps: [If known]
@@ -501,7 +501,7 @@ Optimise database query performance for a reporting dashboard
 - Data volume: 10M+ records
 
 ## Current Query
-[Insert the slow query - sanitized]
+[Insert the slow query - sanitised]
 
 ## Performance Requirements
 - Target: <5 seconds response time

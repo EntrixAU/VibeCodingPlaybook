@@ -5,6 +5,9 @@ permalink: /adoption-framework/
 
 _A practical six-step roadmap to adopt AI-assisted development securely and at scale._
 
+#### Important Note:
+This is a guideline only, you need to reflect on your organisation's or team's objectives with regards to AI coding tools and also understand any existing strategies or policies in place. It is important that you align engineering AI needs with the broader organisation to find a better balance and more importantly a more pragmatic way to infuse AI into your workflows understanding the risks and measures needed to safe guard your customers, products, the team and the organisation.
+
 ## 1. Strategy & Alignment
 
 ### Why this step

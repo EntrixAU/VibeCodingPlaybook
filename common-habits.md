@@ -3,11 +3,9 @@ title: "Common Habits"
 permalink: /common-habits/
 ---
 
-_Patterns you’ll see when teams adopt AI—what to amplify and what to avoid._
-
 Understanding the patterns that emerge when teams adopt AI-assisted development helps identify both productive practices and dangerous pitfalls.
 
-## Good Habits That Emerge
+### Good Habits That Emerge
 
 ### Accelerated Experimentation
 **Pattern**: Developers try more approaches faster
@@ -15,19 +13,19 @@ Understanding the patterns that emerge when teams adopt AI-assisted development 
 - **Example**: Testing 3-4 different algorithms in the time it used to take for one
 - **Best Practice**: Document experiments and learnings
 
-### Enhanced Learning
+#### Enhanced Learning
 **Pattern**: Learning new technologies through AI guidance
 - **Benefit**: Faster skill acquisition across languages and frameworks
 - **Example**: Python developer quickly picking up Rust with AI assistance
 - **Best Practice**: Validate AI explanations with official documentation
 
-### Better Code Review Culture
+#### Better Code Review Culture
 **Pattern**: More thorough reviews due to AI-generated code scrutiny
 - **Benefit**: Higher overall code quality
 - **Example**: Teams developing specific checklists for AI-generated code
 - **Best Practice**: Treat AI code with same rigor as external contractor code
 
-### Documentation-First Thinking
+#### Documentation-First Thinking
 **Pattern**: Writing better prompts leads to better documentation
 - **Benefit**: Clearer requirements and specifications
 - **Example**: Teams creating prompt libraries that double as specs
@@ -35,7 +33,7 @@ Understanding the patterns that emerge when teams adopt AI-assisted development 
 
 ---
 
-## Dangerous Habits to Avoid
+### Dangerous Habits to Avoid
 
 Every new paradigm comes with enthusiasm — but also with mistakes. With vibe coding, I see the same patterns repeating across teams:
 
@@ -49,7 +47,7 @@ Some teams treat AI-generated code as production-ready. No peer review, no tests
 - Performance issues
 - Maintenance nightmares
 
-### Shadow IT/dev, by passing governance
+#### Shadow IT/dev, by passing governance
 **Anti-Pattern**: Using AI tools outside established governance frameworks
 
 Because AI makes coding easy, people outside engineering can spin up scripts or apps without governance. These tools often run outside DevSecOps pipelines, creating serious security and compliance blind spots.
@@ -60,7 +58,7 @@ Because AI makes coding easy, people outside engineering can spin up scripts or 
 - Compliance violations
 - Shadow applications without proper oversight
 
-### Poor prompting, risky outputs, assuming AI "gets it"
+#### Poor prompting, risky outputs, assuming AI "gets it"
 **Anti-Pattern**: Using vague prompts and accepting whatever AI produces
 
 AI is probabilistic. If your prompt is vague — 'make me a login form' — you might get insecure code. Without constraints or context, the AI fills gaps on its own, often in unsafe ways.
@@ -75,13 +73,13 @@ AI is probabilistic. If your prompt is vague — 'make me a login form' — you 
 "Create a secure login system with:
 - bcrypt password hashing (cost 12)
 - Rate limiting (5 attempts per minute)
-- Input validation and sanitization
+- Input validation and sanitisation
 - Secure session management
 - OWASP compliance
 - Comprehensive error handling without info leakage"
 ```
 
-### Ignoring security/compliance standards
+#### Ignoring security/compliance standards
 **Anti-Pattern**: Forgetting that compliance requirements still apply
 
 Many teams forget that **regulatory and compliance frameworks still apply**. AI code must go through the same secure SDLC process as human code. No shortcuts.
@@ -109,7 +107,7 @@ Many teams forget that **regulatory and compliance frameworks still apply**. AI 
 - Inconsistent patterns within teams
 - Technical debt accumulation
 
-### Erosion of critical thinking and dev skills
+#### Erosion of critical thinking and dev skills
 **Anti-Pattern**: Over-dependence leading to skill atrophy
 
 Finally, there's the human side. If juniors rely on AI for every solution, they skip the hard lessons of debugging and problem-solving. Over time, the team loses critical engineering muscle.
@@ -128,11 +126,11 @@ Finally, there's the human side. If juniors rely on AI for every solution, they 
 - Loss of institutional knowledge
 - Reduced innovation capacity
 
-### Prompt Injection Vulnerability
-**Prompt injection** is a new class of vulnerability unique to AI-assisted development. It occurs when untrusted or user-controlled input is included directly in prompts sent to AI models, allowing attackers to manipulate the AI's output or behavior.
+#### Prompt Injection Vulnerability
+**Prompt injection** is a new class of vulnerability unique to AI-assisted development. It occurs when untrusted or user-controlled input is included directly in prompts sent to AI models, allowing attackers to manipulate the AI's output or behaviour.
 
 **How it happens**:
-- Developers pass user input (e.g., comments, form fields, chat messages) directly into prompts without sanitization.
+- Developers pass user input (e.g., comments, form fields, chat messages) directly into prompts without sanitisation.
 - Attackers craft input that changes the intent of the prompt, causing the AI to generate malicious code, leak sensitive data, or bypass intended logic.
 
 **Examples**:
@@ -146,7 +144,7 @@ Finally, there's the human side. If juniors rely on AI for every solution, they 
 - Circumvention of business logic or security controls
 
 **Mitigation**:
-- **Never** include untrusted input directly in prompts. Always sanitize and validate.
+- **Never** include untrusted input directly in prompts. Always sanitise and validate.
 - Use strict input validation and escaping.
 - Apply allow-lists for prompt variables.
 - Review AI prompts as carefully as you review code.
@@ -156,76 +154,76 @@ Finally, there's the human side. If juniors rely on AI for every solution, they 
 
 ---
 
-## Real Risks When Habits Go Wrong
+### Real Risks When Habits Go Wrong
 
 When those mistakes become habits, they translate into real risks. These are the perils of vibe coding if done wrong:
 
-### Security Vulnerabilities (due to code & tools)
+#### Security Vulnerabilities (due to code & tools)
 - **Nearly 45% of generated code contain vulnerabilities** (recent Veracode study)
 - Prompting pattern propagate or increase issues, not diminish
 - Leaked secrets, unsafe libraries, and unvalidated inputs
 - AI tools themselves may have security flaws
 
-### Poor Quality and Maintainability, Tech Debt
+#### Poor Quality and Maintainability, Tech Debt
 - Code might work today but be unstructured, undocumented, and hard to maintain
 - In six months, the team can't understand how it works
 - That's not just tech debt, that's business risk
 
-### Compliance Failures, Business Reputation Risk
+#### Compliance Failures, Business Reputation Risk
 - In financial services, healthcare, or government, you can't plead ignorance
 - **Regulatory frameworks** — they all expect software to go through controlled, auditable processes
 - AI-generated shortcuts won't pass audits
 
-### Accountability Gaps, Who Owns What?
+#### Accountability Gaps, Who Owns What?
 - If something goes wrong, who is responsible? The AI? The developer? The CTO?
 - At the end of the day, the liability rests with the organisation
 - That means you need clear ownership over every line of code, AI-written or not
 
-### Team Readiness, Not Aligned to Real World
+#### Team Readiness, Not Aligned to Real World
 - When teams over-index on AI, they may not be ready to respond to outages, bugs, or breaches
 - It creates a dangerous illusion of speed — until production blows up
 
 > *"When teams over-index on AI, they may not be ready to respond to outages, bugs, or breaches. It creates a dangerous illusion of speed — until production blows up."*
 
-## How can we build better habits?
+### How can we build better habits?
 
-### Weekly Rituals
+#### Weekly Rituals
 - **AI Code Review Sessions**: Dedicated time to review AI-generated code
 - **Prompt Sharing**: Share effective prompts and patterns
 - **Security Retrospectives**: Discuss AI-related security findings
 
-### Monthly Assessments
+#### Regular Assessments
 - **Habit Audit**: Review team's AI usage patterns
 - **Security Review**: Deep dive on AI code security posture  
 - **Skills Assessment**: Identify areas where AI dependency might be problematic
 
-### Governance Rhythms
+#### Governance Rhythms
 - **Policy Updates**: Regular review of AI usage policies
 - **Training Cycles**: Ongoing education on AI best practices
 - **Metrics Review**: Analyze productivity and quality trends
 
-### Cultural Reinforcement
+#### Cultural Reinforcement
 - **Success Stories**: Share examples of good AI practices
 - **Failure Analysis**: Learn from AI-related incidents
 - **Recognition**: Reward teams that exemplify good AI habits
 
 ---
 
-## Ask yourselves these questions if uncertain
+### Ask yourselves these questions if uncertain
 
-### Personal Reflection
+#### Personal Reflection
 1. **Do I understand the AI code I accept?** Can I explain how it works?
 2. **Am I maintaining my core skills?** Can I solve problems without AI?
 3. **Do I review AI suggestions critically?** Or do I accept them blindly?
 4. **Am I documenting my AI interactions?** Can others learn from my experience?
 
-### Team Assessment  
+#### Team Assessment  
 1. **Are we consistent in our AI practices?** Do we have shared standards?
 2. **Do we review each other's AI-generated code?** Is there accountability?
 3. **Are we sharing learnings?** Do we have a knowledge-sharing culture?
 4. **Are we staying secure?** Do we scan and test AI code thoroughly?
 
-### Organizational Check
+#### Organizational Check
 1. **Do we have clear AI policies?** Are they being followed?
 2. **Are we measuring the right things?** Productivity vs. quality vs. security?
 3. **Are we prepared for AI incidents?** Do we have response procedures?

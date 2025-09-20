@@ -3,9 +3,18 @@ title: "Best Practices & Guardrails"
 permalink: /best-practices/
 ---
 
-_Practical rules and guardrails to make AI assistance safe, effective, and auditable._
+### The Methodology in Practice
 
-Transform AI-assisted development from a risk into a competitive advantage with proven strategies, security measures, and governance frameworks. Your comprehensive guide to safe, effective AI-assisted development.
+Vibe Coding isn't just about using AI tools—it's about creating a **structured approach** that:
+
+1. **Maintains Human Oversight** - AI suggests, humans decide
+2. **Implements Guardrails** - Clear rules and boundaries for AI assistance
+3. **Ensures Quality** - Rigorous review and testing processes
+4. **Preserves Accountability** - Clear ownership and decision trails
+
+Transform AI-assisted development from a risk into a competitive advantage with proven strategies, security measures, and governance frameworks. Your comprehensive guide to safe, effective AI-assisted development. 
+
+_Note: These guidelines are  easier said than done. These best practices may not be for everyone or be able to adapt everything so take a moment to reflect on your current team, your team's needs, your objectives and practices and see how well they align or need to align to these best practices to stay on top of the growing concerns of vibe coding in an enterprise setting._ 
 
 ## Table of Contents
 
@@ -101,6 +110,9 @@ Transform AI-assisted development from a risk into a competitive advantage with 
 - **Requirement documents**: Create detailed specifications before prompting
 - **Use in prompts**: Reference specs directly in AI instructions
 - **Iterative refinement**: Improve specs based on AI output quality
+
+_Example: GitHub Spec Flow Pattern_
+Learn more from the official website (https://github.com/github/spec-kit)
 
 ## Master the Instruction files
 
@@ -550,6 +562,7 @@ policies:
 - **Modifications** - How outputs were changed
 - **Deployment status** - What made it to production
 - **Architectural Changes** - Critical changes made by the AI
+- **Tag AI generated PRs separately** - Easier to audit later if anything goes wrong using AI generated code
 
 ---
 

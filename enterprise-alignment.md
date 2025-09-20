@@ -125,7 +125,7 @@ This fundamental question drives enterprise AI governance strategy.
 
 #### Enterprise AI Platform Architecture
 An enterprise platform should provide governed capabilities for AI-assisted delivery:
-- **Context management**: Standard patterns to provide relevant, least-privilege context to AI tools (e.g., repo subsets, sanitized datasets).
+- **Context management**: Standard patterns to provide relevant, least-privilege context to AI tools (e.g., repo subsets, sanitised datasets).
 - **Guardrails as code**: Policies baked into pipelines, IDEs, and agents to enforce approvals, scans, and logging.
 - **Observability**: Unified telemetry across prompts, outputs, model usage, and CI events.
 - **Connectivity**: Secure connectors to VCS, CI/CD, artifact stores, and ticketing with least-privilege scopes.
@@ -136,24 +136,26 @@ An enterprise platform should provide governed capabilities for AI-assisted deli
 - **VCS/CI**: Branch protections, required reviews, signing, SBOM; gates for SAST/DAST/SCA and licence checks.
 - **Secrets Management**: Brokered access; never expose raw secrets to prompts.
 - **Data Platforms**: Sanitized data products for non-production AI workflows with clear classification and retention.
+
 ### 3. Compliance Automation
 
 #### Automated Compliance Checking
 - Map enterprise policies to machine-checkable rules (policy-as-code) for security, quality, and compliance.
-- Enforce in CI/CD: SAST/DAST/SCA, licence allowlists, secret scanning, infrastructure and policy tests.
+- Enforce in CI/CD: SAST/DAST/SCA, licence allow-lists, secret scanning, infrastructure and policy tests.
 - Require evidence artifacts (scan reports, approvals, test results) to be attached to PRs/releases.
 
 #### Continuous Compliance Monitoring
 - Continuously ingest audit logs and control signals into SIEM/GRC tools.
 - Detect drift (e.g., missing approvals, disabled gates) and alert/rescind privileges.
 - Periodically validate controls against applicable regulatory frameworks.
-### Compliance Monitoring Schedule
+
+#### Compliance Monitoring Schedule
 
 A robust compliance monitoring program should include regular, automated checks and alerting to ensure ongoing alignment with enterprise policies and regulatory requirements. Below is a sample schedule and alerting structure:
 
 #### Monitoring Schedule
 
-- **Daily**
+- **Daily or real-time**
   - AI code security scans
   - Access control validation
   - Audit log integrity checks
@@ -191,7 +193,7 @@ This schedule and alerting framework helps ensure that compliance and security r
 
 ## Enterprise Metrics and KPIs
 
-### Governance Effectiveness Metrics
+### Governance Effectiveness Metrics (or something suitable for your organisation and team)
 Define KPI categories and example signals to track policy effectiveness and outcomes:
 - **Adoption**: Active AI users, assistant usage per dev, approved tool coverage
 - **Quality**: Defect density of AI-assisted changes vs baseline, rollback rate
@@ -199,22 +201,21 @@ Define KPI categories and example signals to track policy effectiveness and outc
 - **Delivery**: Lead time for changes, PR cycle time, change failure rate
 - **Compliance**: Evidence completeness %, control drift incidents, audit pass rate
 
-#### AI Development Quality
-Monitor test coverage, code complexity, and maintainability for AI-assisted changes. Compare against human-only baselines to detect regressions.
+---
 
 ## Audit and Assurance
 
 ### Audit Preparation Framework
 Create an audit runbook that enumerates controls, evidence locations, owners, and sampling procedures. Rehearse quarterly using dry‑runs to ensure evidence is complete and retrievable.
 
-#### Evidence Collection
+### Evidence Collection
 - PR metadata: reviewers, approvals, sign-off timestamps
 - Security scans: SAST/DAST/SCA results, exceptions with expiry and compensating controls
 - Test evidence: unit/integration coverage and results
 - Deployment evidence: SBOMs, provenance attestations, signed artifacts
 - AI interaction logs: prompt/output hashes, model/tool versions, operator identity
 
-#### Audit Trail Requirements
+### Audit Trail Requirements
 
 To meet enterprise compliance and audit standards, your AI development process should maintain a robust audit trail with the following characteristics:
 
@@ -245,12 +246,9 @@ These requirements help ensure that all AI-related activities are fully traceabl
 
 ---
 
-## Risk Management
+## Risk Management (An AI coding tools specific risk framework)
 
-### AI-Specific Risk Framework
-
-#### Risk Categories and Controls
-### AI Risk Framework
+### Risk Categories and Controls
 
 The following framework outlines key risk categories associated with AI-assisted development in the enterprise, along with recommended controls for each risk.
 
@@ -278,7 +276,7 @@ The following framework outlines key risk categories associated with AI-assisted
 
 - **Prompt injection attacks**
   - *Controls:*
-    - Strict input sanitization requirements for all prompts and user inputs
+    - Strict input sanitisation requirements for all prompts and user inputs
     - Monitoring and logging of all AI interactions
     - Security awareness training for developers and users of AI tools
 
@@ -505,12 +503,6 @@ The AI based development landscape changes quite significantly. Reviewing and ad
 
 Effective governance transforms AI-assisted development from a risk into a competitive advantage. These patterns provide structure, accountability, and compliance while maintaining development velocity.
 
-### Spec-Driven Development
-
-#### GitHub Spec Flow Pattern
-
-Learn more from the official website (https://github.com/github/spec-kit)
-
 #### Jira Integration
 Link specifications to Jira stories for complete traceability.
 
@@ -558,7 +550,7 @@ Define a schema for AI event logging across tools. Normalise key fields (identit
 - **Secure Communication**: Use mutual TLS and certificate pinning for all agent-to-agent and agent-to-service communications.
 - **Auditability**: Log all agent actions and decisions, linking them to user or system identities for traceability.
 - **Policy Enforcement**: Integrate with policy engines (e.g., OPA) to validate agent actions against enterprise rules before execution.
-- **Input/Output Validation**: Rigorously validate and sanitize all data exchanged between agents and external systems.
+- **Input/Output Validation**: Rigorously validate and sanitise all data exchanged between agents and external systems.
 - **Automated Secrets Management**: Use vaults or managed secret stores; never hardcode credentials in agent code or configs.
 
 **Example Use Cases:**
