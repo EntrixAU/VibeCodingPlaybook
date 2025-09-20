@@ -30,7 +30,6 @@ Integrating AI-assisted development into enterprise environments while maintaini
   - [Training](#training)
   - [Review & Update Policies](#review--update-policies)
 - [Advanced Governance Patterns](#advanced-governance-patterns)
-  - [Spec-Driven Development](#spec-driven-development)
   - [Advanced Policy as Code](#advanced-policy-as-code)
   - [Enterprise Audit-Ready Logs](#enterprise-audit-ready-logs)
   - [Secure MCP & AI Agent Patterns](#secure-mcp--ai-agent-patterns)
