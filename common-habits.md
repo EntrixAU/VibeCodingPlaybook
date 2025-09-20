@@ -7,7 +7,7 @@ Understanding the patterns that emerge when teams adopt AI-assisted development 
 
 ### Good Habits That Emerge
 
-### Accelerated Experimentation
+#### Accelerated Experimentation
 **Pattern**: Developers try more approaches faster
 - **Benefit**: Increased innovation and solution exploration
 - **Example**: Testing 3-4 different algorithms in the time it used to take for one
@@ -37,7 +37,7 @@ Understanding the patterns that emerge when teams adopt AI-assisted development 
 
 Every new paradigm comes with enthusiasm — but also with mistakes. With vibe coding, I see the same patterns repeating across teams:
 
-### Over-reliance on AI, No Reviews, Testing
+#### Over-reliance on AI, No Reviews, Testing
 **Anti-Pattern**: Treating AI-generated code as production-ready
 
 Some teams treat AI-generated code as production-ready. No peer review, no tests. This is dangerous. **AI can be right 90% of the time, but it's the 10% you miss that creates the biggest risks** — the bugs, the vulnerabilities, the outages.
@@ -99,7 +99,7 @@ Many teams forget that **regulatory and compliance frameworks still apply**. AI 
 - Never auto-merge AI commits
 - Regular security training for AI-assisted development
 
-### Copy-Paste Culture 2.0
+#### Copy-Paste Culture 2.0
 **Anti-Pattern**: Treating AI like an advanced copy-paste tool
 
 **Problems**:
