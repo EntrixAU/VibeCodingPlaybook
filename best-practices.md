@@ -3,8 +3,6 @@ title: "Best Practices & Guardrails"
 permalink: /best-practices/
 ---
 
-### The Methodology in Practice
-
 Vibe Coding isn't just about using AI tools—it's about creating a **structured approach** that:
 
 1. **Maintains Human Oversight** - AI suggests, humans decide
@@ -14,7 +12,7 @@ Vibe Coding isn't just about using AI tools—it's about creating a **structured
 
 Transform AI-assisted development from a risk into a competitive advantage with proven strategies, security measures, and governance frameworks. Your comprehensive guide to safe, effective AI-assisted development. 
 
-_Note: These guidelines are  easier said than done. These best practices may not be for everyone or be able to adapt everything so take a moment to reflect on your current team, your team's needs, your objectives and practices and see how well they align or need to align to these best practices to stay on top of the growing concerns of vibe coding in an enterprise setting._ 
+_Note: These guidelines are  easier said than done. These best practices may not be for everyone or be able to adapt everything so take a moment to reflect on your current team, your team's needs, your objectives and practices and see how well they align or need to align going forward to adopt these best practices to stay on top of the growing concerns of vibe coding in an enterprise setting._ 
 
 ## Table of Contents
 
