@@ -1,9 +1,9 @@
 ---
-title: "DevSecOps Strategies for Safe Use of AI"
+title: "DevSecOps Strategies"
 permalink: /best-practices/devsecops/
 ---
 
-[← Back to Best Practices hub](/best-practices/)
+[← Back to Best Practices hub](best-practices/)
 
 Implementing comprehensive DevSecOps strategies ensures AI-assisted development maintains security, compliance, and quality throughout the development lifecycle.
 

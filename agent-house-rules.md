@@ -3,7 +3,7 @@ title: "AI Coding Agent House Rules"
 permalink: /best-practices/agent-house-rules/
 ---
 
-[← Back to Best Practices hub](/best-practices/)
+[← Back to Best Practices hub](best-practices/)
 
 Principles for safe, effective AI agent operation: isolate tasks, comment thoroughly, enforce permissions, and run feedback loops.
 

@@ -3,7 +3,7 @@ title: "Prompt Engineering Hygiene"
 permalink: /best-practices/prompt-engineering-hygiene/
 ---
 
-[← Back to Best Practices hub](/best-practices/)
+[← Back to Best Practices hub](best-practices/)
 
 Keep secrets out of prompts, be concise and specific, sanitize outputs, and educate teams.
 
