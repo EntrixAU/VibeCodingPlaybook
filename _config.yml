@@ -1,5 +1,5 @@
 # Site settings
-title: "Vibe Coding Playbook"
+title: "Vibe Coding Best Practices Playbook"
 description: "Let's Do It Right - A comprehensive guide to AI-assisted development"
 author: "Sam Fernando"
 
@@ -15,9 +15,8 @@ baseurl: "/VibeCodingPlaybook"     # Replace with your repository name
 # Navigation
 header_pages:
   - index.md
-  - whats-vibe-coding.md
-  - common-habits.md
   - best-practices.md
+  - devsecops.md
   - enterprise-alignment.md
   - adoption-framework.md
   - references.md
