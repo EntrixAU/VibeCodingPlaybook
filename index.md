@@ -13,7 +13,7 @@ Why this playbook matters:
 This playbook reflects my personal opinions, based on my experience and research. Please use it as a guide, but always do your own research and adapt recommendations to your specific context and requirements.
 
 ### Key themes
-- [Essential Best Practices](best-practices-essential) – What to do (and avoid) day‑to‑day
+- [Essential Best Practices](best-practices/essential) – What to do (and avoid) day‑to‑day
 - [Implementation Guidance](best-practices) – Links to focused pages on planning, reuse, modularity, and tool validation
 - [AI Agent House Rules](agent-house-rules) – How agents operate safely
 - [DevSecOps](devsecops) – Security scanning, policy as code, and continuous monitoring

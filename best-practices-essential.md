@@ -3,7 +3,7 @@ title: "Essential Best Practices"
 permalink: /best-practices/essential/
 ---
 
-[← Back to Best Practices hub](best-practices/)
+[← Back to Best Practices hub](/best-practices)
 
 This section covers day‑to‑day practices: what to do (and avoid) when working with AI assistance.
 

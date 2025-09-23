@@ -16,8 +16,8 @@ _Note: These guidelines are  easier said than done. These best practices may not
 
 ## Table of Contents
 
-### [Essential Best Practices](best-practice-essentials)
-- [Avoid Building Entire Features or Modules](best-practice-essentials/#avoid-building-entire-features-or-modules)
+### [Essential Best Practices](essentials)
+- [Avoid Building Entire Features or Modules](essentials/#avoid-building-entire-features-or-modules)
 - [Keep the Humans in the Loop](#keep-the-humans-in-the-loop)
 - [Use Scanning Features](#use-scanning-features)
 - [Craft Instructions Unique to You](#craft-instructions-unique-to-you)
